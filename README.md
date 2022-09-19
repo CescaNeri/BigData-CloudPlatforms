@@ -18,4 +18,8 @@
 - Apache Kafka
 - Python :heart:
 
+## EXAM - Oral Examination
+
+Questions on all (theoretical and practical) aspects of the course, including both modules and seminars. 
+
 
