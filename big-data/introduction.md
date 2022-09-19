@@ -78,4 +78,3 @@ Marketing campaigns are particularly effective when costumers are going through 
 A company wanted to send advertising about maternity products BEFORE the baby was actually born. They were able to identify patterns of behaviors adopted by costumers when a baby was coming. 
 However, the company incurred in legal issues because they sent maternity adv to a 16 y.o girl who did not inform the parents about the pregnancy.
 The company won the legal dispute but it raised some concerns regarding privacy. 
-
