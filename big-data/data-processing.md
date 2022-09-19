@@ -43,4 +43,38 @@ Many different programming solutions can be applied on hadoop:
     - analysis run on continuously incoming data 
     - there is no much time and resources, you need to adopt some approximation algorithms 
 
+## Big Data Flow
 
+![](data-flow.jpg)
+
+In the distributed file system, it is often used the metaphor of the **Data Lake**.
+A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is kept in its original format and is processed to be queried only when needed. 
+It can store a varied amount of formats in big data  ecosystems, from unstructured, semi-structured, to structured data sources.  
+
+## NoSQL - NewSQL DBMSs
+
+Relational DBMSs have not been designed to easily distributed. NoSQL DBMSs have risen to fill this gap.
+NewSQL is the latest frontier which combines the benefits from both relational and NoSQL worlds.
+
+## Techniques for Big Data Analysis
+
+- Extract, transform, and load (ETL)
+- Data fusion and data integration
+- Data management
+- Analytics
+    -  Data mining
+        - Association rule learning
+        - Classification
+        - Cluster analysis
+        - Regression
+    - Machine learning
+        - Supervised learning
+        - Unsupervised learning
+- Cloud computing
+
+## Goals of Analytics
+- Descriptive Analytics (give insights into the past)
+- Diagnostic Analytics (understand why something has happened)
+    - integrating the dataset analyzed with other data to look for correlation paths
+- Predictive Analytics (look at the future)
+- Prescriptive Analytics (prescribe what action to take to eliminate a future problem)

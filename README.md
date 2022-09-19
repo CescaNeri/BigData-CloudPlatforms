@@ -6,7 +6,7 @@
 
 ## Program:
 
-**Module 1**: theoretical background on Big Data
+**Module 1**: Theoretical background on Big Data
 
 **Module 2**: Handling big data in the cloud (guided practice)
 
