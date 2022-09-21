@@ -72,6 +72,18 @@ Repetition level indicates at which level we have to create a new list for the c
 
 By using these two values (repetition and definition), I am able to fully reconstruct the message.
 
+Repetition and definition level cause overhead (they occupy space).
+- The number of bits that has to be used is quite small (1,2,3... the number of levels) and in some case they can be omitted 
+- The repetition levels are stored in a column so they can be compressed 
+
+**Parquet file format**
+We have a notion of *row group* -> the data are not fully columnar. We do not store all the values of each column continuously.
+Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. 
+- **COlumn chunk** (chunk of the data for a particular column)
+All the values of each columns is further subdivided into pages.
+The size of the row group is set to the same size of the block (each block corresponds to a row).
+**Data page size** -> it can be tuned (smaller or larger) depending on what query we need to issue.
+
 
 
 
