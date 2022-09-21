@@ -88,6 +88,24 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.
     - Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)
     - Longer recovery time 
 
+## HDFS not always the best fit
+
+Although this may change in the future, there are area where HDFS is not a good fit:
+1. Low-latency data access
+2. Lots of small files
+
+**I/O communication**
+
+An application client wishing to read a file must first contact the NN to determine where the actual data is stored.
+- The NN identifies the relevant block
+- The client contacts the DN to retrieve the data
+
+**Features of design:**
+- The namenode never removes data
+- All data transfer occurs directly between clients and DNs
+- Communications with the NN only involve transfer of metadata
+
+
 
 
 
