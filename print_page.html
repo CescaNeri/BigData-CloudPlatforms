@@ -1,0 +1,1262 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Print as PDF - CescaNeri/BigData-CloudPlatforms</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="css/print-site.css">
+    
+      <link rel="stylesheet" href="css/print-site-material.css">
+    
+    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
+        })
+        </script>
+        </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="CescaNeri/BigData-CloudPlatforms" class="md-header__button md-logo" aria-label="CescaNeri/BigData-CloudPlatforms" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 2.83c-1.74 0-3.41.81-4.5 2.07-1.09-1.26-2.76-2.07-4.5-2.07-3.08 0-5.5 2.41-5.5 5.5 0 3.77 3.4 6.86 8.55 11.53L12 21.17l1.45-1.31C18.6 15.19 22 12.1 22 8.33c0-3.09-2.42-5.5-5.5-5.5m-4.5 15v-4H9l3-7v4h3"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CescaNeri/BigData-CloudPlatforms
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Print as PDF
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CescaNeri/BigData-CloudPlatforms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="CescaNeri/BigData-CloudPlatforms" class="md-nav__button md-logo" aria-label="CescaNeri/BigData-CloudPlatforms" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 2.83c-1.74 0-3.41.81-4.5 2.07-1.09-1.26-2.76-2.07-4.5-2.07-3.08 0-5.5 2.41-5.5 5.5 0 3.77 3.4 6.86 8.55 11.53L12 21.17l1.45-1.31C18.6 15.19 22 12.1 22 8.33c0-3.09-2.42-5.5-5.5-5.5m-4.5 15v-4H9l3-7v4h3"/></svg>
+
+    </a>
+    CescaNeri/BigData-CloudPlatforms
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CescaNeri/BigData-CloudPlatforms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Course and Exam Details
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Big data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Big data" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Big data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Batch application
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Batch application" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Batch application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/batch-application/yarn.html" class="md-nav__link">
+        YARN - Yet ANother Resource Negotiator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Distributed file system
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Distributed file system" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Distributed file system
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/distributed-file-system/file-formats.html" class="md-nav__link">
+        File Formats
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/distributed-file-system/hadoop-dfs.html" class="md-nav__link">
+        Hadoop Distributed File System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Infrastructures architectures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Infrastructures architectures" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Infrastructures architectures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/infrastructures-architectures/architectures.html" class="md-nav__link">
+        Big Data Architectures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/infrastructures-architectures/infrastructures.html" class="md-nav__link">
+        Big Data Infrastructures
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/introduction/data-processing.html" class="md-nav__link">
+        Processing Big Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/introduction/introduction.html" class="md-nav__link">
+        BIG DATA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/introduction/job-opportunities.html" class="md-nav__link">
+        Job Opportunities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/introduction/life-cycle.html" class="md-nav__link">
+        Big Data Lifecycle
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Print as PDF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="print_page.html" class="md-nav__link md-nav__link--active">
+        Print as PDF
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#" class="md-nav__link">
+    1. Course and Exam Details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-big-data" class="md-nav__link">
+    I. Big data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#" class="md-nav__link">
+    1. Course and Exam Details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-big-data" class="md-nav__link">
+    I. Big data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+
+
+<div id="print-site-page" class="print-site-enumerate-headings print-site-enumerate-figures">
+        <div id="print-site-banner">
+            <p>
+    <em>This box will disappear when printing</em>
+    <span style="float: right"><a href="https://timvink.github.io/mkdocs-print-site-plugin/">mkdocs-print-site-plugin</a></span>
+</p>
+<p>
+    This page has combined all site pages into one. You can export to PDF using <b>File > Print > Save as PDF</b>.
+</p>
+<p>
+    See also <a href="https://timvink.github.io/mkdocs-print-site-plugin/how-to/export-PDF.html">export to PDF</a> and <a href="https://timvink.github.io/mkdocs-print-site-plugin/how-to/export-HTML.html">export to standalone HTML</a>.
+</p>
+        </div>
+        
+        <section class="print-page">
+            <div id="print-page-toc" data-toc-depth="3">
+                <nav role='navigation' class='print-page-toc-nav'>
+                <h1 class='print-page-toc-title'>Index</h1>
+                </nav>
+            </div>
+        </section>
+        <section class="print-page" id="index"><h1 id="index-course-and-exam-details">Course and Exam Details</h1>
+<p><strong>Matteo Francia</strong> = Manager of the course, Cloud Platforms</p>
+<p><strong>Enrico Gallinucci</strong> = Big Data (specialized in social data)</p>
+<h2 id="index-program">Program:</h2>
+<p><strong>Module 1</strong>: Theoretical background on Big Data</p>
+<p><strong>Module 2</strong>: Handling big data in the cloud (guided practice)</p>
+<h2 id="index-technologies-used">Technologies used:</h2>
+<ul>
+<li>AWS Academy (Lab Exercises)</li>
+<li>Apache Spark</li>
+<li>Apache Hadoop</li>
+<li>Apache Kafka</li>
+<li>Python :heart:</li>
+</ul>
+<h2 id="index-exam-oral-examination">EXAM - Oral Examination</h2>
+<p>Questions on all (theoretical and practical) aspects of the course, including both modules and seminars. </p></section>
+                        <h1 class='nav-section-title' id='section-big-data'>
+                            Big data <a class='headerlink' href='#section-big-data' title='Permanent link'>↵</a>
+                        </h1>
+                        
+                        <h2 class='nav-section-title' id='section-batch-application'>
+                            Batch application <a class='headerlink' href='#section-batch-application' title='Permanent link'>↵</a>
+                        </h2>
+                        <section class="print-page" id="big-data-batch-application-yarn"><h1 id="big-data-batch-application-yarn-yarn-yet-another-resource-negotiator">YARN - Yet ANother Resource Negotiator</h1>
+<p>In the same cluster, I want to run some programs and applications. The problem regards how these computations allocate resources.</p>
+<p>The resource negotiator:
+- In charge of assigning units of work
+- Has a global view of the resources  available in the cluster
+- Decides where and when each uint of work should be allocated and with how many resources
+- Uses a scheduling policy to manage concurrency
+- Avoids over-instantiation of processes 
+- Handles fault-tolerance</p>
+<p>Potentially, we can run as many process as we want on each machine but we do not want to overload it.</p>
+<p>YARN provides APIs for requesting and working with cluster resources.
+- It is a general framework (works with any kind of application you want to run)
+- Application are written using analytical frameworks</p>
+<h2 id="big-data-batch-application-yarn-main-daemons">Main Daemons</h2>
+<p>YARN work with the master/slave mechanism:
+- Resource Manager (ultimate authority that arbitrates among all the applications)
+- Node Manager (per-node slave)
+    - In charge of running containers which run applications (virtual abstract entities associated with a certain amount of resources. We have a virtual environment that run applications)</p>
+<p>For each application. there is one container that runs a special process that in charge of coordinating the single operation.</p>
+<p><strong>Coordination</strong> happens on two levels:
+1. Resource Manager, composed by two components:
+    - Application Manager (start the application - accept request from client and start the machine)
+    - Scheduling component (decides where resources should be allocated)
+2. For each application, we have another process (<strong>application master process</strong>) that manages the resources of each application</p>
+<p>Application execution consists of the following steps:
+1. A client program submits the application, including the necessary specifications to launch the application-specific AMP itself
+2. The RM assumes the responsibility to negotiate a specified container in which to start the AMP and then launches it
+3. The AMP registers with the RM
+4. The AMP negotiates appropriate resources containers
+5. On successful container allocations, the AMP launches the container by providing the container launch specification
+6. The application code executing within the container provides necessary information
+7. During the application execution, the client that submitted the program communicates directly with the AMP to get status and updates
+8. Once the application is complete, the AMP de-registers with the RM and shuts down, allowing its own container to be repurposed</p>
+<h2 id="big-data-batch-application-yarn-yarn-scheduler">YARN Scheduler</h2>
+<p>YARN provides a choice of schedulers and configurable policies:
+- FIFO scheduler (useless)
+- Fair Scheduler (with multiple applications that want to access the resource, the scheduler will balance the resources among the two applications)
+    - Problem related to prediction of execution time as resources are split
+- Capacity Scheduler (the amount of resources is divided in two profiles - fixed amount)
+    - Each application run within a profile have access to a fixed amount of resources
+    - Execution time is predictable but there may be a waste of resources</p>
+<h2 id="big-data-batch-application-yarn-data-locality">Data Locality</h2>
+<p>When the scheduler needs to identify the resources to allocate, it does so following the data locality principle.
+The point is to exploit cluster typology and data block replication to apply the data locality principle. </p>
+<p><em>When computation involves large set of data, it is cheaper to move code to data rather than data to code</em></p></section><h1 class='nav-section-title-end'>Ended: Batch application</h1>
+                        <h2 class='nav-section-title' id='section-distributed-file-system'>
+                            Distributed file system <a class='headerlink' href='#section-distributed-file-system' title='Permanent link'>↵</a>
+                        </h2>
+                        <section class="print-page" id="big-data-distributed-file-system-file-formats"><h1 id="big-data-distributed-file-system-file-formats-file-formats">File Formats</h1>
+<p>The hadoop ecosystem supports several different formats:
+- Standard file formats
+- Hadoop / BigData-specific formats</p>
+<p>Hadoop-specific formats involves several advantages:
+- <strong>Serialization</strong>
+- <strong>Splittability</strong> (if the file is split into multiple blocks, metadata headers allow to skip unnecessary I/O)
+    - Metadata is associated with each single block (the client can access individual blocks)
+- <strong>Compression</strong> (if you want to compress the data, you use a compression mechanism that works on a block-level or at a record-level)</p>
+<p>There are many file formats - <strong>row-oriented</strong>:
+- Sequence files
+- Apache thrift (Facebook), Protocol buffers (Google)
+    - They both create a notion of schema that has to be used in order to read the data
+    - Some code specifies how the data are structured
+- Apache Avro 
+    - Each file contains its own schema definition (no need to share separately the schema of the file because it is included in the file itself)</p>
+<h2 id="big-data-distributed-file-system-file-formats-column-oriented-file-formats">Column-oriented file formats</h2>
+<p>This formats store data based on columns.
+Column-oriented formats are better suited for analytical scenarios. This because in a typical analytical query, you want to take data from a subset of columns and perform analysis.</p>
+<p>This format is not ideal for operational purposes (day-to-day operations in a database).</p>
+<p>There are several advantaged to column-oriented file formats:
+- Better compression (similar values because data is more homogeneous)
+- Reduced I/O for analytical queries
+- Operate on encoded data</p>
+<p>There are many file formats:
+- ORC Files
+- Apache Parquet (general purpose)</p>
+<h2 id="big-data-distributed-file-system-file-formats-parquet">Parquet</h2>
+<p>Besides storing data in a column format, it allows to store <strong>nested structures</strong> (like JSON) in a flat format.</p>
+<p><strong>Data Model</strong>
+ Nested attributes that have multiple values.
+ - Types:
+    - Group
+    - Primitive
+- Frequency:
+    - Required
+    - Optional
+    - Repeated</p>
+<p><img alt="" src="big-data/distributed-file-system/nested.jpg" /></p>
+<p><strong>Unnesting</strong>
+Can we store nested data structures in a columnar format?
+we need to map the schema to a list of columns in a way that we can write records to flat columns and read them back to their original nested data structure.
+- Each value is associated with two integers (repetition level and definition level)
+- These integers allow to fully reconstruct the nested structures while still being able to store each primitive separately</p>
+<p>When I put values in a column formats, I do not know which value belongs to which record. 
+Rebuilding the structure of the rows just by looking at the values cannot be done.
+The parquet format allows to reconstruct the message.</p>
+<p><img alt="" src="big-data/distributed-file-system/parquet.jpg" /></p>
+<p>Parquet uses a definition level that defines the level of definition (0,1,2,3...), dealing with optionality.
+This allows you to understand which values exist.
+Inside the hierarchy, some fields are mandatory and others are optional. </p>
+<p><strong>Repetition Level</strong>
+The presence of repeated fields requires to store when new lists are starting in a column of values.
+Repetition level indicates at which level we have to create a new list for the current value. </p>
+<p>By using these two values (repetition and definition), I am able to fully reconstruct the message.</p>
+<p>Repetition and definition level cause overhead (they occupy space).
+- The number of bits that has to be used is quite small (1,2,3... the number of levels) and in some case they can be omitted 
+- The repetition levels are stored in a column so they can be compressed </p>
+<p><strong>Parquet file format</strong>
+We have a notion of <em>row group</em> -&gt; the data are not fully columnar. We do not store all the values of each column continuously.
+Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. 
+- <strong>COlumn chunk</strong> (chunk of the data for a particular column)
+All the values of each columns is further subdivided into pages.
+The size of the row group is set to the same size of the block (each block corresponds to a row).
+<strong>Data page size</strong> -&gt; it can be tuned (smaller or larger) depending on what query we need to issue.</p></section><section class="print-page" id="big-data-distributed-file-system-hadoop-dfs"><h1 id="big-data-distributed-file-system-hadoop-dfs-hadoop-distributed-file-system">Hadoop Distributed File System</h1>
+<p>The first thing that software has to provide is <strong>abstraction</strong>, as we want to interact with the disks of the machines as if it was a single machine.
+We want a single reference and we want to talk to a single entity.
+- Master-Slave architecture 
+A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.</p>
+<p>The software needs to deal with <strong>big data</strong>:
+- Files may be bigger than single disks
+- We need to split files into smaller blocks and store them on different machines</p>
+<p>ALso, <strong>fault tolerance</strong> is of key importance: disks can fail, machines can be unreachable, but data should always be available.
+- we can store multiple copies of each block</p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-hdfs-definition">HDFS - definition</h2>
+<p>HDFS is filesystem designed for storing very large files with a streaming data access patterns, running on clusters of commodity hardware.
+- Application that run on HDFS need streaming access to their data sets.
+    - I do not want to continuously update data with batch operations.
+    - The emphasis is on high throughput of data access rather than low latency of data access</p>
+<p><strong>Blocks</strong> -&gt; splitting files into block that range between 64MB and 1GB.
+We need blocks because files can be larger than disks.
+- Why are blocks this big?
+We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. </p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-master-slave-abstraction">Master - Slave Abstraction</h2>
+<p>Master service -&gt; <em>namenode</em>
+- Persistently maintains the filesystem tree
+- Coordinates the storage on different machines
+- Keeps in memory the location of each block for a given file (<strong>block pool</strong>)
+Slaves -&gt; <em>datanodes</em>
+- Store and retrieve blocks</p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-spof">SPoF</h2>
+<p>The namenode is a single point of failure: without it, the file system cannot be used.
+- <strong>Backup solution</strong>: not the best solution
+- <strong>Secondary NN Solution</strong>: separate machine in which a secondary namenode is installed and does some synchronization with the primary one (while being in a sleeping state).</p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-high-availability">High Availability</h2>
+<p>Most of the big data tools and frameworks use this term to reference solutions that answer to the problem of always having data available no matter what.</p>
+<p>HA indicates a system that can tolerate faults.
+- Supported by configuring two separate machines as NNs:
+    - One is active (up and running)
+    - The other is in standby
+In the event of failure of the active NN, the standby NN takes over.</p>
+<p>It s a more complex solution in terms of resources and communication with the network, but it guarantees that in case of failure, there will not be any downtime.</p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-hdfs-federation">HDFS - federation</h2>
+<p>There is no need to have a single file system, but we can have many systems on the same cluster.
+We can create multiple NN that manage different file systems.</p>
+<p>This has several advantages:
+- <strong>Performance</strong> (if we have a large filesystem with lots of data, the NN can be a bottleneck in terms of answering to multiple requests of users. By dividing file systems with different NN that address different requests, performance will increase)
+- Availability
+- <strong>Scalability</strong> (when the file system is large, the metadata can become quite huge. The metadata block needs to be lowered in memory so splitting metadata among different machines allows scalability)
+- Maintainability, Security and Flexibility</p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-hdfs-replication">HDFS - replication</h2>
+<p>Whenever we want to save a file in the file system, this will be splitted in blocks and stored separately.</p>
+<p>Each data block is independently replicated at multiple DNs in order to improve performance and robustness. </p>
+<p>Nodes are organized in racks, that are organized in data centers.
+- Hadoop models such concepts in a tree-liked fashion and computes the distance between nodes as their distance on the tree.</p>
+<p>The typical rule is to store the first <strong>replica</strong> on the node (n1) where the client issued the write command.
+Replica 2 is stores on a node (n2) in a rack (r2) different form n1.
+Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
+<p><img alt="" src="big-data/distributed-file-system/racks.jpg" /></p>
+<p><strong>Hadoop 3</strong> alternative to simple replication:
+- Each block is split across each data node
+- It reduces data redundancy
+- It requires less storage (less money)
+- Faster writes (when we need to write data, the data to write are less)
+- DISADVANTAGES:
+    - Higher CPU cost (whenever we want to access data, having split the blocks in further blocks, we need to rebuild the blocks)
+    - Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)
+    - Longer recovery time </p>
+<h2 id="big-data-distributed-file-system-hadoop-dfs-hdfs-not-always-the-best-fit">HDFS not always the best fit</h2>
+<p>Although this may change in the future, there are area where HDFS is not a good fit:
+1. Low-latency data access
+2. Lots of small files</p>
+<p><strong>I/O communication</strong></p>
+<p>An application client wishing to read a file must first contact the NN to determine where the actual data is stored.
+- The NN identifies the relevant block
+- The client contacts the DN to retrieve the data</p>
+<p><strong>Features of design:</strong>
+- The namenode never removes data
+- All data transfer occurs directly between clients and DNs
+- Communications with the NN only involve transfer of metadata</p></section><h1 class='nav-section-title-end'>Ended: Distributed file system</h1>
+                        <h2 class='nav-section-title' id='section-infrastructures-architectures'>
+                            Infrastructures architectures <a class='headerlink' href='#section-infrastructures-architectures' title='Permanent link'>↵</a>
+                        </h2>
+                        <section class="print-page" id="big-data-infrastructures-architectures-architectures"><h1 id="big-data-infrastructures-architectures-architectures-big-data-architectures">Big Data Architectures</h1>
+<p>There are a lot of problems related to distributed architectures, especially concerning parallelization:
+- Communication between workers
+- Access to shared resources
+- Parallelization and concurrency</p>
+<p>The solution is to have single computer -&gt; <strong>Data Center</strong></p>
+<p><img alt="" src="big-data/infrastructures-architectures/datacenter.jpg" /></p>
+<p>The core is the <strong>framework provider</strong>, which is the set of software modules that handles the abstraction of the complexity of the computer system and makes it visible as if it was a single entity.</p>
+<p><strong>System Orchestrator</strong> -&gt; manages application (both a human being or a program)</p>
+<p>ADD DETAILS FROM THE SLIDES!!! 'til 28</p>
+<p><img alt="" src="big-data/infrastructures-architectures/arch.jpg" /></p>
+<p>ADD DETAILS</p>
+<h2 id="big-data-infrastructures-architectures-architectures-analytical-applications">Analytical Applications</h2>
+<ul>
+<li><strong>Batch Analysis:</strong> Take a large amount of data and run analysis<ul>
+<li>Run on demand</li>
+<li>Takes a lot of time</li>
+</ul>
+</li>
+<li><strong>Stream Analysis</strong> We devised an algorithm that runs continuously <ul>
+<li>Real-time results</li>
+<li>Useful for monitoring</li>
+</ul>
+</li>
+</ul>
+<p>Can we run both batch and stream on the same set of data?</p>
+<p><strong>Lambda architecture</strong>
+Most trivial way to handle this problem. It consists in duplicating the data in order to apply both analysis.
+Data goes through two path:
+- Hot path (timely, real-time, less accurate data)
+- Cold path (less timely but more accurate data)</p>
+<p><strong>Kappa architecture</strong>
+We can simplify the problem and handle everything a stream problem.
+Stream and batch application are different BUT we can run batch analysis on a stream engine.
+Data flows through a single patch, using a stream processing system. </p>
+<p><strong>Lambda vs Kappa</strong>
+Lambda is easier but it needs parallel development and maintenance of two parallel pipelines. 
+Kappa is the ongoing trend. A streaming engine can handle a bounded dataset and a well-designed streaming systems provide a strict superset of batch functionality.</p></section><section class="print-page" id="big-data-infrastructures-architectures-infrastructures"><h1 id="big-data-infrastructures-architectures-infrastructures-big-data-infrastructures">Big Data Infrastructures</h1>
+<p><strong>Scaling</strong> -&gt; big data does not fit into a single drive (or a single machine). 
+Big data requires a lot of computer resources.</p>
+<h2 id="big-data-infrastructures-architectures-infrastructures-smp-architecture">SMP Architecture</h2>
+<p>Symmetric Multi Processing, which is adopted by traditional RDBSM has physical limits regarding the number of devices that can be mounted, as well as a BUS bottleneck.</p>
+<h2 id="big-data-infrastructures-architectures-infrastructures-scaling">Scaling</h2>
+<ul>
+<li>Scale-up (adding more resources like processors, RAM, disk or upgrading the machine)</li>
+<li>Scale-out (adding more machines)</li>
+</ul>
+<h2 id="big-data-infrastructures-architectures-infrastructures-mpp-architecture">MPP Architecture</h2>
+<p>Massively Parallel Processing:
+- Several processors, equipped with their own RAM and disks, collaborating to solve a single problem by splitting it in several interdependent tasks.
+- This architecture requires specialized hardware. 
+- Vendor lock-in may be an issue with this architecture.</p>
+<h2 id="big-data-infrastructures-architectures-infrastructures-cluster-architecture-scale-out">Cluster Architecture (scale-out)</h2>
+<p>A cluster is a group of linked computers (nodes), working together closely so that in many respects they form a single computer.</p>
+<ul>
+<li>There is no vendor lock-in</li>
+<li>Every node is a system on its own, capable of independent operations </li>
+<li>Unlimited scalability </li>
+</ul>
+<p>Compute nodes are stored on racks
+- There can be many racks of computer nodes
+- The nodes on a single rack are connected by a network
+- Racks are connected by another level of network</p>
+<h2 id="big-data-infrastructures-architectures-infrastructures-scale-up-vs-scale-out">Scale-up vs Scale-out</h2>
+<p>Scaling-up PROS:
+- Lower power consumption and utility costs
+- Less challenging to implement
+- Lower licensing costs
+- Specialized hardware and software</p>
+<p>Scaling-out PROS:
+- Infinite scaling
+- Generalist hardware and software
+- Cheaper machines
+- Usually cheaper overall
+- Commodity Hardware
+    - Hardware that can be seen as a commodity
+    - Large range of vendors</p>
+<h2 id="big-data-infrastructures-architectures-infrastructures-multiple-clusters">Multiple Clusters</h2>
+<p>Having a single large cluster allows you to avoid data silos, leading to a simpler governance.</p>
+<p>However, multiple clusters are inevitable within medium-large enterprise settings:
+- Resiliency (every cluster sits within a single point of failure)
+- Software development (mitigate the risk of impacting critical production environments by isolating configuration, integration, or evolution testing and deployment)
+- Workload isolation (hardware resources tuned for specific workloads)
+- Legal separation
+- Independent storage and compute</p>
+<p>With the success of cloud services, the independent storage and compute solution for big data clusters is on the rise
+- DATA LOCALITY (locate the resource that deal with specific data near to that data, avoiding to move data from one machine to another)</p>
+<p>Machines that store data are usually up and running 24/7 as data must be persistent. </p>
+<h2 id="big-data-infrastructures-architectures-infrastructures-other-distributed-architectures">Other distributed architectures</h2>
+<p><strong>Grid Computing</strong>
+- Similar to cluster computing
+- Each node is set to perform a different task</p>
+<p><strong>High Performance Computing</strong>
+Massively parallel systems specifically developed to solve CPU-intensive tasks.
+Big data systems are mostly data-intensive.</p>
+<p><img alt="" src="big-data/infrastructures-architectures/hpc.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Infrastructures architectures</h1>
+                        <h2 class='nav-section-title' id='section-introduction'>
+                            Introduction <a class='headerlink' href='#section-introduction' title='Permanent link'>↵</a>
+                        </h2>
+                        <section class="print-page" id="big-data-introduction-data-processing"><h1 id="big-data-introduction-data-processing-processing-big-data">Processing Big Data</h1>
+<p>When you are on a distributed architecture, it is important to manage the distribution of machines.
+Many problems can happen in distributed environments. </p>
+<p>Since data is spread across machines, it is important to replicate those data. 
+Also, it will not be possible to update data at the same time so you will need to deal with consistency (eventual consistency).
+- it may happen that data collected at the same time may refer to different momentos.</p>
+<h2 id="big-data-introduction-data-processing-big-data-software-stack">Big Data Software Stack</h2>
+<p>New programming environments designed to get their parallelism not from a supercomputer but from computer clusters.</p>
+<p><strong>Apache Hadoop</strong></p>
+<ul>
+<li>automate the management of low level applications</li>
+<li>low-level tool, more advanced tools can be applied to it</li>
+</ul>
+<p>It is a software library (framework) that allows for the distributed processing of large data sets across clusters of computers using simple programming models.</p>
+<p>Rather than relying on hardware to deliver high-availability and reliability, the library itself is designed to detect and handle failures at the application layer, so as to deliver a highly-available service on top of a cluster of computers.</p>
+<p><strong>Hadoop Modules</strong></p>
+<ul>
+<li>HDFS (Hadoop Distributed File System) - storage<ul>
+<li>layer that handles the storage of data across different machines</li>
+<li>provides ABSTRACTION on the storage of data</li>
+</ul>
+</li>
+<li>YARN (Yet Another Resource Negotiator) - computation<ul>
+<li>decides which unit of application runs in which machine</li>
+<li>if some unit of work fails in some machine, it will recreate it in another machine</li>
+</ul>
+</li>
+<li>Map Reduce - analysis<ul>
+<li>YARN-based system for parallel processing of large data sets</li>
+</ul>
+</li>
+</ul>
+<p><strong>On top of Hadoop</strong></p>
+<p>Many different programming solutions can be applied on hadoop:
+1. Analytics (batch)
+    - simple/complex computations over large amounts of stored data
+2. Interactive (real-time)
+    - operational perspective 
+3. Streaming (near-real-time)
+    - continuous analytics
+    - analysis run on continuously incoming data 
+    - there is no much time and resources, you need to adopt some approximation algorithms </p>
+<h2 id="big-data-introduction-data-processing-big-data-flow">Big Data Flow</h2>
+<p><img alt="" src="big-data/introduction/data-flow.jpg" /></p>
+<p>In the distributed file system, it is often used the metaphor of the <strong>Data Lake</strong>.
+A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is kept in its original format and is processed to be queried only when needed. 
+It can store a varied amount of formats in big data  ecosystems, from unstructured, semi-structured, to structured data sources.  </p>
+<h2 id="big-data-introduction-data-processing-nosql-newsql-dbmss">NoSQL - NewSQL DBMSs</h2>
+<p>Relational DBMSs have not been designed to easily distributed. NoSQL DBMSs have risen to fill this gap.
+NewSQL is the latest frontier which combines the benefits from both relational and NoSQL worlds.</p>
+<h2 id="big-data-introduction-data-processing-techniques-for-big-data-analysis">Techniques for Big Data Analysis</h2>
+<ul>
+<li>Extract, transform, and load (ETL)</li>
+<li>Data fusion and data integration</li>
+<li>Data management</li>
+<li>Analytics<ul>
+<li>Data mining<ul>
+<li>Association rule learning</li>
+<li>Classification</li>
+<li>Cluster analysis</li>
+<li>Regression</li>
+</ul>
+</li>
+<li>Machine learning<ul>
+<li>Supervised learning</li>
+<li>Unsupervised learning</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cloud computing</li>
+</ul>
+<h2 id="big-data-introduction-data-processing-goals-of-analytics">Goals of Analytics</h2>
+<ul>
+<li>Descriptive Analytics (give insights into the past)</li>
+<li>Diagnostic Analytics (understand why something has happened)<ul>
+<li>integrating the dataset analyzed with other data to look for correlation paths</li>
+</ul>
+</li>
+<li>Predictive Analytics (look at the future)</li>
+<li>Prescriptive Analytics (prescribe what action to take to eliminate a future problem)</li>
+</ul></section><section class="print-page" id="big-data-introduction-introduction"><h1 id="big-data-introduction-introduction-big-data">BIG DATA</h1>
+<p>Nowadays, we produce more data than the capability of analyze them.
+- Data grows faster than energy on chip</p>
+<p><a href="https://www.domo.com/learn/infographic/data-never-sleeps-9">Check out the updated infographic</a></p>
+<p>SKA telescope produce 3TB every second. 
+They cannot store all the data but they need to analyze them and store the results.</p>
+<p><img alt="" src="big-data/introduction/domo.jpg" /></p>
+<h1 id="big-data-introduction-introduction-big-data-definition">Big Data - Definition</h1>
+<p>How can we distinguish big data from normal data?
+The line is quite vague</p>
+<blockquote>
+<p>Big data exceeds the reach of commonly used hardware environments and software tools to capture, manage, and process it with in a tolerable elapsed time for its user population
+<em>- Teradata</em></p>
+</blockquote>
+<p>We can define Big Data following the V's principles:</p>
+<ul>
+<li>VOLUME (dataset that are particularly big)</li>
+<li>VELOCITY, interpreted in two ways:<ul>
+<li>velocity in which data are injected </li>
+<li>speed of the analysis that you want to run</li>
+</ul>
+</li>
+<li>VARIETY (many different formats of data)<ul>
+<li>structured vs semi-structured (JSON)</li>
+</ul>
+</li>
+<li>VERACITY (in many cases, you are dealing on datasets which you cannot fully rely on)<ul>
+<li>especially true when you are dealing with social data </li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="big-data/introduction/datav.jpg" /></p>
+<p>The 'V' concept can be extended but we only consider the first four as they are the main ones.</p>
+<h2 id="big-data-introduction-introduction-big-data-hype">Big Data Hype</h2>
+<p>Big Data comes mainly from two phenomenons:
+- explosion of social networks
+- IoT (sensors, smart cities, wearables, industry 4.0)</p>
+<p>The data that comes from these two sources is quite enormous with respect to the amount of data produced by companies. </p>
+<p><strong>The Long Tail Model</strong> - Pareto Rule <em>reversed</em></p>
+<p>The highest value does not come from the small set of highly popular items, but from the long list of niche items.
+- Insignificant data is actually the most valuable.</p>
+<p>The possibility to handle large amount of data makes you smarter. Sometimes, no complex algorithm is needed:</p>
+<p>Google Translate just collects snippets of translations, match it with a long list of translations stored in their dataset, and return the most used one.
+- The system is continuously debugged.</p>
+<h2 id="big-data-introduction-introduction-success-stories">Success Stories</h2>
+<ul>
+<li>German National Football Team</li>
+</ul>
+<p>They applied data analysis to football and they won the 2016 world championship.</p>
+<ul>
+<li>Crime Prevention in LA</li>
+<li>Diagnosis and Treatment of Genetic Disease </li>
+<li>Investments in the Financial Sector</li>
+<li>Astronomical Discoveries</li>
+<li>Injury Prevention of Football Players</li>
+</ul>
+<h2 id="big-data-introduction-introduction-todays-opportunities-and-use-cases">Todays' Opportunities and Use Cases</h2>
+<ol>
+<li>Healthcare (remote monitoring, preventive care, reduced hospitalization, improved system efficiency)</li>
+<li>Manufacturing (sensors)</li>
+<li>Location-Based Services</li>
+<li>Public Sector (citizen surveys)</li>
+<li>Retail (social media)</li>
+</ol>
+<h2 id="big-data-introduction-introduction-privacy">Privacy</h2>
+<p>Marketing campaigns are particularly effective when costumers are going through a change (maternity, new job, lifestyle).
+A company wanted to send advertising about maternity products BEFORE the baby was actually born. They were able to identify patterns of behaviors adopted by costumers when a baby was coming. 
+However, the company incurred in legal issues because they sent maternity adv to a 16 y.o girl who did not inform the parents about the pregnancy.
+The company won the legal dispute but it raised some concerns regarding privacy. </p></section><section class="print-page" id="big-data-introduction-job-opportunities"><h1 id="big-data-introduction-job-opportunities-job-opportunities">Job Opportunities</h1>
+<p>Between 2019 and 2023, companies will hire 210K to 267K professionals with skills in mathematics, computer science, and 4.0.
+Most demanded professional figures:
+- Data Scientist
+- Big Data Analyst
+- Cloud Computing Expert
+- Cyber Security Expert
+- Business Intelligence Analyst
+- Social Media Marketing Manager
+- Artificial Intelligence Systems Engineer</p>
+<h2 id="big-data-introduction-job-opportunities-data-scientist">Data Scientist</h2>
+<p>The main figure emerged with big data is the one of the data scientist (sexiest job in the world).</p>
+<p>He deals with data analysis once data volume and velocity reaches a level requiring sophisticated technical skills.</p>
+<p><img alt="" src="big-data/introduction/data-science.jpg" /></p>
+<h2 id="big-data-introduction-job-opportunities-data-architect">Data Architect</h2>
+<p>Develop data architecture to effectively capture, integrate, organize, centralize and maintain data.</p>
+<h2 id="big-data-introduction-job-opportunities-data-engineer">Data Engineer</h2>
+<p>Develop, test and maintain data architectures to keep data accessible and ready for analysis.</p>
+<h2 id="big-data-introduction-job-opportunities-data-analyst">Data Analyst</h2>
+<p>Processes and interprets data to get actionable insights for a company.</p></section><section class="print-page" id="big-data-introduction-life-cycle"><h1 id="big-data-introduction-life-cycle-big-data-lifecycle">Big Data Lifecycle</h1>
+<p><img alt="" src="big-data/introduction/lifecycle.jpg" /></p>
+<h2 id="big-data-introduction-life-cycle-acquisition">Acquisition</h2>
+<ul>
+<li>Selection (understand which data is actually valuable)</li>
+<li>Filtering and Compression (very important because raw data is often too voluminous to store it all)</li>
+<li>Collect <strong>Metadata</strong>
+Collecting Metadata is fundamental to understand, measure, and control the data. Metadata describes the data so it enables trustworthiness, reproducibility and debugging.</li>
+</ul>
+<p>There are some software tools that allow you to collect metadata. This is a job that cannot be fully integrated. 
+- human input is required in this phase :sad:</p>
+<h2 id="big-data-introduction-life-cycle-extraction">Extraction</h2>
+<p>Depending on the analysis that you need to run, you work with specific data.</p>
+<ul>
+<li>Transformation and Normalization</li>
+<li>Cleaning and Error Handling<ul>
+<li>Very important because of the untrustworthy of big data</li>
+</ul>
+</li>
+</ul>
+<h2 id="big-data-introduction-life-cycle-integration">Integration</h2>
+<p>In most cases, you will work with data coming from different sources, so, you will need to integrate them. </p>
+<p>The activities performed to integrate data:
+- discover the relationship between datasets
+- standardization, conflict management and entity resolution
+    - resolve heterogeneity and conflicts in data structure and semantics
+    - understand the trade-off of different modeling strategies</p>
+<h2 id="big-data-introduction-life-cycle-analysis">Analysis</h2>
+<ul>
+<li>Exploration (approach the data with new explorative approaches to gain a full understanding)</li>
+<li>Analytics (understand which approach works better to solve business problems)</li>
+<li>Delivery (find the best way to model and represent the results)</li>
+</ul>
+<h2 id="big-data-introduction-life-cycle-interpretation">Interpretation</h2>
+<p>You need to be careful because sometimes it is common to rush to conclusions.
+It is important to verify the results:
+- when you work with big data you should work on small artificial samples to verify expectations
+- identify a subset of the data collected, analyze it and verify the results.</p>
+<p>It is interesting to remember that CORRELATION between data does not always mean that it is real.</p>
+<blockquote>
+<p>Correlation is not Causation :heart:</p>
+</blockquote>
+<h2 id="big-data-introduction-life-cycle-decision">Decision</h2>
+<p>The decision-making process requires strong managerial skills </p></section><h1 class='nav-section-title-end'>Ended: Introduction</h1><h1 class='nav-section-title-end'>Ended: Big data</h1></div>
+
+
+
+
+              
+
+  
+
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+<script id="__config" type="application/json">{"base": "/", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+
+<script src="https://unpkg.com/iframe-worker/polyfill"></script>
+<script src="search/search_index.js"></script>
+
+
+    
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="js/print-site.js"></script>
+      
+        <script src="js/arithmatex.config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
