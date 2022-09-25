@@ -1,20 +1,28 @@
-name: Publich to gh-pages
+name: Update GitHub Pages
 
 on:
   workflow_dispatch:
   push:
     branches:
       - main
-
 jobs:
-  build:
+  update-gh-pages:
+    name: Generate and upload new GitHub Pages
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-    uses: actions/setup-node@v1
-    with:
-      node-version: '12.x'
-    - remote_theme: pages-themes/cayman@v0.2.0
-    plugins:
-    - jekyll-remote-theme
+      - name: Check out the repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run action
+        uses: ldeluigi/markdown-docs@v0
+        with:
+          src: .
+          dst: ./gh-pages
+          primary-color: red
+          icon: heart-flash
+      - name: Deploy GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gh-pages
