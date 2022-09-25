@@ -4,13 +4,13 @@
 
 **Enrico Gallinucci** = Big Data (specialized in social data)
 
-## Program:
+## Program
 
 **Module 1**: Theoretical background on Big Data
 
 **Module 2**: Handling big data in the cloud (guided practice)
 
-## Technologies used:
+## Technologies used
 
 - AWS Academy (Lab Exercises)
 - Apache Spark
