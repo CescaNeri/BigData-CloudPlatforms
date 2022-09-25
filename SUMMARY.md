@@ -1,2 +1,2 @@
-- (Big Data)[big-data/]
-- (Cloud Platforms)[cloud-platforms/]
+- [Big Data](big-data/)
+- [Cloud Platforms](cloud-platforms/)
