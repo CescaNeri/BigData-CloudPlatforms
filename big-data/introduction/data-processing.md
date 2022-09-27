@@ -5,6 +5,7 @@ Many problems can happen in distributed environments.
 
 Since data is spread across machines, it is important to replicate those data. 
 Also, it will not be possible to update data at the same time so you will need to deal with consistency (eventual consistency).
+
 - it may happen that data collected at the same time may refer to different momentos.
 
 ## Big Data Software Stack
@@ -34,6 +35,7 @@ Rather than relying on hardware to deliver high-availability and reliability, th
 **On top of Hadoop**
 
 Many different programming solutions can be applied on hadoop:
+
 1. Analytics (batch)
     - simple/complex computations over large amounts of stored data
 2. Interactive (real-time)
