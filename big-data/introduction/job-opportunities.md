@@ -2,6 +2,7 @@
 
 Between 2019 and 2023, companies will hire 210K to 267K professionals with skills in mathematics, computer science, and 4.0.
 Most demanded professional figures:
+
 - Data Scientist
 - Big Data Analyst
 - Cloud Computing Expert
