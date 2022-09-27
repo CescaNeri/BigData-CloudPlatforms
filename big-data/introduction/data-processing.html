@@ -536,8 +536,10 @@
 <p>When you are on a distributed architecture, it is important to manage the distribution of machines.
 Many problems can happen in distributed environments. </p>
 <p>Since data is spread across machines, it is important to replicate those data. 
-Also, it will not be possible to update data at the same time so you will need to deal with consistency (eventual consistency).
-- it may happen that data collected at the same time may refer to different momentos.</p>
+Also, it will not be possible to update data at the same time so you will need to deal with consistency (eventual consistency).</p>
+<ul>
+<li>it may happen that data collected at the same time may refer to different momentos.</li>
+</ul>
 <h2 id="big-data-software-stack">Big Data Software Stack</h2>
 <p>New programming environments designed to get their parallelism not from a supercomputer but from computer clusters.</p>
 <p><strong>Apache Hadoop</strong></p>
@@ -565,15 +567,23 @@ Also, it will not be possible to update data at the same time so you will need t
 </li>
 </ul>
 <p><strong>On top of Hadoop</strong></p>
-<p>Many different programming solutions can be applied on hadoop:
-1. Analytics (batch)
-    - simple/complex computations over large amounts of stored data
-2. Interactive (real-time)
-    - operational perspective 
-3. Streaming (near-real-time)
-    - continuous analytics
-    - analysis run on continuously incoming data 
-    - there is no much time and resources, you need to adopt some approximation algorithms </p>
+<p>Many different programming solutions can be applied on hadoop:</p>
+<ol>
+<li>Analytics (batch)<ul>
+<li>simple/complex computations over large amounts of stored data</li>
+</ul>
+</li>
+<li>Interactive (real-time)<ul>
+<li>operational perspective </li>
+</ul>
+</li>
+<li>Streaming (near-real-time)<ul>
+<li>continuous analytics</li>
+<li>analysis run on continuously incoming data </li>
+<li>there is no much time and resources, you need to adopt some approximation algorithms </li>
+</ul>
+</li>
+</ol>
 <h2 id="big-data-flow">Big Data Flow</h2>
 <p><img alt="" src="data-flow.jpg" /></p>
 <p>In the distributed file system, it is often used the metaphor of the <strong>Data Lake</strong>.
@@ -620,7 +630,7 @@ NewSQL is the latest frontier which combines the benefits from both relational a
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 19, 2022 10:29:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 27, 2022 14:32:39</span>
       
         <br>
         Created:

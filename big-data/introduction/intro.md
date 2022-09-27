@@ -1,6 +1,7 @@
 # BIG DATA
 
 Nowadays, we produce more data than the capability of analyze them.
+
 - Data grows faster than energy on chip
 
 [Check out the updated infographic](https://www.domo.com/learn/infographic/data-never-sleeps-9)
@@ -37,6 +38,7 @@ The 'V' concept can be extended but we only consider the first four as they are 
 ## Big Data Hype
 
 Big Data comes mainly from two phenomenons:
+
 - explosion of social networks
 - IoT (sensors, smart cities, wearables, industry 4.0)
 
@@ -45,11 +47,13 @@ The data that comes from these two sources is quite enormous with respect to the
 **The Long Tail Model** - Pareto Rule *reversed*
 
 The highest value does not come from the small set of highly popular items, but from the long list of niche items.
+
 - Insignificant data is actually the most valuable.
 
 The possibility to handle large amount of data makes you smarter. Sometimes, no complex algorithm is needed:
 
 Google Translate just collects snippets of translations, match it with a long list of translations stored in their dataset, and return the most used one.
+
 - The system is continuously debugged.
 
 ## Success Stories
