@@ -1,4 +1,4 @@
-# BIG DATA
+# Big Data
 
 Nowadays, we produce more data than the capability of analyze them.
 

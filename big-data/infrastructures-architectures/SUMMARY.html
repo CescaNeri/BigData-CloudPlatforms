@@ -13,7 +13,7 @@
     
     
       
-        <title>Introduction to Big Data - CescaNeri/BigData-CloudPlatforms</title>
+        <title>SUMMARY - CescaNeri/BigData-CloudPlatforms</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#big-data" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction to Big Data
+              SUMMARY
             
           </span>
         </div>
@@ -237,14 +232,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -265,21 +258,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="intro.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/intro.html" class="md-nav__link">
         Introduction to Big Data
       </a>
-      
     </li>
   
 
@@ -291,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="life-cycle.html" class="md-nav__link">
+      <a href="../introduction/life-cycle.html" class="md-nav__link">
         Big Data Lifecycle
       </a>
     </li>
@@ -305,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="data-processing.html" class="md-nav__link">
+      <a href="../introduction/data-processing.html" class="md-nav__link">
         Processing Big Data
       </a>
     </li>
@@ -319,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="job-opportunities.html" class="md-nav__link">
+      <a href="../introduction/job-opportunities.html" class="md-nav__link">
         Job Opportunities
       </a>
     </li>
@@ -410,8 +393,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -424,89 +405,18 @@
               
   
                 
-  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/introduction/intro.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/infrastructures-architectures/SUMMARY.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="big-data">Big Data</h1>
-<p>Nowadays, we produce more data than the capability of analyze them.</p>
+  <h1>SUMMARY</h1>
+
 <ul>
-<li>Data grows faster than energy on chip</li>
+<li><a href="infrastructures.html">Big Data Infrastructure</a></li>
+<li><a href="architectures.html">Big Data Architecture</a></li>
 </ul>
-<p><a href="https://www.domo.com/learn/infographic/data-never-sleeps-9">Check out the updated infographic</a></p>
-<p>SKA telescope produce 3TB every second. 
-They cannot store all the data but they need to analyze them and store the results.</p>
-<p><img alt="" src="domo.jpg" /></p>
-<h1 id="big-data-definition">Big Data - Definition</h1>
-<p>How can we distinguish big data from normal data?
-The line is quite vague</p>
-<blockquote>
-<p>Big data exceeds the reach of commonly used hardware environments and software tools to capture, manage, and process it with in a tolerable elapsed time for its user population
-<em>- Teradata</em></p>
-</blockquote>
-<p>We can define Big Data following the V's principles:</p>
-<ul>
-<li>VOLUME (dataset that are particularly big)</li>
-<li>VELOCITY, interpreted in two ways:<ul>
-<li>velocity in which data are injected </li>
-<li>speed of the analysis that you want to run</li>
-</ul>
-</li>
-<li>VARIETY (many different formats of data)<ul>
-<li>structured vs semi-structured (JSON)</li>
-</ul>
-</li>
-<li>VERACITY (in many cases, you are dealing on datasets which you cannot fully rely on)<ul>
-<li>especially true when you are dealing with social data </li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="datav.jpg" /></p>
-<p>The 'V' concept can be extended but we only consider the first four as they are the main ones.</p>
-<h2 id="big-data-hype">Big Data Hype</h2>
-<p>Big Data comes mainly from two phenomenons:</p>
-<ul>
-<li>explosion of social networks</li>
-<li>IoT (sensors, smart cities, wearables, industry 4.0)</li>
-</ul>
-<p>The data that comes from these two sources is quite enormous with respect to the amount of data produced by companies. </p>
-<p><strong>The Long Tail Model</strong> - Pareto Rule <em>reversed</em></p>
-<p>The highest value does not come from the small set of highly popular items, but from the long list of niche items.</p>
-<ul>
-<li>Insignificant data is actually the most valuable.</li>
-</ul>
-<p>The possibility to handle large amount of data makes you smarter. Sometimes, no complex algorithm is needed:</p>
-<p>Google Translate just collects snippets of translations, match it with a long list of translations stored in their dataset, and return the most used one.</p>
-<ul>
-<li>The system is continuously debugged.</li>
-</ul>
-<h2 id="success-stories">Success Stories</h2>
-<ul>
-<li>German National Football Team</li>
-</ul>
-<p>They applied data analysis to football and they won the 2016 world championship.</p>
-<ul>
-<li>Crime Prevention in LA</li>
-<li>Diagnosis and Treatment of Genetic Disease </li>
-<li>Investments in the Financial Sector</li>
-<li>Astronomical Discoveries</li>
-<li>Injury Prevention of Football Players</li>
-</ul>
-<h2 id="todays-opportunities-and-use-cases">Todays' Opportunities and Use Cases</h2>
-<ol>
-<li>Healthcare (remote monitoring, preventive care, reduced hospitalization, improved system efficiency)</li>
-<li>Manufacturing (sensors)</li>
-<li>Location-Based Services</li>
-<li>Public Sector (citizen surveys)</li>
-<li>Retail (social media)</li>
-</ol>
-<h2 id="privacy">Privacy</h2>
-<p>Marketing campaigns are particularly effective when costumers are going through a change (maternity, new job, lifestyle).
-A company wanted to send advertising about maternity products BEFORE the baby was actually born. They were able to identify patterns of behaviors adopted by costumers when a baby was coming. 
-However, the company incurred in legal issues because they sent maternity adv to a 16 y.o girl who did not inform the parents about the pregnancy.
-The company won the legal dispute but it raised some concerns regarding privacy. </p>
 
   <hr>
 <div class="md-source-file">
@@ -517,7 +427,7 @@ The company won the legal dispute but it raised some concerns regarding privacy.
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 19, 2022 07:30:55</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 27, 2022 14:56:54</span>
       
     
   </small>
@@ -544,27 +454,6 @@ The company won the legal dispute but it raised some concerns regarding privacy.
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-      
-        
-        <a href="life-cycle.html" class="md-footer__link md-footer__link--next" aria-label="Next: Big Data Lifecycle" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Big Data Lifecycle
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
