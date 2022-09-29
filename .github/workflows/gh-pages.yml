@@ -19,7 +19,7 @@ jobs:
         with:
           src: .
           dst: ./gh-pages
-          icon: library
+          icon: book
           primary-color: indigo
           secondary-color: indigo
       - name: Deploy GH Pages
