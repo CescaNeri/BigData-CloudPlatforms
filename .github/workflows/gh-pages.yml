@@ -19,8 +19,9 @@ jobs:
         with:
           src: .
           dst: ./gh-pages
-          primary-color: red
-          icon: heart-flash
+          icon: library
+          primary-color: indigo
+          secondary-color: indigo
       - name: Deploy GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
