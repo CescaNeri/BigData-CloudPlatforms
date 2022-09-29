@@ -1,16 +1,19 @@
 # File Formats
 
 The hadoop ecosystem supports several different formats:
+
 - Standard file formats
 - Hadoop / BigData-specific formats
 
 Hadoop-specific formats involves several advantages:
+
 - **Serialization**
 - **Splittability** (if the file is split into multiple blocks, metadata headers allow to skip unnecessary I/O)
     - Metadata is associated with each single block (the client can access individual blocks)
 - **Compression** (if you want to compress the data, you use a compression mechanism that works on a block-level or at a record-level)
 
 There are many file formats - **row-oriented**:
+
 - Sequence files
 - Apache thrift (Facebook), Protocol buffers (Google)
     - They both create a notion of schema that has to be used in order to read the data
@@ -26,11 +29,13 @@ Column-oriented formats are better suited for analytical scenarios. This because
 This format is not ideal for operational purposes (day-to-day operations in a database).
 
 There are several advantaged to column-oriented file formats:
+
 - Better compression (similar values because data is more homogeneous)
 - Reduced I/O for analytical queries
 - Operate on encoded data
 
 There are many file formats:
+
 - ORC Files
 - Apache Parquet (general purpose)
 
@@ -40,6 +45,7 @@ Besides storing data in a column format, it allows to store **nested structures*
 
  **Data Model**
  Nested attributes that have multiple values.
+
  - Types:
     - Group
     - Primitive
@@ -53,6 +59,7 @@ Besides storing data in a column format, it allows to store **nested structures*
 **Unnesting**
 Can we store nested data structures in a columnar format?
 we need to map the schema to a list of columns in a way that we can write records to flat columns and read them back to their original nested data structure.
+
 - Each value is associated with two integers (repetition level and definition level)
 - These integers allow to fully reconstruct the nested structures while still being able to store each primitive separately
 
@@ -73,12 +80,14 @@ Repetition level indicates at which level we have to create a new list for the c
 By using these two values (repetition and definition), I am able to fully reconstruct the message.
 
 Repetition and definition level cause overhead (they occupy space).
+
 - The number of bits that has to be used is quite small (1,2,3... the number of levels) and in some case they can be omitted 
 - The repetition levels are stored in a column so they can be compressed 
 
 **Parquet file format**
 We have a notion of *row group* -> the data are not fully columnar. We do not store all the values of each column continuously.
 Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. 
+
 - **COlumn chunk** (chunk of the data for a particular column)
 All the values of each columns is further subdivided into pages.
 The size of the row group is set to the same size of the block (each block corresponds to a row).

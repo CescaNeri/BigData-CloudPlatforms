@@ -1,6 +1,7 @@
 # Big Data Architectures
 
 There are a lot of problems related to distributed architectures, especially concerning parallelization:
+
 - Communication between workers
 - Access to shared resources
 - Parallelization and concurrency
@@ -33,6 +34,7 @@ Can we run both batch and stream on the same set of data?
 **Lambda architecture**
 Most trivial way to handle this problem. It consists in duplicating the data in order to apply both analysis.
 Data goes through two path:
+
 - Hot path (timely, real-time, less accurate data)
 - Cold path (less timely but more accurate data)
 
