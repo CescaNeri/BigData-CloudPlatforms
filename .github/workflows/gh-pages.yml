@@ -20,8 +20,8 @@ jobs:
           src: .
           dst: ./gh-pages
           icon: book
-          primary-color: indigo
-          secondary-color: indigo
+          primary-color: teal
+          secondary-color: teal
       - name: Deploy GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
