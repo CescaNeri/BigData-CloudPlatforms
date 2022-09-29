@@ -474,49 +474,73 @@
 
 
 <h1 id="file-formats">File Formats</h1>
-<p>The hadoop ecosystem supports several different formats:
-- Standard file formats
-- Hadoop / BigData-specific formats</p>
-<p>Hadoop-specific formats involves several advantages:
-- <strong>Serialization</strong>
-- <strong>Splittability</strong> (if the file is split into multiple blocks, metadata headers allow to skip unnecessary I/O)
-    - Metadata is associated with each single block (the client can access individual blocks)
-- <strong>Compression</strong> (if you want to compress the data, you use a compression mechanism that works on a block-level or at a record-level)</p>
-<p>There are many file formats - <strong>row-oriented</strong>:
-- Sequence files
-- Apache thrift (Facebook), Protocol buffers (Google)
-    - They both create a notion of schema that has to be used in order to read the data
-    - Some code specifies how the data are structured
-- Apache Avro 
-    - Each file contains its own schema definition (no need to share separately the schema of the file because it is included in the file itself)</p>
+<p>The hadoop ecosystem supports several different formats:</p>
+<ul>
+<li>Standard file formats</li>
+<li>Hadoop / BigData-specific formats</li>
+</ul>
+<p>Hadoop-specific formats involves several advantages:</p>
+<ul>
+<li><strong>Serialization</strong></li>
+<li><strong>Splittability</strong> (if the file is split into multiple blocks, metadata headers allow to skip unnecessary I/O)<ul>
+<li>Metadata is associated with each single block (the client can access individual blocks)</li>
+</ul>
+</li>
+<li><strong>Compression</strong> (if you want to compress the data, you use a compression mechanism that works on a block-level or at a record-level)</li>
+</ul>
+<p>There are many file formats - <strong>row-oriented</strong>:</p>
+<ul>
+<li>Sequence files</li>
+<li>Apache thrift (Facebook), Protocol buffers (Google)<ul>
+<li>They both create a notion of schema that has to be used in order to read the data</li>
+<li>Some code specifies how the data are structured</li>
+</ul>
+</li>
+<li>Apache Avro <ul>
+<li>Each file contains its own schema definition (no need to share separately the schema of the file because it is included in the file itself)</li>
+</ul>
+</li>
+</ul>
 <h2 id="column-oriented-file-formats">Column-oriented file formats</h2>
 <p>This formats store data based on columns.
 Column-oriented formats are better suited for analytical scenarios. This because in a typical analytical query, you want to take data from a subset of columns and perform analysis.</p>
 <p>This format is not ideal for operational purposes (day-to-day operations in a database).</p>
-<p>There are several advantaged to column-oriented file formats:
-- Better compression (similar values because data is more homogeneous)
-- Reduced I/O for analytical queries
-- Operate on encoded data</p>
-<p>There are many file formats:
-- ORC Files
-- Apache Parquet (general purpose)</p>
+<p>There are several advantaged to column-oriented file formats:</p>
+<ul>
+<li>Better compression (similar values because data is more homogeneous)</li>
+<li>Reduced I/O for analytical queries</li>
+<li>Operate on encoded data</li>
+</ul>
+<p>There are many file formats:</p>
+<ul>
+<li>ORC Files</li>
+<li>Apache Parquet (general purpose)</li>
+</ul>
 <h2 id="parquet">Parquet</h2>
 <p>Besides storing data in a column format, it allows to store <strong>nested structures</strong> (like JSON) in a flat format.</p>
 <p><strong>Data Model</strong>
- Nested attributes that have multiple values.
- - Types:
-    - Group
-    - Primitive
-- Frequency:
-    - Required
-    - Optional
-    - Repeated</p>
+ Nested attributes that have multiple values.</p>
+<ul>
+<li>Types:<ul>
+<li>Group</li>
+<li>Primitive</li>
+</ul>
+</li>
+<li>Frequency:<ul>
+<li>Required</li>
+<li>Optional</li>
+<li>Repeated</li>
+</ul>
+</li>
+</ul>
 <p><img alt="" src="nested.jpg" /></p>
 <p><strong>Unnesting</strong>
 Can we store nested data structures in a columnar format?
-we need to map the schema to a list of columns in a way that we can write records to flat columns and read them back to their original nested data structure.
-- Each value is associated with two integers (repetition level and definition level)
-- These integers allow to fully reconstruct the nested structures while still being able to store each primitive separately</p>
+we need to map the schema to a list of columns in a way that we can write records to flat columns and read them back to their original nested data structure.</p>
+<ul>
+<li>Each value is associated with two integers (repetition level and definition level)</li>
+<li>These integers allow to fully reconstruct the nested structures while still being able to store each primitive separately</li>
+</ul>
 <p>When I put values in a column formats, I do not know which value belongs to which record. 
 Rebuilding the structure of the rows just by looking at the values cannot be done.
 The parquet format allows to reconstruct the message.</p>
@@ -528,23 +552,27 @@ Inside the hierarchy, some fields are mandatory and others are optional. </p>
 The presence of repeated fields requires to store when new lists are starting in a column of values.
 Repetition level indicates at which level we have to create a new list for the current value. </p>
 <p>By using these two values (repetition and definition), I am able to fully reconstruct the message.</p>
-<p>Repetition and definition level cause overhead (they occupy space).
-- The number of bits that has to be used is quite small (1,2,3... the number of levels) and in some case they can be omitted 
-- The repetition levels are stored in a column so they can be compressed </p>
+<p>Repetition and definition level cause overhead (they occupy space).</p>
+<ul>
+<li>The number of bits that has to be used is quite small (1,2,3... the number of levels) and in some case they can be omitted </li>
+<li>The repetition levels are stored in a column so they can be compressed </li>
+</ul>
 <p><strong>Parquet file format</strong>
 We have a notion of <em>row group</em> -&gt; the data are not fully columnar. We do not store all the values of each column continuously.
-Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. 
-- <strong>COlumn chunk</strong> (chunk of the data for a particular column)
+Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. </p>
+<ul>
+<li><strong>COlumn chunk</strong> (chunk of the data for a particular column)
 All the values of each columns is further subdivided into pages.
 The size of the row group is set to the same size of the block (each block corresponds to a row).
-<strong>Data page size</strong> -&gt; it can be tuned (smaller or larger) depending on what query we need to issue.</p>
+<strong>Data page size</strong> -&gt; it can be tuned (smaller or larger) depending on what query we need to issue.</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 21, 2022 10:32:32</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
       
         <br>
         Created:

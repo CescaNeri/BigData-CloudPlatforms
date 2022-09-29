@@ -467,10 +467,12 @@
 
 
 <h1 id="big-data-architectures">Big Data Architectures</h1>
-<p>There are a lot of problems related to distributed architectures, especially concerning parallelization:
-- Communication between workers
-- Access to shared resources
-- Parallelization and concurrency</p>
+<p>There are a lot of problems related to distributed architectures, especially concerning parallelization:</p>
+<ul>
+<li>Communication between workers</li>
+<li>Access to shared resources</li>
+<li>Parallelization and concurrency</li>
+</ul>
 <p>The solution is to have single computer -&gt; <strong>Data Center</strong></p>
 <p><img alt="" src="datacenter.jpg" /></p>
 <p>The core is the <strong>framework provider</strong>, which is the set of software modules that handles the abstraction of the complexity of the computer system and makes it visible as if it was a single entity.</p>
@@ -494,9 +496,11 @@
 <p>Can we run both batch and stream on the same set of data?</p>
 <p><strong>Lambda architecture</strong>
 Most trivial way to handle this problem. It consists in duplicating the data in order to apply both analysis.
-Data goes through two path:
-- Hot path (timely, real-time, less accurate data)
-- Cold path (less timely but more accurate data)</p>
+Data goes through two path:</p>
+<ul>
+<li>Hot path (timely, real-time, less accurate data)</li>
+<li>Cold path (less timely but more accurate data)</li>
+</ul>
 <p><strong>Kappa architecture</strong>
 We can simplify the problem and handle everything a stream problem.
 Stream and batch application are different BUT we can run batch analysis on a stream engine.
@@ -510,7 +514,7 @@ Kappa is the ongoing trend. A streaming engine can handle a bounded dataset and 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 21, 2022 07:51:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
       
         <br>
         Created:

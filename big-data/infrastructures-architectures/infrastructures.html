@@ -519,10 +519,12 @@ Big data requires a lot of computer resources.</p>
 <li>Scale-out (adding more machines)</li>
 </ul>
 <h2 id="mpp-architecture">MPP Architecture</h2>
-<p>Massively Parallel Processing:
-- Several processors, equipped with their own RAM and disks, collaborating to solve a single problem by splitting it in several interdependent tasks.
-- This architecture requires specialized hardware. 
-- Vendor lock-in may be an issue with this architecture.</p>
+<p>Massively Parallel Processing:</p>
+<ul>
+<li>Several processors, equipped with their own RAM and disks, collaborating to solve a single problem by splitting it in several interdependent tasks.</li>
+<li>This architecture requires specialized hardware. </li>
+<li>Vendor lock-in may be an issue with this architecture.</li>
+</ul>
 <h2 id="cluster-architecture-scale-out">Cluster Architecture (scale-out)</h2>
 <p>A cluster is a group of linked computers (nodes), working together closely so that in many respects they form a single computer.</p>
 <ul>
@@ -530,34 +532,46 @@ Big data requires a lot of computer resources.</p>
 <li>Every node is a system on its own, capable of independent operations </li>
 <li>Unlimited scalability </li>
 </ul>
-<p>Compute nodes are stored on racks
-- There can be many racks of computer nodes
-- The nodes on a single rack are connected by a network
-- Racks are connected by another level of network</p>
+<p>Compute nodes are stored on racks</p>
+<ul>
+<li>There can be many racks of computer nodes</li>
+<li>The nodes on a single rack are connected by a network</li>
+<li>Racks are connected by another level of network</li>
+</ul>
 <h2 id="scale-up-vs-scale-out">Scale-up vs Scale-out</h2>
-<p>Scaling-up PROS:
-- Lower power consumption and utility costs
-- Less challenging to implement
-- Lower licensing costs
-- Specialized hardware and software</p>
-<p>Scaling-out PROS:
-- Infinite scaling
-- Generalist hardware and software
-- Cheaper machines
-- Usually cheaper overall
-- Commodity Hardware
-    - Hardware that can be seen as a commodity
-    - Large range of vendors</p>
+<p>Scaling-up PROS:</p>
+<ul>
+<li>Lower power consumption and utility costs</li>
+<li>Less challenging to implement</li>
+<li>Lower licensing costs</li>
+<li>Specialized hardware and software</li>
+</ul>
+<p>Scaling-out PROS:</p>
+<ul>
+<li>Infinite scaling</li>
+<li>Generalist hardware and software</li>
+<li>Cheaper machines</li>
+<li>Usually cheaper overall</li>
+<li>Commodity Hardware<ul>
+<li>Hardware that can be seen as a commodity</li>
+<li>Large range of vendors</li>
+</ul>
+</li>
+</ul>
 <h2 id="multiple-clusters">Multiple Clusters</h2>
 <p>Having a single large cluster allows you to avoid data silos, leading to a simpler governance.</p>
-<p>However, multiple clusters are inevitable within medium-large enterprise settings:
-- Resiliency (every cluster sits within a single point of failure)
-- Software development (mitigate the risk of impacting critical production environments by isolating configuration, integration, or evolution testing and deployment)
-- Workload isolation (hardware resources tuned for specific workloads)
-- Legal separation
-- Independent storage and compute</p>
-<p>With the success of cloud services, the independent storage and compute solution for big data clusters is on the rise
-- DATA LOCALITY (locate the resource that deal with specific data near to that data, avoiding to move data from one machine to another)</p>
+<p>However, multiple clusters are inevitable within medium-large enterprise settings:</p>
+<ul>
+<li>Resiliency (every cluster sits within a single point of failure)</li>
+<li>Software development (mitigate the risk of impacting critical production environments by isolating configuration, integration, or evolution testing and deployment)</li>
+<li>Workload isolation (hardware resources tuned for specific workloads)</li>
+<li>Legal separation</li>
+<li>Independent storage and compute</li>
+</ul>
+<p>With the success of cloud services, the independent storage and compute solution for big data clusters is on the rise</p>
+<ul>
+<li>DATA LOCALITY (locate the resource that deal with specific data near to that data, avoiding to move data from one machine to another)</li>
+</ul>
 <p>Machines that store data are usually up and running 24/7 as data must be persistent. </p>
 <h2 id="other-distributed-architectures">Other distributed architectures</h2>
 <p><strong>Grid Computing</strong>
@@ -573,7 +587,7 @@ Big data systems are mostly data-intensive.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 19, 2022 10:53:17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
       
         <br>
         Created:

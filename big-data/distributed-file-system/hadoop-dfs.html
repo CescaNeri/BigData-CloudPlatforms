@@ -510,87 +510,121 @@
 
 <h1 id="hadoop-distributed-file-system">Hadoop Distributed File System</h1>
 <p>The first thing that software has to provide is <strong>abstraction</strong>, as we want to interact with the disks of the machines as if it was a single machine.
-We want a single reference and we want to talk to a single entity.
-- Master-Slave architecture 
-A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.</p>
-<p>The software needs to deal with <strong>big data</strong>:
-- Files may be bigger than single disks
-- We need to split files into smaller blocks and store them on different machines</p>
-<p>ALso, <strong>fault tolerance</strong> is of key importance: disks can fail, machines can be unreachable, but data should always be available.
-- we can store multiple copies of each block</p>
+We want a single reference and we want to talk to a single entity.</p>
+<ul>
+<li>Master-Slave architecture 
+A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.</li>
+</ul>
+<p>The software needs to deal with <strong>big data</strong>:</p>
+<ul>
+<li>Files may be bigger than single disks</li>
+<li>We need to split files into smaller blocks and store them on different machines</li>
+</ul>
+<p>ALso, <strong>fault tolerance</strong> is of key importance: disks can fail, machines can be unreachable, but data should always be available.</p>
+<ul>
+<li>we can store multiple copies of each block</li>
+</ul>
 <h2 id="hdfs-definition">HDFS - definition</h2>
-<p>HDFS is filesystem designed for storing very large files with a streaming data access patterns, running on clusters of commodity hardware.
-- Application that run on HDFS need streaming access to their data sets.
-    - I do not want to continuously update data with batch operations.
-    - The emphasis is on high throughput of data access rather than low latency of data access</p>
+<p>HDFS is filesystem designed for storing very large files with a streaming data access patterns, running on clusters of commodity hardware.</p>
+<ul>
+<li>Application that run on HDFS need streaming access to their data sets.<ul>
+<li>I do not want to continuously update data with batch operations.</li>
+<li>The emphasis is on high throughput of data access rather than low latency of data access</li>
+</ul>
+</li>
+</ul>
 <p><strong>Blocks</strong> -&gt; splitting files into block that range between 64MB and 1GB.
-We need blocks because files can be larger than disks.
-- Why are blocks this big?
-We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. </p>
+We need blocks because files can be larger than disks.</p>
+<ul>
+<li>Why are blocks this big?
+We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. </li>
+</ul>
 <h2 id="master-slave-abstraction">Master - Slave Abstraction</h2>
-<p>Master service -&gt; <em>namenode</em>
-- Persistently maintains the filesystem tree
-- Coordinates the storage on different machines
-- Keeps in memory the location of each block for a given file (<strong>block pool</strong>)
-Slaves -&gt; <em>datanodes</em>
-- Store and retrieve blocks</p>
+<p>Master service -&gt; <em>namenode</em></p>
+<ul>
+<li>Persistently maintains the filesystem tree</li>
+<li>Coordinates the storage on different machines</li>
+<li>Keeps in memory the location of each block for a given file (<strong>block pool</strong>)
+Slaves -&gt; <em>datanodes</em></li>
+<li>Store and retrieve blocks</li>
+</ul>
 <h2 id="spof">SPoF</h2>
-<p>The namenode is a single point of failure: without it, the file system cannot be used.
-- <strong>Backup solution</strong>: not the best solution
-- <strong>Secondary NN Solution</strong>: separate machine in which a secondary namenode is installed and does some synchronization with the primary one (while being in a sleeping state).</p>
+<p>The namenode is a single point of failure: without it, the file system cannot be used.</p>
+<ul>
+<li><strong>Backup solution</strong>: not the best solution</li>
+<li><strong>Secondary NN Solution</strong>: separate machine in which a secondary namenode is installed and does some synchronization with the primary one (while being in a sleeping state).</li>
+</ul>
 <h2 id="high-availability">High Availability</h2>
 <p>Most of the big data tools and frameworks use this term to reference solutions that answer to the problem of always having data available no matter what.</p>
-<p>HA indicates a system that can tolerate faults.
-- Supported by configuring two separate machines as NNs:
-    - One is active (up and running)
-    - The other is in standby
-In the event of failure of the active NN, the standby NN takes over.</p>
+<p>HA indicates a system that can tolerate faults.</p>
+<ul>
+<li>Supported by configuring two separate machines as NNs:<ul>
+<li>One is active (up and running)</li>
+<li>The other is in standby
+In the event of failure of the active NN, the standby NN takes over.</li>
+</ul>
+</li>
+</ul>
 <p>It s a more complex solution in terms of resources and communication with the network, but it guarantees that in case of failure, there will not be any downtime.</p>
 <h2 id="hdfs-federation">HDFS - federation</h2>
 <p>There is no need to have a single file system, but we can have many systems on the same cluster.
 We can create multiple NN that manage different file systems.</p>
-<p>This has several advantages:
-- <strong>Performance</strong> (if we have a large filesystem with lots of data, the NN can be a bottleneck in terms of answering to multiple requests of users. By dividing file systems with different NN that address different requests, performance will increase)
-- Availability
-- <strong>Scalability</strong> (when the file system is large, the metadata can become quite huge. The metadata block needs to be lowered in memory so splitting metadata among different machines allows scalability)
-- Maintainability, Security and Flexibility</p>
+<p>This has several advantages:</p>
+<ul>
+<li><strong>Performance</strong> (if we have a large filesystem with lots of data, the NN can be a bottleneck in terms of answering to multiple requests of users. By dividing file systems with different NN that address different requests, performance will increase)</li>
+<li>Availability</li>
+<li><strong>Scalability</strong> (when the file system is large, the metadata can become quite huge. The metadata block needs to be lowered in memory so splitting metadata among different machines allows scalability)</li>
+<li>Maintainability, Security and Flexibility</li>
+</ul>
 <h2 id="hdfs-replication">HDFS - replication</h2>
 <p>Whenever we want to save a file in the file system, this will be splitted in blocks and stored separately.</p>
 <p>Each data block is independently replicated at multiple DNs in order to improve performance and robustness. </p>
-<p>Nodes are organized in racks, that are organized in data centers.
-- Hadoop models such concepts in a tree-liked fashion and computes the distance between nodes as their distance on the tree.</p>
+<p>Nodes are organized in racks, that are organized in data centers.</p>
+<ul>
+<li>Hadoop models such concepts in a tree-liked fashion and computes the distance between nodes as their distance on the tree.</li>
+</ul>
 <p>The typical rule is to store the first <strong>replica</strong> on the node (n1) where the client issued the write command.
 Replica 2 is stores on a node (n2) in a rack (r2) different form n1.
 Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
 <p><img alt="" src="racks.jpg" /></p>
-<p><strong>Hadoop 3</strong> alternative to simple replication:
-- Each block is split across each data node
-- It reduces data redundancy
-- It requires less storage (less money)
-- Faster writes (when we need to write data, the data to write are less)
-- DISADVANTAGES:
-    - Higher CPU cost (whenever we want to access data, having split the blocks in further blocks, we need to rebuild the blocks)
-    - Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)
-    - Longer recovery time </p>
+<p><strong>Hadoop 3</strong> alternative to simple replication:</p>
+<ul>
+<li>Each block is split across each data node</li>
+<li>It reduces data redundancy</li>
+<li>It requires less storage (less money)</li>
+<li>Faster writes (when we need to write data, the data to write are less)</li>
+<li>DISADVANTAGES:<ul>
+<li>Higher CPU cost (whenever we want to access data, having split the blocks in further blocks, we need to rebuild the blocks)</li>
+<li>Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)</li>
+<li>Longer recovery time </li>
+</ul>
+</li>
+</ul>
 <h2 id="hdfs-not-always-the-best-fit">HDFS not always the best fit</h2>
-<p>Although this may change in the future, there are area where HDFS is not a good fit:
-1. Low-latency data access
-2. Lots of small files</p>
+<p>Although this may change in the future, there are area where HDFS is not a good fit:</p>
+<ol>
+<li>Low-latency data access</li>
+<li>Lots of small files</li>
+</ol>
 <p><strong>I/O communication</strong></p>
-<p>An application client wishing to read a file must first contact the NN to determine where the actual data is stored.
-- The NN identifies the relevant block
-- The client contacts the DN to retrieve the data</p>
-<p><strong>Features of design:</strong>
-- The namenode never removes data
-- All data transfer occurs directly between clients and DNs
-- Communications with the NN only involve transfer of metadata</p>
+<p>An application client wishing to read a file must first contact the NN to determine where the actual data is stored.</p>
+<ul>
+<li>The NN identifies the relevant block</li>
+<li>The client contacts the DN to retrieve the data</li>
+</ul>
+<p><strong>Features of design:</strong></p>
+<ul>
+<li>The namenode never removes data</li>
+<li>All data transfer occurs directly between clients and DNs</li>
+<li>Communications with the NN only involve transfer of metadata</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 21, 2022 09:26:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
       
         <br>
         Created:
