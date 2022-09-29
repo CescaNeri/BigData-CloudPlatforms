@@ -364,10 +364,43 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Batch Application
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Batch Application" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Batch Application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="big-dat/batch-application" class="md-nav__link">
-        Batch Application
+      <a href="big-data/batch-application/yarn.html" class="md-nav__link">
+        YARN
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -448,6 +481,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#section-batch-application" class="md-nav__link">
+    II. Batch Application
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Batch Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-yarn" class="md-nav__link">
+    5. YARN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -512,6 +565,26 @@
           <li class="md-nav__item">
   <a href="#big-data-introduction-job-opportunities" class="md-nav__link">
     4. Job Opportunities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-batch-application" class="md-nav__link">
+    II. Batch Application
+  </a>
+  
+    <nav class="md-nav" aria-label="II. Batch Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-yarn" class="md-nav__link">
+    5. YARN
   </a>
   
 </li>
@@ -800,7 +873,55 @@ Most demanded professional figures:</p>
 <h2 id="big-data-introduction-job-opportunities-data-engineer">Data Engineer</h2>
 <p>Develop, test and maintain data architectures to keep data accessible and ready for analysis.</p>
 <h2 id="big-data-introduction-job-opportunities-data-analyst">Data Analyst</h2>
-<p>Processes and interprets data to get actionable insights for a company.</p></section><h1 class='nav-section-title-end'>Ended: Big Data Introduction</h1></div>
+<p>Processes and interprets data to get actionable insights for a company.</p></section><h1 class='nav-section-title-end'>Ended: Big Data Introduction</h1>
+                        <h1 class='nav-section-title' id='section-batch-application'>
+                            Batch Application <a class='headerlink' href='#section-batch-application' title='Permanent link'>↵</a>
+                        </h1>
+                        <section class="print-page" id="big-data-batch-application-yarn"><h1 id="big-data-batch-application-yarn-yarn-yet-another-resource-negotiator">YARN - Yet ANother Resource Negotiator</h1>
+<p>In the same cluster, I want to run some programs and applications. The problem regards how these computations allocate resources.</p>
+<p>The resource negotiator:
+- In charge of assigning units of work
+- Has a global view of the resources  available in the cluster
+- Decides where and when each uint of work should be allocated and with how many resources
+- Uses a scheduling policy to manage concurrency
+- Avoids over-instantiation of processes 
+- Handles fault-tolerance</p>
+<p>Potentially, we can run as many process as we want on each machine but we do not want to overload it.</p>
+<p>YARN provides APIs for requesting and working with cluster resources.
+- It is a general framework (works with any kind of application you want to run)
+- Application are written using analytical frameworks</p>
+<h2 id="big-data-batch-application-yarn-main-daemons">Main Daemons</h2>
+<p>YARN work with the master/slave mechanism:
+- Resource Manager (ultimate authority that arbitrates among all the applications)
+- Node Manager (per-node slave)
+    - In charge of running containers which run applications (virtual abstract entities associated with a certain amount of resources. We have a virtual environment that run applications)</p>
+<p>For each application. there is one container that runs a special process that in charge of coordinating the single operation.</p>
+<p><strong>Coordination</strong> happens on two levels:
+1. Resource Manager, composed by two components:
+    - Application Manager (start the application - accept request from client and start the machine)
+    - Scheduling component (decides where resources should be allocated)
+2. For each application, we have another process (<strong>application master process</strong>) that manages the resources of each application</p>
+<p>Application execution consists of the following steps:
+1. A client program submits the application, including the necessary specifications to launch the application-specific AMP itself
+2. The RM assumes the responsibility to negotiate a specified container in which to start the AMP and then launches it
+3. The AMP registers with the RM
+4. The AMP negotiates appropriate resources containers
+5. On successful container allocations, the AMP launches the container by providing the container launch specification
+6. The application code executing within the container provides necessary information
+7. During the application execution, the client that submitted the program communicates directly with the AMP to get status and updates
+8. Once the application is complete, the AMP de-registers with the RM and shuts down, allowing its own container to be repurposed</p>
+<h2 id="big-data-batch-application-yarn-yarn-scheduler">YARN Scheduler</h2>
+<p>YARN provides a choice of schedulers and configurable policies:
+- FIFO scheduler (useless)
+- Fair Scheduler (with multiple applications that want to access the resource, the scheduler will balance the resources among the two applications)
+    - Problem related to prediction of execution time as resources are split
+- Capacity Scheduler (the amount of resources is divided in two profiles - fixed amount)
+    - Each application run within a profile have access to a fixed amount of resources
+    - Execution time is predictable but there may be a waste of resources</p>
+<h2 id="big-data-batch-application-yarn-data-locality">Data Locality</h2>
+<p>When the scheduler needs to identify the resources to allocate, it does so following the data locality principle.
+The point is to exploit cluster typology and data block replication to apply the data locality principle. </p>
+<p><em>When computation involves large set of data, it is cheaper to move code to data rather than data to code</em></p></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
 
 
 
