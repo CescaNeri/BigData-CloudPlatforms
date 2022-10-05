@@ -1533,28 +1533,76 @@ The point is to exploit cluster typology and data block replication to apply the
 <p><strong>Shuffle and Sort:</strong> group by key and generate a pairs of the form</p>
 <p><strong>Reduce function:</strong> add up all the values for a given key and emits a pair of the form (w, m)</p>
 <p><strong>Output:</strong> w is a word that appears at least once among all the input documents; m is the total number of occurrences of w among all those documents</p>
-<div class="highlight"><pre><span></span><code>Map(String docid, String text):
-    for each word w in text:
-        Emit(w, 1);
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">docid</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">text</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">Emit</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 
-Reduce(String term, counts[]):
-    int sum = 0;
-    for each c in counts:
-        sum += c;
-    Emit(term, sum);
+<span class="n">Reduce</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">counts</span><span class="o">[]</span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">counts</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Emit</span><span class="p">(</span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h2 id="big-data-batch-application-map-reduce-map-in-java">Map in Java</h2>
-<div class="highlight"><pre><span></span><code>public class WordCountMapperextendsMapper&lt;LongWritable, Text, Text, IntWritable&gt; {
-    private static final IntWritableone = newIntWritable(1);
-    privateText word = newText();
-    public void map(LongWritablekey, Text value, Context context) 
-        throwsIOException, InterruptedException{
-    String line = value.toString();StringTokenizertokenizer = newStringTokenizer(line);
-    while(tokenizer.hasMoreTokens()) {word.set(tokenizer.nextToken());context.write(word, one);
-        }
-    }
-}
-</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WordCountMapperextendsMapper</span><span class="o">&lt;</span><span class="n">LongWritable</span><span class="p">,</span><span class="w"> </span><span class="n">Text</span><span class="p">,</span><span class="w"> </span><span class="n">Text</span><span class="p">,</span><span class="w"> </span><span class="n">IntWritable</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IntWritableone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newIntWritable</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">privateText</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newText</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">LongWritablekey</span><span class="p">,</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">throwsIOException</span><span class="p">,</span><span class="w"> </span><span class="n">InterruptedException</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="n">StringTokenizertokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newStringTokenizer</span><span class="p">(</span><span class="n">line</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="n">word</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">nextToken</span><span class="p">());</span><span class="n">context</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="big-data-batch-application-map-reduce-reduce-in-java">Reduce in Java</h2>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WordCountReducerextendsReducer</span><span class="o">&lt;</span><span class="n">Text</span><span class="p">,</span><span class="w"> </span><span class="n">IntWritable</span><span class="p">,</span><span class="w"> </span><span class="n">Text</span><span class="p">,</span><span class="w"> </span><span class="n">IntWritable</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">reduce</span><span class="p">(</span><span class="n">Text</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">IntWritable</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w">     </span>
+<span class="w">        </span><span class="n">throwsIOException</span><span class="p">,</span><span class="w"> </span><span class="n">InterruptedException</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">intsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">IntWritablevalue</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">get</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">context</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">newIntWritable</span><span class="p">(</span><span class="n">sum</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="big-data-batch-application-map-reduce-combiners">Combiners</h2>
+<p>When the reduce function is associative and commutative, we can push some of what the reducers do to the Map tasks. 
+In this case, we also apply a combiner to the Map function. The combiner function must be <strong>associative</strong> and <strong>commutative.</strong></p>
+<p>Advantages:</p>
+<ul>
+<li>It reduces the amount of intermediate data</li>
+<li>It reduces the network traffic</li>
+</ul>
+<h2 id="big-data-batch-application-map-reduce-data-partitioning">Data Partitioning</h2>
+<p><strong>Maps:</strong></p>
+<ul>
+<li>Partitioning depends on the input splits</li>
+<li>One map task per input split</li>
+</ul>
+<p><strong>Reducers:</strong></p>
+<ul>
+<li>Data is shuffled and according to partitioning function, it decides, for each key, which reducers it goes to</li>
+<li>Based on the number of nodes and available resources</li>
+<li>Can be defined by the user</li>
+</ul>
+<p>The keyspace of the intermediate key-value pairs is evenly distributed over the reducers with a hash function (same keys in different mappers end up at the same reducer).
+The partitioning of the intermediate key-value pairs generated by the maps can be customized.</p>
+<p><strong>How does it work:</strong></p>
+<ul>
+<li>Let p be the number of reduce tasks</li>
+<li>The partitioner adopts a hash function that translates a key to a number from 0 to p-1</li>
+<li>Each output ket-value pair is stored in one of p files</li>
+<li>The reduce task collects from every map task the partitions with the same hash value</li>
+</ul>
+<p><strong>Tuning the number of reduce tasks</strong></p>
+<p>Hadoop used to create only one, global reduce task by default (mainly used).
+Deciding the number of reduce task is not easy; it is more an art than a science.</p>
+<p>One solution would be to devise single task for every CPU available in the cluster. In this way, all CPUs are working but in reality, there are often more keys to process than available CPUs.</p>
+<p>Another solution would be to create multiple tasks for each CPU. From a certain perspective, it may seem a waste but actually, this solution mitigate skewness problems.</p>
+<p>General rule of thumb: each task should run for about 5 minutes and produce more than 1 HDFS block's worth of output.</p>
+<p><img alt="" src="big-data/batch-application/map2.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
 
 
 
