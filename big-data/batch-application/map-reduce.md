@@ -147,3 +147,15 @@ Another solution would be to create multiple tasks for each CPU. From a certain 
 General rule of thumb: each task should run for about 5 minutes and produce more than 1 HDFS block's worth of output.
 
 ![](map2.jpg)
+
+## MapReduce Execution
+ An important idea behind MapReduce is separating the *what* of distributed processing from the *how.*
+
+ The developer launches the job on the client's JMV, which contacts the YARN RM to submit the application.
+
+ **Data locality enforcement**
+Main principle: do not move data to workers, move workers to data.
+
+The task are created from the input splits in the shared file system
+
+**Optimization:** prefer nodes that are on the same rack in the data center as the on holding the data block. Inter-rack bandwidth is significantly less than intra-rack bandwidth.
