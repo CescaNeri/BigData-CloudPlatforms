@@ -41,7 +41,7 @@ MapReduce program = **job**
 
 ![](mapreduce.jpg)
 
-## Example - Word COunt
+## Example - Word Count
 
 Counting the  number of occurrences for each word in a collection of documents.
 
@@ -78,8 +78,11 @@ public class WordCountMapperextendsMapper<LongWritable, Text, Text, IntWritable>
     privateText word = newText();
     public void map(LongWritablekey, Text value, Context context) 
         throwsIOException, InterruptedException{
-    String line = value.toString();StringTokenizertokenizer = newStringTokenizer(line);
-    while(tokenizer.hasMoreTokens()) {word.set(tokenizer.nextToken());context.write(word, one);
+    String line = value.toString();
+    StringTokenizertokenizer = newStringTokenizer(line);
+    while(tokenizer.hasMoreTokens()) {
+        word.set(tokenizer.nextToken());
+        context.write(word, one);
         }
     }
 }

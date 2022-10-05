@@ -551,7 +551,7 @@
       
         <li class="md-nav__item">
   <a href="#example-word-count" class="md-nav__link">
-    Example - Word COunt
+    Example - Word Count
   </a>
   
 </li>
@@ -670,7 +670,7 @@
       
         <li class="md-nav__item">
   <a href="#example-word-count" class="md-nav__link">
-    Example - Word COunt
+    Example - Word Count
   </a>
   
 </li>
@@ -762,7 +762,7 @@
 <li>The key-value pairs returned by Reduce tasks are written persistently onto the DFS</li>
 </ol>
 <p><img alt="" src="mapreduce.jpg" /></p>
-<h2 id="example-word-count">Example - Word COunt</h2>
+<h2 id="example-word-count">Example - Word Count</h2>
 <p>Counting the  number of occurrences for each word in a collection of documents.</p>
 <p><strong>Input:</strong> a repository of documents (each document is a value in the input pairs)</p>
 <p><strong>Map function:</strong> read a document and emit a sequence of key-value pairs</p>
@@ -785,8 +785,11 @@
 <span class="w">    </span><span class="n">privateText</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newText</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">LongWritablekey</span><span class="p">,</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span>
 <span class="w">        </span><span class="n">throwsIOException</span><span class="p">,</span><span class="w"> </span><span class="n">InterruptedException</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="n">StringTokenizertokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newStringTokenizer</span><span class="p">(</span><span class="n">line</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="n">word</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">nextToken</span><span class="p">());</span><span class="n">context</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">StringTokenizertokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newStringTokenizer</span><span class="p">(</span><span class="n">line</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">word</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">nextToken</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">context</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -852,7 +855,7 @@ Main principle: do not move data to workers, move workers to data.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 5, 2022 08:56:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 5, 2022 09:11:14</span>
       
         <br>
         Created:
