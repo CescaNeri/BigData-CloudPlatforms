@@ -162,3 +162,15 @@ Main principle: do not move data to workers, move workers to data.
 The task are created from the input splits in the shared file system
 
 **Optimization:** prefer nodes that are on the same rack in the data center as the on holding the data block. Inter-rack bandwidth is significantly less than intra-rack bandwidth.
+
+## Map Execution STEPS
+
+![](map-1.jpg)
+
+![](map-2.jpg)
+
+![](map-3.jpg)
+
+![](map-4.jpg)
+
+![](map-5.jpg)
