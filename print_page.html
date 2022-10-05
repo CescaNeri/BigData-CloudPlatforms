@@ -507,6 +507,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/batch-application/apache-spark.html" class="md-nav__link">
+        Apache Spark
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -665,6 +679,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-apache-spark" class="md-nav__link">
+    11. Apache Spark
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -815,6 +836,13 @@
           <li class="md-nav__item">
   <a href="#big-data-batch-application-map-reduce" class="md-nav__link">
     10. Map Reduce
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-apache-spark" class="md-nav__link">
+    11. Apache Spark
   </a>
   
 </li>
@@ -1633,7 +1661,87 @@ Main principle: do not move data to workers, move workers to data.</p>
 <li>The same output may be useful for different subsequent stages</li>
 <li>The output can be stored in the DFS, forming a materialized view</li>
 </ul>
-<p>Early stages of map-reduce operations often represents the heaviest amount of data access, so building and saving them once as a basis for many downstream uses saves us a lot of work.</p></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
+<p>Early stages of map-reduce operations often represents the heaviest amount of data access, so building and saving them once as a basis for many downstream uses saves us a lot of work.</p></section><section class="print-page" id="big-data-batch-application-apache-spark"><h1 id="big-data-batch-application-apache-spark-apache-spark">Apache Spark</h1>
+<p><em>How did we get from Hadoop's MapReduce to Spark?</em></p>
+<p>Hadoop's MapReduce is the result of many years of development but in the meanwhile, a lot has changed.
+Before, disk was the primary source of data and machines were mostly single core.
+Now, RAM is the primary source of data and machines are mostly multi core.</p>
+<p><strong>Limitations of MapReduce:</strong></p>
+<ul>
+<li>It is designed for batch processing</li>
+<li>It has a strict paradigm</li>
+<li>New hardware capabilities are not exploited</li>
+<li>Too much complex </li>
+</ul>
+<h2 id="big-data-batch-application-apache-spark-apache-spark-framework">Apache Spark Framework</h2>
+<p>Spark relies on two main abstractions:</p>
+<ul>
+<li>
+<p><strong>RDD (Resilient Distributed Dataset)</strong>: immutable distributed collection of objects</p>
+<ul>
+<li><strong>Resilient</strong> (automatically rebuild on failure)</li>
+<li><strong>Distributed</strong> (the objects belonging to a given collection are split into partitions and spread across the nodes)</li>
+<li><strong>Immutable</strong> (once created, it cannot be modified)</li>
+<li><strong>Lazily evaluated</strong> (optimization before execution)</li>
+<li><strong>Cachable</strong> (it can persist in memory, spill to disk if necessary)</li>
+<li><strong>Type inference</strong> (data types are not declared but inferred)</li>
+</ul>
+</li>
+<li>
+<p><strong>DAG (Direct Acyclic Graph)</strong>: based on the user application and on the lineage graphs. Sparks computes a logical execution plan in the form of a DAG.</p>
+<ul>
+<li>Sequence of computations performed on data</li>
+<li>Nodes are the RDD (created to compute the result)</li>
+<li>Edges represents the operations
+The execution plan is compiled into physical stages</li>
+</ul>
+</li>
+</ul>
+<h2 id="big-data-batch-application-apache-spark-rdd">RDD</h2>
+<p><strong>Creation</strong></p>
+<p>RDD can be created in two ways:</p>
+<ol>
+<li>By loading an external dataset</li>
+<li>By distributing a collection of objects that you have in memory</li>
+</ol>
+<p>By default, RDD are not persisted: they are recomputed each time they are needed in an action.
+Therefore, there is no need to occupy memory if the RDD is not used again. </p>
+<p><strong>Operations</strong></p>
+<p>RDDs offer two types of operations:</p>
+<ol>
+<li>Transformations (all the operations that allow you to create a new RDD from a previous one)</li>
+<li>Actions (compute a result that is either returned to the driver program or saved to an external storage system)</li>
+</ol>
+<p><strong>Metadata</strong></p>
+<p>RDD transformations cause only metadata change. Each RDD stores a set of a metadata:</p>
+<ul>
+<li>Partitions (set of data splits associated with the RDD)</li>
+<li>Partitioner (how the data is split into partitions)</li>
+<li>Dependencies (list of parent RDDs involved in computation)</li>
+<li>Compute (function to compute partition of the RDD, given the parent partitions from the dependencies)</li>
+<li>Preferred locations (where is the best place to put computations on this partition)</li>
+</ul>
+<p><strong>Lineage</strong></p>
+<p>The set of RDD dependencies is logically represented as a linear graph which allows for fault tolerance system without checkpointing.
+The derived physical execution plan can be optimized by aggregating different operations and exploiting data locality.</p>
+<p><strong>Dependencies</strong></p>
+<p>In the dependency graph, we can distinguish between two kinds of dependencies:</p>
+<ol>
+<li>Narrow dependencies (it allows for pipelining on one cluster node)</li>
+<li>Wide dependencies  (it cannot be pipelined, as they require data shuffling)</li>
+</ol>
+<p><img alt="" src="big-data/batch-application/dependencies.jpg" /></p>
+<p><strong>Persistence</strong></p>
+<p>Persisting a dataset in memory across operations is one of Spark's most important capabilities.
+By default, each RDD is recomputed each time an action is run on it. When you persist an RDD, each node stored in memory the partitions that are computed, allowing for faster future actions.</p>
+<h2 id="big-data-batch-application-apache-spark-spark-application-decomposition">Spark Application Decomposition</h2>
+<ul>
+<li>Application (single instance of SparkContext that stores data processing logic and schedules series of jobs, sequentially or in parallel)</li>
+<li>Job (complete set of transformations on RDD that finishes with action or data saving, triggered by the driver application)</li>
+<li>Stage (set of transformations that can be pipelined and executed by a single independent worker)</li>
+<li>Task (basic unit of scheduling which executes the stages on a single data partition)</li>
+</ul>
+<p><img alt="" src="big-data/batch-application/spark-appl.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
 
 
 
