@@ -174,3 +174,27 @@ The task are created from the input splits in the shared file system
 ![](map-4.jpg)
 
 ![](map-5.jpg)
+
+## MapReduce Algorithms
+
+MapREduce is a framework, not a tool. You must fit your solution into the framework of map and reduce. In some situations, it might be challenging and translating ML and DM to the MapReduce paradigm is not trivial.
+
+Sometimes, we may need multiple map / reduce stages and build chains of maps and reduces.
+
+**Filtering algorithms** to find lines/files/tuples with a particular characteristic.
+
+**Summarization algorithms** to compute the maximum/sum/average over a set of values.
+
+**Join** to combine different inputs on some shared values.
+
+**Sort** to sort inputs in the preferred order.
+
+## Two Stage MapReduce
+
+As map-reduce calculations get more complex, it is useful to break them down into stages:
+
+- The output of the first stage serves as input to the next one
+- The same output may be useful for different subsequent stages
+- The output can be stored in the DFS, forming a materialized view
+
+Early stages of map-reduce operations often represents the heaviest amount of data access, so building and saving them once as a basis for many downstream uses saves us a lot of work.

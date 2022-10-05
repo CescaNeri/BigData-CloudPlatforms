@@ -598,6 +598,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mapreduce-algorithms" class="md-nav__link">
+    MapReduce Algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-stage-mapreduce" class="md-nav__link">
+    Two Stage MapReduce
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -720,6 +734,20 @@
         <li class="md-nav__item">
   <a href="#map-execution-steps" class="md-nav__link">
     Map Execution STEPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapreduce-algorithms" class="md-nav__link">
+    MapReduce Algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-stage-mapreduce" class="md-nav__link">
+    Two Stage MapReduce
   </a>
   
 </li>
@@ -869,13 +897,28 @@ Main principle: do not move data to workers, move workers to data.</p>
 <p><img alt="" src="map-3.jpg" /></p>
 <p><img alt="" src="map-4.jpg" /></p>
 <p><img alt="" src="map-5.jpg" /></p>
+<h2 id="mapreduce-algorithms">MapReduce Algorithms</h2>
+<p>MapREduce is a framework, not a tool. You must fit your solution into the framework of map and reduce. In some situations, it might be challenging and translating ML and DM to the MapReduce paradigm is not trivial.</p>
+<p>Sometimes, we may need multiple map / reduce stages and build chains of maps and reduces.</p>
+<p><strong>Filtering algorithms</strong> to find lines/files/tuples with a particular characteristic.</p>
+<p><strong>Summarization algorithms</strong> to compute the maximum/sum/average over a set of values.</p>
+<p><strong>Join</strong> to combine different inputs on some shared values.</p>
+<p><strong>Sort</strong> to sort inputs in the preferred order.</p>
+<h2 id="two-stage-mapreduce">Two Stage MapReduce</h2>
+<p>As map-reduce calculations get more complex, it is useful to break them down into stages:</p>
+<ul>
+<li>The output of the first stage serves as input to the next one</li>
+<li>The same output may be useful for different subsequent stages</li>
+<li>The output can be stored in the DFS, forming a materialized view</li>
+</ul>
+<p>Early stages of map-reduce operations often represents the heaviest amount of data access, so building and saving them once as a basis for many downstream uses saves us a lot of work.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 5, 2022 09:23:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 5, 2022 09:49:49</span>
       
         <br>
         Created:
