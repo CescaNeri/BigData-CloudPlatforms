@@ -13,7 +13,7 @@
     
     
       
-        <title>File Formats - CescaNeri/BigData-CloudPlatforms</title>
+        <title>Map Reduce - CescaNeri/BigData-CloudPlatforms</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-formats" class="md-skip">
+        <a href="#map-reduce" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File Formats
+              Map Reduce
             
           </span>
         </div>
@@ -389,14 +389,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -419,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="hadoop-dfs.html" class="md-nav__link">
+      <a href="../distributed-file-system/hadoop-dfs.html" class="md-nav__link">
         Hadoop DFS
       </a>
     </li>
@@ -431,59 +429,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          File Formats
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="file-formats.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../distributed-file-system/file-formats.html" class="md-nav__link">
         File Formats
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#column-oriented-file-formats" class="md-nav__link">
-    Column-oriented file formats
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parquet" class="md-nav__link">
-    Parquet
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -501,12 +451,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -529,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch-application/yarn.html" class="md-nav__link">
+      <a href="yarn.html" class="md-nav__link">
         YARN
       </a>
     </li>
@@ -541,11 +493,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../batch-application/map-reduce.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Map Reduce
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="map-reduce.html" class="md-nav__link md-nav__link--active">
         Map Reduce
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parallelization" class="md-nav__link">
+    Parallelization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapreduce-program" class="md-nav__link">
+    MapReduce Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapreduce-process" class="md-nav__link">
+    MapReduce Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-word-count" class="md-nav__link">
+    Example - Word COunt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-in-java" class="md-nav__link">
+    Map in Java
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -599,15 +620,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#column-oriented-file-formats" class="md-nav__link">
-    Column-oriented file formats
+  <a href="#parallelization" class="md-nav__link">
+    Parallelization
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parquet" class="md-nav__link">
-    Parquet
+  <a href="#mapreduce-program" class="md-nav__link">
+    MapReduce Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapreduce-process" class="md-nav__link">
+    MapReduce Process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-word-count" class="md-nav__link">
+    Example - Word COunt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-in-java" class="md-nav__link">
+    Map in Java
   </a>
   
 </li>
@@ -625,116 +667,85 @@
               
   
                 
-  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/distributed-file-system/file-formats.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/batch-application/map-reduce.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="file-formats">File Formats</h1>
-<p>The hadoop ecosystem supports several different formats:</p>
+<h1 id="map-reduce">Map Reduce</h1>
+<p>It is based, in general, on key-value pairs (data is structured in couples). It is a programming model and an associated implementation for processing and generating large data sets.</p>
+<p>How it works:</p>
+<p>It is based on typical analytical problems, in which you have large datasets and you want to extract something, you reorganize the data to compute aggregations and generate a final output.</p>
+<p><strong>Map operations and reduce operations</strong></p>
 <ul>
-<li>Standard file formats</li>
-<li>Hadoop / BigData-specific formats</li>
+<li>MAP takes a function f and applies it to every element in a list</li>
+<li>FOLD iteratively applies a function g to <strong>aggregate</strong> results</li>
 </ul>
-<p>Hadoop-specific formats involves several advantages:</p>
+<h2 id="parallelization">Parallelization</h2>
+<p>The map operation includes all operations can be parallelized in a straightforward manner, since each functional application happens in isolation.</p>
+<p>Reduce operation has more restrictions on data locality.</p>
+<h2 id="mapreduce-program">MapReduce Program</h2>
+<p>The map function requires an input (key-value pairs), that are chosen by the programmer.</p>
 <ul>
-<li><strong>Serialization</strong></li>
-<li><strong>Splittability</strong> (if the file is split into multiple blocks, metadata headers allow to skip unnecessary I/O)<ul>
-<li>Metadata is associated with each single block (the client can access individual blocks)</li>
+<li>Map (k1, v1) -&gt; list(k2, v2)</li>
+<li>Reduce  (k2, list(v2)) -&gt; list(k3, v3)</li>
 </ul>
-</li>
-<li><strong>Compression</strong> (if you want to compress the data, you use a compression mechanism that works on a block-level or at a record-level)</li>
-</ul>
-<p>There are many file formats - <strong>row-oriented</strong>:</p>
+<p>The output of the map function is a list containing all the values in the row, while the reduce function takes as input a key and the list with all the values associated with that key.</p>
+<p>MapReduce program = <strong>job</strong></p>
 <ul>
-<li>Sequence files</li>
-<li>Apache thrift (Facebook), Protocol buffers (Google)<ul>
-<li>They both create a notion of schema that has to be used in order to read the data</li>
-<li>Some code specifies how the data are structured</li>
+<li>Each job is divided into smaller units called <strong>tasks</strong></li>
+<li>The tasks are scheduled using YARN and run on nodes in the cluster</li>
 </ul>
-</li>
-<li>Apache Avro <ul>
-<li>Each file contains its own schema definition (no need to share separately the schema of the file because it is included in the file itself)</li>
-</ul>
-</li>
-</ul>
-<h2 id="column-oriented-file-formats">Column-oriented file formats</h2>
-<p>This formats store data based on columns.
-Column-oriented formats are better suited for analytical scenarios. This because in a typical analytical query, you want to take data from a subset of columns and perform analysis.</p>
-<p>This format is not ideal for operational purposes (day-to-day operations in a database).</p>
-<p>There are several advantaged to column-oriented file formats:</p>
-<ul>
-<li>Better compression (similar values because data is more homogeneous)</li>
-<li>Reduced I/O for analytical queries</li>
-<li>Operate on encoded data</li>
-</ul>
-<p>There are many file formats:</p>
-<ul>
-<li>ORC Files</li>
-<li>Apache Parquet (general purpose)</li>
-</ul>
-<h2 id="parquet">Parquet</h2>
-<p>Besides storing data in a column format, it allows to store <strong>nested structures</strong> (like JSON) in a flat format.</p>
-<p><strong>Data Model</strong>
- Nested attributes that have multiple values.</p>
-<ul>
-<li>Types:<ul>
-<li>Group</li>
-<li>Primitive</li>
-</ul>
-</li>
-<li>Frequency:<ul>
-<li>Required</li>
-<li>Optional</li>
-<li>Repeated</li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="nested.jpg" /></p>
-<p><strong>Unnesting</strong>
-Can we store nested data structures in a columnar format?
-we need to map the schema to a list of columns in a way that we can write records to flat columns and read them back to their original nested data structure.</p>
-<ul>
-<li>Each value is associated with two integers (repetition level and definition level)</li>
-<li>These integers allow to fully reconstruct the nested structures while still being able to store each primitive separately</li>
-</ul>
-<p>When I put values in a column formats, I do not know which value belongs to which record. 
-Rebuilding the structure of the rows just by looking at the values cannot be done.
-The parquet format allows to reconstruct the message.</p>
-<p><img alt="" src="parquet.jpg" /></p>
-<p>Parquet uses a definition level that defines the level of definition (0,1,2,3...), dealing with optionality.
-This allows you to understand which values exist.
-Inside the hierarchy, some fields are mandatory and others are optional. </p>
-<p><strong>Repetition Level</strong>
-The presence of repeated fields requires to store when new lists are starting in a column of values.
-Repetition level indicates at which level we have to create a new list for the current value. </p>
-<p>By using these two values (repetition and definition), I am able to fully reconstruct the message.</p>
-<p>Repetition and definition level cause overhead (they occupy space).</p>
-<ul>
-<li>The number of bits that has to be used is quite small (1,2,3... the number of levels) and in some case they can be omitted </li>
-<li>The repetition levels are stored in a column so they can be compressed </li>
-</ul>
-<p><strong>Parquet file format</strong>
-We have a notion of <em>row group</em> -&gt; the data are not fully columnar. We do not store all the values of each column continuously.
-Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. </p>
-<ul>
-<li><strong>COlumn chunk</strong> (chunk of the data for a particular column)
-All the values of each columns is further subdivided into pages.
-The size of the row group is set to the same size of the block (each block corresponds to a row).
-<strong>Data page size</strong> -&gt; it can be tuned (smaller or larger) depending on what query we need to issue.</li>
-</ul>
+<h2 id="mapreduce-process">MapReduce Process</h2>
+<ol>
+<li>Input is divided into fixed-size splits</li>
+<li>A Map task is created for each split</li>
+<li>The key-value pairs returned by Map tasks are sorted and stored in the local disk</li>
+<li>Map outputs are sent to the nodes where the Reduce tasks are running</li>
+<li>The key-value pairs returned by Reduce tasks are written persistently onto the DFS</li>
+</ol>
+<p><img alt="" src="mapreduce.jpg" /></p>
+<h2 id="example-word-count">Example - Word COunt</h2>
+<p>Counting the  number of occurrences for each word in a collection of documents.</p>
+<p><strong>Input:</strong> a repository of documents (each document is a value in the input pairs)</p>
+<p><strong>Map function:</strong> read a document and emit a sequence of key-value pairs</p>
+<p><strong>Shuffle and Sort:</strong> group by key and generate a pairs of the form</p>
+<p><strong>Reduce function:</strong> add up all the values for a given key and emits a pair of the form (w, m)</p>
+<p><strong>Output:</strong> w is a word that appears at least once among all the input documents; m is the total number of occurrences of w among all those documents</p>
+<div class="highlight"><pre><span></span><code>Map(String docid, String text):
+    for each word w in text:
+        Emit(w, 1);
+
+Reduce(String term, counts[]):
+    int sum = 0;
+    for each c in counts:
+        sum += c;
+    Emit(term, sum);
+</code></pre></div>
+<h2 id="map-in-java">Map in Java</h2>
+<div class="highlight"><pre><span></span><code>public class WordCountMapperextendsMapper&lt;LongWritable, Text, Text, IntWritable&gt; {
+    private static final IntWritableone = newIntWritable(1);
+    privateText word = newText();
+    public void map(LongWritablekey, Text value, Context context) 
+        throwsIOException, InterruptedException{
+    String line = value.toString();StringTokenizertokenizer = newStringTokenizer(line);
+    while(tokenizer.hasMoreTokens()) {word.set(tokenizer.nextToken());context.write(word, one);
+        }
+    }
+}
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 5, 2022 08:04:48</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 21, 2022 10:02:55</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 5, 2022 08:04:48</span>
       
     
   </small>
@@ -766,7 +777,7 @@ The size of the row group is set to the same size of the block (each block corre
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="hadoop-dfs.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hadoop DFS" rel="prev">
+        <a href="yarn.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: YARN" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -775,26 +786,11 @@ The size of the row group is set to the same size of the block (each block corre
               <span class="md-footer__direction">
                 Previous
               </span>
-              Hadoop DFS
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../batch-application/yarn.html" class="md-footer__link md-footer__link--next" aria-label="Next: YARN" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
               YARN
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   

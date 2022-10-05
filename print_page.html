@@ -493,6 +493,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/batch-application/map-reduce.html" class="md-nav__link">
+        Map Reduce
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -644,6 +658,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-map-reduce" class="md-nav__link">
+    10. Map Reduce
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -787,6 +808,13 @@
           <li class="md-nav__item">
   <a href="#big-data-batch-application-yarn" class="md-nav__link">
     9. YARN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-map-reduce" class="md-nav__link">
+    10. Map Reduce
   </a>
   
 </li>
@@ -1465,7 +1493,68 @@ The size of the row group is set to the same size of the block (each block corre
 <h2 id="big-data-batch-application-yarn-data-locality">Data Locality</h2>
 <p>When the scheduler needs to identify the resources to allocate, it does so following the data locality principle.
 The point is to exploit cluster typology and data block replication to apply the data locality principle. </p>
-<p><em>When computation involves large set of data, it is cheaper to move code to data rather than data to code</em></p></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
+<p><em>When computation involves large set of data, it is cheaper to move code to data rather than data to code</em></p></section><section class="print-page" id="big-data-batch-application-map-reduce"><h1 id="big-data-batch-application-map-reduce-map-reduce">Map Reduce</h1>
+<p>It is based, in general, on key-value pairs (data is structured in couples). It is a programming model and an associated implementation for processing and generating large data sets.</p>
+<p>How it works:</p>
+<p>It is based on typical analytical problems, in which you have large datasets and you want to extract something, you reorganize the data to compute aggregations and generate a final output.</p>
+<p><strong>Map operations and reduce operations</strong></p>
+<ul>
+<li>MAP takes a function f and applies it to every element in a list</li>
+<li>FOLD iteratively applies a function g to <strong>aggregate</strong> results</li>
+</ul>
+<h2 id="big-data-batch-application-map-reduce-parallelization">Parallelization</h2>
+<p>The map operation includes all operations can be parallelized in a straightforward manner, since each functional application happens in isolation.</p>
+<p>Reduce operation has more restrictions on data locality.</p>
+<h2 id="big-data-batch-application-map-reduce-mapreduce-program">MapReduce Program</h2>
+<p>The map function requires an input (key-value pairs), that are chosen by the programmer.</p>
+<ul>
+<li>Map (k1, v1) -&gt; list(k2, v2)</li>
+<li>Reduce  (k2, list(v2)) -&gt; list(k3, v3)</li>
+</ul>
+<p>The output of the map function is a list containing all the values in the row, while the reduce function takes as input a key and the list with all the values associated with that key.</p>
+<p>MapReduce program = <strong>job</strong></p>
+<ul>
+<li>Each job is divided into smaller units called <strong>tasks</strong></li>
+<li>The tasks are scheduled using YARN and run on nodes in the cluster</li>
+</ul>
+<h2 id="big-data-batch-application-map-reduce-mapreduce-process">MapReduce Process</h2>
+<ol>
+<li>Input is divided into fixed-size splits</li>
+<li>A Map task is created for each split</li>
+<li>The key-value pairs returned by Map tasks are sorted and stored in the local disk</li>
+<li>Map outputs are sent to the nodes where the Reduce tasks are running</li>
+<li>The key-value pairs returned by Reduce tasks are written persistently onto the DFS</li>
+</ol>
+<p><img alt="" src="big-data/batch-application/mapreduce.jpg" /></p>
+<h2 id="big-data-batch-application-map-reduce-example-word-count">Example - Word COunt</h2>
+<p>Counting the  number of occurrences for each word in a collection of documents.</p>
+<p><strong>Input:</strong> a repository of documents (each document is a value in the input pairs)</p>
+<p><strong>Map function:</strong> read a document and emit a sequence of key-value pairs</p>
+<p><strong>Shuffle and Sort:</strong> group by key and generate a pairs of the form</p>
+<p><strong>Reduce function:</strong> add up all the values for a given key and emits a pair of the form (w, m)</p>
+<p><strong>Output:</strong> w is a word that appears at least once among all the input documents; m is the total number of occurrences of w among all those documents</p>
+<div class="highlight"><pre><span></span><code>Map(String docid, String text):
+    for each word w in text:
+        Emit(w, 1);
+
+Reduce(String term, counts[]):
+    int sum = 0;
+    for each c in counts:
+        sum += c;
+    Emit(term, sum);
+</code></pre></div>
+<h2 id="big-data-batch-application-map-reduce-map-in-java">Map in Java</h2>
+<div class="highlight"><pre><span></span><code>public class WordCountMapperextendsMapper&lt;LongWritable, Text, Text, IntWritable&gt; {
+    private static final IntWritableone = newIntWritable(1);
+    privateText word = newText();
+    public void map(LongWritablekey, Text value, Context context) 
+        throwsIOException, InterruptedException{
+    String line = value.toString();StringTokenizertokenizer = newStringTokenizer(line);
+    while(tokenizer.hasMoreTokens()) {word.set(tokenizer.nextToken());context.write(word, one);
+        }
+    }
+}
+</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
 
 
 
