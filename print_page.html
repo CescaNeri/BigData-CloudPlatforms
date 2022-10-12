@@ -1697,6 +1697,14 @@ The execution plan is compiled into physical stages</li>
 </ul>
 </li>
 </ul>
+<p>The distinction among different stages (boundaries) is set by shuffle operations. 
+Operation with narrow dependencies are pipelined as much as possible.</p>
+<p>For each stage, we have different <strong>tasks</strong>:</p>
+<ul>
+<li>A task is created for each partition in the new RDD</li>
+<li>Tasks are scheduled and assigned to the worker nodes based on data locality</li>
+<li>The scheduler can run the same task on multiple nodes in case of stragglers</li>
+</ul>
 <h2 id="big-data-batch-application-apache-spark-rdd">RDD</h2>
 <p><strong>Creation</strong></p>
 <p>RDD can be created in two ways:</p>
@@ -1731,6 +1739,7 @@ The derived physical execution plan can be optimized by aggregating different op
 <li>Wide dependencies  (it cannot be pipelined, as they require data shuffling)</li>
 </ol>
 <p><img alt="" src="big-data/batch-application/dependencies.jpg" /></p>
+<p>In spark we have different operations (Map function) that can be <em>reduced</em> using operations like 'groupbykey', 'reducebykey' and 'join'.</p>
 <p><strong>Persistence</strong></p>
 <p>Persisting a dataset in memory across operations is one of Spark's most important capabilities.
 By default, each RDD is recomputed each time an action is run on it. When you persist an RDD, each node stored in memory the partitions that are computed, allowing for faster future actions.</p>
@@ -1741,7 +1750,34 @@ By default, each RDD is recomputed each time an action is run on it. When you pe
 <li>Stage (set of transformations that can be pipelined and executed by a single independent worker)</li>
 <li>Task (basic unit of scheduling which executes the stages on a single data partition)</li>
 </ul>
-<p><img alt="" src="big-data/batch-application/spark-appl.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
+<p><img alt="" src="big-data/batch-application/spark-appl.jpg" /></p>
+<h2 id="big-data-batch-application-apache-spark-spark-architecture">Spark Architecture</h2>
+<p>Spark uses a <em>master/slave</em> architecture with one central coordinator (<em>driver</em>) and many distributed workers (<em>executors</em>).</p>
+<p>Drivers and executers are independent Java processes which form a spark application.
+The architecture is independent of the cluster manager that Spark runs on.</p>
+<p><img alt="" src="big-data/batch-application/spark-arch.jpg" /></p>
+<p><strong>Cluster Manager</strong>: it is responsible for assigning and managing the cluster's resources</p>
+<p><strong>Executor</strong>: it is responsible for executing the received tasks (defined by the driver).
+Each executor can run multiple tasks at the same time.</p>
+<p><strong>Driver Program</strong>: each spark application have one driver that converts user program into tasks.</p>
+<p><strong>Spark Architecture in YARN</strong></p>
+<ul>
+<li>Driver Program = Application</li>
+<li>Executor &lt; Container</li>
+<li>Cluster Manager = Resource Manager</li>
+</ul>
+<p><strong>Spark vs MapReduce</strong></p>
+<p><img alt="" src="big-data/batch-application/spark-vs-map.jpg" /></p>
+<p>Since executors are fixed, the containers to be instantiated are just those for the executors. 
+Each container runs the executor and each executor can run multiple tasks.</p>
+<p>The level of parallelization is restricted by the number of executors. </p>
+<h2 id="big-data-batch-application-apache-spark-deployment">Deployment</h2>
+<p>There are three different deployment modes:</p>
+<ol>
+<li><strong>Cluster mode</strong> (the driver process runs directly on a node in the cluster)</li>
+<li><strong>Client mode</strong> (the driver process runs on a machine that does not belong to the cluster)</li>
+<li><strong>Local mode</strong> (both driver and executors run on the same machine)</li>
+</ol></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
 
 
 

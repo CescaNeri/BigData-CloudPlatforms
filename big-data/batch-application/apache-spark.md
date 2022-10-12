@@ -31,6 +31,15 @@ Spark relies on two main abstractions:
     - Edges represents the operations
     The execution plan is compiled into physical stages
 
+The distinction among different stages (boundaries) is set by shuffle operations. 
+Operation with narrow dependencies are pipelined as much as possible.
+
+For each stage, we have different **tasks**:
+
+- A task is created for each partition in the new RDD
+- Tasks are scheduled and assigned to the worker nodes based on data locality
+- The scheduler can run the same task on multiple nodes in case of stragglers
+
 ## RDD 
 
 **Creation**
@@ -74,6 +83,8 @@ In the dependency graph, we can distinguish between two kinds of dependencies:
 
 ![](dependencies.jpg)
 
+In spark we have different operations (Map function) that can be *reduced* using operations like 'groupbykey', 'reducebykey' and 'join'.
+
 **Persistence**
 
 Persisting a dataset in memory across operations is one of Spark's most important capabilities.
@@ -87,4 +98,45 @@ By default, each RDD is recomputed each time an action is run on it. When you pe
 - Task (basic unit of scheduling which executes the stages on a single data partition)
 
 ![](spark-appl.jpg)
+
+## Spark Architecture
+
+Spark uses a *master/slave* architecture with one central coordinator (*driver*) and many distributed workers (*executors*).
+
+Drivers and executers are independent Java processes which form a spark application.
+The architecture is independent of the cluster manager that Spark runs on.
+
+![](spark-arch.jpg)
+
+**Cluster Manager**: it is responsible for assigning and managing the cluster's resources
+
+**Executor**: it is responsible for executing the received tasks (defined by the driver).
+Each executor can run multiple tasks at the same time.
+
+**Driver Program**: each spark application have one driver that converts user program into tasks.
+
+**Spark Architecture in YARN**
+
+- Driver Program = Application
+- Executor < Container
+- Cluster Manager = Resource Manager
+
+**Spark vs MapReduce**
+
+![](spark-vs-map.jpg)
+
+Since executors are fixed, the containers to be instantiated are just those for the executors. 
+Each container runs the executor and each executor can run multiple tasks.
+
+The level of parallelization is restricted by the number of executors. 
+
+## Deployment
+
+There are three different deployment modes:
+
+1. **Cluster mode** (the driver process runs directly on a node in the cluster)
+2. **Client mode** (the driver process runs on a machine that does not belong to the cluster)
+3. **Local mode** (both driver and executors run on the same machine)
+
+
 
