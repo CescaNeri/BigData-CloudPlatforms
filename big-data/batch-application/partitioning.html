@@ -13,7 +13,7 @@
     
     
       
-        <title>Hadoop DFS - CescaNeri/BigData-CloudPlatforms</title>
+        <title>Partitioning - CescaNeri/BigData-CloudPlatforms</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hadoop-distributed-file-system" class="md-skip">
+        <a href="#partitioning" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hadoop DFS
+              Partitioning
             
           </span>
         </div>
@@ -389,14 +389,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -417,94 +415,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Hadoop DFS
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="hadoop-dfs.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../distributed-file-system/hadoop-dfs.html" class="md-nav__link">
         Hadoop DFS
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-definition" class="md-nav__link">
-    HDFS - definition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#master-slave-abstraction" class="md-nav__link">
-    Master - Slave Abstraction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spof" class="md-nav__link">
-    SPoF
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#high-availability" class="md-nav__link">
-    High Availability
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-federation" class="md-nav__link">
-    HDFS - federation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-replication" class="md-nav__link">
-    HDFS - replication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-not-always-the-best-fit" class="md-nav__link">
-    HDFS not always the best fit
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -516,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="file-formats.html" class="md-nav__link">
+      <a href="../distributed-file-system/file-formats.html" class="md-nav__link">
         File Formats
       </a>
     </li>
@@ -536,12 +451,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -564,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch-application/yarn.html" class="md-nav__link">
+      <a href="yarn.html" class="md-nav__link">
         YARN
       </a>
     </li>
@@ -578,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch-application/map-reduce.html" class="md-nav__link">
+      <a href="map-reduce.html" class="md-nav__link">
         Map Reduce
       </a>
     </li>
@@ -592,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch-application/apache-spark.html" class="md-nav__link">
+      <a href="apache-spark.html" class="md-nav__link">
         Apache Spark
       </a>
     </li>
@@ -604,11 +521,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../batch-application/partitioning.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Partitioning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="partitioning.html" class="md-nav__link md-nav__link--active">
         Partitioning
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rdd-partitioning-criteria" class="md-nav__link">
+    RDD Partitioning Criteria
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shuffling" class="md-nav__link">
+    Shuffling
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -662,50 +627,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hdfs-definition" class="md-nav__link">
-    HDFS - definition
+  <a href="#rdd-partitioning-criteria" class="md-nav__link">
+    RDD Partitioning Criteria
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#master-slave-abstraction" class="md-nav__link">
-    Master - Slave Abstraction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spof" class="md-nav__link">
-    SPoF
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#high-availability" class="md-nav__link">
-    High Availability
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-federation" class="md-nav__link">
-    HDFS - federation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-replication" class="md-nav__link">
-    HDFS - replication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hdfs-not-always-the-best-fit" class="md-nav__link">
-    HDFS not always the best fit
+  <a href="#shuffling" class="md-nav__link">
+    Shuffling
   </a>
   
 </li>
@@ -723,121 +653,61 @@
               
   
                 
-  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/distributed-file-system/hadoop-dfs.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/batch-application/partitioning.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="hadoop-distributed-file-system">Hadoop Distributed File System</h1>
-<p>The first thing that software has to provide is <strong>abstraction</strong>, as we want to interact with the disks of the machines as if it was a single machine.
-We want a single reference and we want to talk to a single entity.</p>
-<ul>
-<li>Master-Slave architecture 
-A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.</li>
-</ul>
-<p>The software needs to deal with <strong>big data</strong>:</p>
-<ul>
-<li>Files may be bigger than single disks</li>
-<li>We need to split files into smaller blocks and store them on different machines</li>
-</ul>
-<p>ALso, <strong>fault tolerance</strong> is of key importance: disks can fail, machines can be unreachable, but data should always be available.</p>
-<ul>
-<li>we can store multiple copies of each block</li>
-</ul>
-<h2 id="hdfs-definition">HDFS - definition</h2>
-<p>HDFS is filesystem designed for storing very large files with a streaming data access patterns, running on clusters of commodity hardware.</p>
-<ul>
-<li>Application that run on HDFS need streaming access to their data sets.<ul>
-<li>I do not want to continuously update data with batch operations.</li>
-<li>The emphasis is on high throughput of data access rather than low latency of data access</li>
-</ul>
-</li>
-</ul>
-<p><strong>Blocks</strong> -&gt; splitting files into block that range between 64MB and 1GB.
-We need blocks because files can be larger than disks.</p>
-<ul>
-<li>Why are blocks this big?
-We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. </li>
-</ul>
-<h2 id="master-slave-abstraction">Master - Slave Abstraction</h2>
-<p>Master service -&gt; <em>namenode</em></p>
-<ul>
-<li>Persistently maintains the filesystem tree</li>
-<li>Coordinates the storage on different machines</li>
-<li>Keeps in memory the location of each block for a given file (<strong>block pool</strong>)
-Slaves -&gt; <em>datanodes</em></li>
-<li>Store and retrieve blocks</li>
-</ul>
-<h2 id="spof">SPoF</h2>
-<p>The namenode is a single point of failure: without it, the file system cannot be used.</p>
-<ul>
-<li><strong>Backup solution</strong>: not the best solution</li>
-<li><strong>Secondary NN Solution</strong>: separate machine in which a secondary namenode is installed and does some synchronization with the primary one (while being in a sleeping state).</li>
-</ul>
-<h2 id="high-availability">High Availability</h2>
-<p>Most of the big data tools and frameworks use this term to reference solutions that answer to the problem of always having data available no matter what.</p>
-<p>HA indicates a system that can tolerate faults.</p>
-<ul>
-<li>Supported by configuring two separate machines as NNs:<ul>
-<li>One is active (up and running)</li>
-<li>The other is in standby
-In the event of failure of the active NN, the standby NN takes over.</li>
-</ul>
-</li>
-</ul>
-<p>It s a more complex solution in terms of resources and communication with the network, but it guarantees that in case of failure, there will not be any downtime.</p>
-<h2 id="hdfs-federation">HDFS - federation</h2>
-<p>There is no need to have a single file system, but we can have many systems on the same cluster.
-We can create multiple NN that manage different file systems.</p>
-<p>This has several advantages:</p>
-<ul>
-<li><strong>Performance</strong> (if we have a large filesystem with lots of data, the NN can be a bottleneck in terms of answering to multiple requests of users. By dividing file systems with different NN that address different requests, performance will increase)</li>
-<li>Availability</li>
-<li><strong>Scalability</strong> (when the file system is large, the metadata can become quite huge. The metadata block needs to be lowered in memory so splitting metadata among different machines allows scalability)</li>
-<li>Maintainability, Security and Flexibility</li>
-</ul>
-<h2 id="hdfs-replication">HDFS - replication</h2>
-<p>Whenever we want to save a file in the file system, this will be splitted in blocks and stored separately.</p>
-<p>Each data block is independently replicated at multiple DNs in order to improve performance and robustness. </p>
-<p>Nodes are organized in racks, that are organized in data centers.</p>
-<ul>
-<li>Hadoop models such concepts in a tree-liked fashion and computes the distance between nodes as their distance on the tree.</li>
-</ul>
-<p>The typical rule is to store the first <strong>replica</strong> on the node (n1) where the client issued the write command.
-Replica 2 is stores on a node (n2) in a rack (r2) different form n1.
-Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
-<p><img alt="" src="racks.jpg" /></p>
-<p><strong>Hadoop 3</strong> alternative to simple replication:</p>
-<ul>
-<li>Each block is split across each data node</li>
-<li>It reduces data redundancy</li>
-<li>It requires less storage (less money)</li>
-<li>Faster writes (when we need to write data, the data to write are less)</li>
-<li>DISADVANTAGES:<ul>
-<li>Higher CPU cost (whenever we want to access data, having split the blocks in further blocks, we need to rebuild the blocks)</li>
-<li>Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)</li>
-<li>Longer recovery time </li>
-</ul>
-</li>
-</ul>
-<h2 id="hdfs-not-always-the-best-fit">HDFS not always the best fit</h2>
-<p>Although this may change in the future, there are area where HDFS is not a good fit:</p>
+<h1 id="partitioning">Partitioning</h1>
+<p>Data in RDD are split into multiple partitions, which serve two purposes:</p>
 <ol>
-<li>Low-latency data access</li>
-<li>Lots of small files</li>
+<li>parallelize computation across workers and CPU cores</li>
+<li>Minimize network traffic for data exchange between executors</li>
 </ol>
-<p><strong>I/O communication</strong></p>
-<p>An application client wishing to read a file must first contact the NN to determine where the actual data is stored.</p>
+<p>If not specified, SPark sets the number of partitions automatically. The number of partitions are important as one task is run for each partition:</p>
+<p>Too few partitions results in less concurrency and risks from data skewness, while too many partitions results in excessive overhead in managing small tasks.</p>
+<p><strong>Rule of thumb:</strong></p>
 <ul>
-<li>The NN identifies the relevant block</li>
-<li>The client contacts the DN to retrieve the data</li>
+<li>Lower bound: 2 partitions for each core</li>
+<li>Upper bounds:<ul>
+<li>each task should take at least 100/200 ms to execute</li>
+<li>a block worth of data</li>
 </ul>
-<p><strong>Features of design:</strong></p>
+</li>
+</ul>
+<p>When in doubt, more partitions is usually better.</p>
+<h2 id="rdd-partitioning-criteria">RDD Partitioning Criteria</h2>
+<p>The partitioning criteria is used to:</p>
 <ul>
-<li>The namenode never removes data</li>
-<li>All data transfer occurs directly between clients and DNs</li>
-<li>Communications with the NN only involve transfer of metadata</li>
+<li>Put values that belong to the same key in the same partition</li>
+<li>Define how the key should be distributed in different partitions</li>
+<li>No control over the specific worker node a partition goes to</li>
+</ul>
+<p>Partition criteria triggers shuffle operations so, forcing a partitioning criteria on a RDD is costly and there is no explicit control over which worker node each key goes on.</p>
+<p><strong>Different partitioning data:</strong></p>
+<ol>
+<li><strong>Hash Partitioning:</strong> hashing using the Java hashCode</li>
+<li><strong>Range Partitioning:</strong> distributes data into uniform ranges</li>
+<li><strong>Custom Partitioning:</strong> user-defined partitioning</li>
+</ol>
+<p><strong>When is it useful?</strong></p>
+<p>If I repartition an RDD based on some criteria, then I know that all the values with the same key will end up in the same partition.</p>
+<h2 id="shuffling">Shuffling</h2>
+<p>Shuffling is the mechanism used to re-distribute data across partitions. It is necessary to compute some operations but it is costly and complex.</p>
+<p><img alt="" src="hash.jpg" /></p>
+<p><img alt="" src="sort.jpg" /></p>
+<p><img alt="" src="tungsten.jpg" /></p>
+<p>In time, Spark has provided a number of shuffling implementations:</p>
+<ul>
+<li><strong>Hash shuffle:</strong> each map task creates a file for every reducer. <a href="https://medium.com/@philipp.brunenberg/understanding-apache-spark-hash-shuffle-b9aed2d587b0">In this article is explained clearly (kinda)</a><ul>
+<li>Each executor holds a pool of files</li>
+<li>A single group contains a file for every reducer</li>
+<li>An executor contains as many groups as the mapper than can run in parallel in the executor itself</li>
+</ul>
+</li>
+<li><strong>Sort shuffle:</strong></li>
+<li><strong>Tungsten sort:</strong></li>
 </ul>
 
   <hr>
@@ -845,11 +715,11 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 10:20:30</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 21, 2022 07:53:49</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 10:20:30</span>
       
     
   </small>
@@ -881,7 +751,7 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../infrastructures-architectures/architectures.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Big Data Architecture" rel="prev">
+        <a href="apache-spark.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Apache Spark" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -890,26 +760,11 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Big Data Architecture
+              Apache Spark
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="file-formats.html" class="md-footer__link md-footer__link--next" aria-label="Next: File Formats" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              File Formats
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

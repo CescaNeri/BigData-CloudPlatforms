@@ -521,6 +521,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/batch-application/partitioning.html" class="md-nav__link">
+        Partitioning
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -686,6 +700,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-partitioning" class="md-nav__link">
+    12. Partitioning
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -843,6 +864,13 @@
           <li class="md-nav__item">
   <a href="#big-data-batch-application-apache-spark" class="md-nav__link">
     11. Apache Spark
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-data-batch-application-partitioning" class="md-nav__link">
+    12. Partitioning
   </a>
   
 </li>
@@ -1777,7 +1805,56 @@ Each container runs the executor and each executor can run multiple tasks.</p>
 <li><strong>Cluster mode</strong> (the driver process runs directly on a node in the cluster)</li>
 <li><strong>Client mode</strong> (the driver process runs on a machine that does not belong to the cluster)</li>
 <li><strong>Local mode</strong> (both driver and executors run on the same machine)</li>
-</ol></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
+</ol></section><section class="print-page" id="big-data-batch-application-partitioning"><h1 id="big-data-batch-application-partitioning-partitioning">Partitioning</h1>
+<p>Data in RDD are split into multiple partitions, which serve two purposes:</p>
+<ol>
+<li>parallelize computation across workers and CPU cores</li>
+<li>Minimize network traffic for data exchange between executors</li>
+</ol>
+<p>If not specified, SPark sets the number of partitions automatically. The number of partitions are important as one task is run for each partition:</p>
+<p>Too few partitions results in less concurrency and risks from data skewness, while too many partitions results in excessive overhead in managing small tasks.</p>
+<p><strong>Rule of thumb:</strong></p>
+<ul>
+<li>Lower bound: 2 partitions for each core</li>
+<li>Upper bounds:<ul>
+<li>each task should take at least 100/200 ms to execute</li>
+<li>a block worth of data</li>
+</ul>
+</li>
+</ul>
+<p>When in doubt, more partitions is usually better.</p>
+<h2 id="big-data-batch-application-partitioning-rdd-partitioning-criteria">RDD Partitioning Criteria</h2>
+<p>The partitioning criteria is used to:</p>
+<ul>
+<li>Put values that belong to the same key in the same partition</li>
+<li>Define how the key should be distributed in different partitions</li>
+<li>No control over the specific worker node a partition goes to</li>
+</ul>
+<p>Partition criteria triggers shuffle operations so, forcing a partitioning criteria on a RDD is costly and there is no explicit control over which worker node each key goes on.</p>
+<p><strong>Different partitioning data:</strong></p>
+<ol>
+<li><strong>Hash Partitioning:</strong> hashing using the Java hashCode</li>
+<li><strong>Range Partitioning:</strong> distributes data into uniform ranges</li>
+<li><strong>Custom Partitioning:</strong> user-defined partitioning</li>
+</ol>
+<p><strong>When is it useful?</strong></p>
+<p>If I repartition an RDD based on some criteria, then I know that all the values with the same key will end up in the same partition.</p>
+<h2 id="big-data-batch-application-partitioning-shuffling">Shuffling</h2>
+<p>Shuffling is the mechanism used to re-distribute data across partitions. It is necessary to compute some operations but it is costly and complex.</p>
+<p><img alt="" src="big-data/batch-application/hash.jpg" /></p>
+<p><img alt="" src="big-data/batch-application/sort.jpg" /></p>
+<p><img alt="" src="big-data/batch-application/tungsten.jpg" /></p>
+<p>In time, Spark has provided a number of shuffling implementations:</p>
+<ul>
+<li><strong>Hash shuffle:</strong> each map task creates a file for every reducer. <a href="https://medium.com/@philipp.brunenberg/understanding-apache-spark-hash-shuffle-b9aed2d587b0">In this article is explained clearly (kinda)</a><ul>
+<li>Each executor holds a pool of files</li>
+<li>A single group contains a file for every reducer</li>
+<li>An executor contains as many groups as the mapper than can run in parallel in the executor itself</li>
+</ul>
+</li>
+<li><strong>Sort shuffle:</strong></li>
+<li><strong>Tungsten sort:</strong></li>
+</ul></section><h1 class='nav-section-title-end'>Ended: Batch Application</h1></div>
 
 
 
