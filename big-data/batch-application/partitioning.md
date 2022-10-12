@@ -54,5 +54,42 @@ In time, Spark has provided a number of shuffling implementations:
     - Each executor holds a pool of files
     - A single group contains a file for every reducer
     - An executor contains as many groups as the mapper than can run in parallel in the executor itself
-- **Sort shuffle:**
-- **Tungsten sort:**
+- **Sort shuffle:** each mapper keeps output in memory, spills to disk if necessary.
+    - Each mapper spills to its own file
+    - Each file is sorted by reducer
+    - When a reducer ask for data, the pieces from each file are collected, sorted in memory, and sent to the reducer
+- **Tungsten sort:** evolution of the sort shuffle, but it works on serialized data (no need to do de-serialization and serialization).
+    - Improves performance of the sort shuffle technique
+    - It works only under certain constraints
+
+As of today, one single implementation is provided: *SortShuffleManager*
+
+- If conditions allow it, tungsten sort is adopted
+- Hash shuffle is convenient only if you need to create an output with few partitions (low number of files)
+- Otherwise, sort shuffle is adopted
+
+## Cluster Configuration
+
+In the SPark architecture, the level of parallelization is also given by the number of resources allocated.
+
+The number of resources that we can ask for is given in the amount of memory and CPU.
+All the executors have the same configuration and the number of executors is fixed as well.
+
+**Tuning CPU**
+
+We can either set the number of **executors** or the cumber of **cores** per executors.
+The best thing to do is to have fewer executor with a high number of cores. Single-core executors throw away the benefits that come from running multiple tasks in a single JVM.
+
+When deciding the number of CPU, it is important to remember that not everything should be allocated to the executor, as there are other parties.
+
+It is good practice to leave at least one core per machine for other services.
+
+![](cpu.jpg)
+
+**Tuning Memory**
+
+Tuning memory can be done by setting the amount of memory per executor.
+
+We should keep in mind that executors with too much memory often result in excessive garbage collection delays.
+
+![](memory.jpg)

@@ -570,6 +570,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cluster-configuration" class="md-nav__link">
+    Cluster Configuration
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -640,6 +647,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cluster-configuration" class="md-nav__link">
+    Cluster Configuration
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -706,16 +720,45 @@
 <li>An executor contains as many groups as the mapper than can run in parallel in the executor itself</li>
 </ul>
 </li>
-<li><strong>Sort shuffle:</strong></li>
-<li><strong>Tungsten sort:</strong></li>
+<li><strong>Sort shuffle:</strong> each mapper keeps output in memory, spills to disk if necessary.<ul>
+<li>Each mapper spills to its own file</li>
+<li>Each file is sorted by reducer</li>
+<li>When a reducer ask for data, the pieces from each file are collected, sorted in memory, and sent to the reducer</li>
 </ul>
+</li>
+<li><strong>Tungsten sort:</strong> evolution of the sort shuffle, but it works on serialized data (no need to do de-serialization and serialization).<ul>
+<li>Improves performance of the sort shuffle technique</li>
+<li>It works only under certain constraints</li>
+</ul>
+</li>
+</ul>
+<p>As of today, one single implementation is provided: <em>SortShuffleManager</em></p>
+<ul>
+<li>If conditions allow it, tungsten sort is adopted</li>
+<li>Hash shuffle is convenient only if you need to create an output with few partitions (low number of files)</li>
+<li>Otherwise, sort shuffle is adopted</li>
+</ul>
+<h2 id="cluster-configuration">Cluster Configuration</h2>
+<p>In the SPark architecture, the level of parallelization is also given by the number of resources allocated.</p>
+<p>The number of resources that we can ask for is given in the amount of memory and CPU.
+All the executors have the same configuration and the number of executors is fixed as well.</p>
+<p><strong>Tuning CPU</strong></p>
+<p>We can either set the number of <strong>executors</strong> or the cumber of <strong>cores</strong> per executors.
+The best thing to do is to have fewer executor with a high number of cores. Single-core executors throw away the benefits that come from running multiple tasks in a single JVM.</p>
+<p>When deciding the number of CPU, it is important to remember that not everything should be allocated to the executor, as there are other parties.</p>
+<p>It is good practice to leave at least one core per machine for other services.</p>
+<p><img alt="" src="cpu.jpg" /></p>
+<p><strong>Tuning Memory</strong></p>
+<p>Tuning memory can be done by setting the amount of memory per executor.</p>
+<p>We should keep in mind that executors with too much memory often result in excessive garbage collection delays.</p>
+<p><img alt="" src="memory.jpg" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 10:20:30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 10:45:34</span>
       
         <br>
         Created:
