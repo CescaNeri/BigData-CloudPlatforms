@@ -13,7 +13,7 @@
     
     
       
-        <title>SUMMARY - CescaNeri/BigData-CloudPlatforms</title>
+        <title>SQL on Hadoop - CescaNeri/BigData-CloudPlatforms</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sql-on-hadoop" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SUMMARY
+              SQL on Hadoop
             
           </span>
         </div>
@@ -474,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="yarn.html" class="md-nav__link">
+      <a href="../batch-application/yarn.html" class="md-nav__link">
         YARN
       </a>
     </li>
@@ -488,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="map-reduce.html" class="md-nav__link">
+      <a href="../batch-application/map-reduce.html" class="md-nav__link">
         Map Reduce
       </a>
     </li>
@@ -502,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="apache-spark.html" class="md-nav__link">
+      <a href="../batch-application/apache-spark.html" class="md-nav__link">
         Apache Spark
       </a>
     </li>
@@ -516,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="partitioning.html" class="md-nav__link">
+      <a href="../batch-application/partitioning.html" class="md-nav__link">
         Partitioning
       </a>
     </li>
@@ -564,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sql-hadoop/apache-hive.md" class="md-nav__link">
+      <a href="apache-hive.md" class="md-nav__link">
         Apache Hive
       </a>
     </li>
@@ -610,6 +615,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spark-sql" class="md-nav__link">
+    Spark SQL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logical-optimization" class="md-nav__link">
+    Logical Optimization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-optimization" class="md-nav__link">
+    Physical Optimization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-query-execution" class="md-nav__link">
+    Adaptive Query Execution
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -622,15 +665,95 @@
               
   
                 
+  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/big-data/sql-hadoop/spark-sql.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
 
 
-  <h1>SUMMARY</h1>
 
+<h1 id="sql-on-hadoop">SQL on Hadoop</h1>
+<p>SQL on Hadoop is a class of application tools that combine established SQL-style querying with newer Hadoop data framework elements</p>
+<p><strong>SQL options on Hadoop</strong></p>
+<ol>
+<li>Batch SQL (apache Hive)</li>
+<li>In-Memory SQL (Apache Spark)</li>
+<li>Interactive SQL (Impala)</li>
+<li>Operational SQL (Apache HBase, NoSQL)</li>
+</ol>
+<p><strong>Data storage</strong></p>
 <ul>
-<li><a href="yarn.html">YARN</a></li>
-<li><a href="map-reduce.html">Map Reduce</a></li>
-<li><a href="apache-spark.html">Apache Spark</a></li>
-<li><a href="partitioning.html">Partitioning</a></li>
+<li>Only NoSQL database directly handle data storage</li>
+<li>Some tools provide a relational abstraction over HDFS</li>
+</ul>
+<p><strong>Execution Engine</strong></p>
+<ul>
+<li>Most tools directly handle query execution</li>
+<li>Hive pushes execution to other tools</li>
+</ul>
+<h2 id="spark-sql">Spark SQL</h2>
+<p>Instead of working with RDDs, we work with <strong>datasets</strong>.
+With dataset, type conformity is checked at compile time.</p>
+<p>They are <strong>lazily evaluated</strong> but supports under-the-hoop optimizations and code generation.</p>
+<p><img alt="" src="spark.jpg" /></p>
+<p><strong>Pros and Cons of Structure</strong></p>
+<ul>
+<li>Structure imposes some <strong>limits</strong> (RDDS enable any computation through user defined functions)</li>
+<li>The most common computations are supported</li>
+<li>Language simplicity</li>
+<li>Opens the room to <strong>optimization</strong></li>
+</ul>
+<p><img alt="" src="sql.jpg" /></p>
+<p>The goal is to obtain an efficient and optimized logical plan, on which physical plans are generated.</p>
+<h2 id="logical-optimization">Logical Optimization</h2>
+<p>It is based on <strong>rules</strong>, which is a function that can be applied on a portion of the logical plan.</p>
+<p>Several types of rules:</p>
+<ul>
+<li>Constant folding (resolve constant expressions at compile time)</li>
+<li>Predicate push-down (push selection predicates (filters) close to the sources)</li>
+<li>Column pruning (project only the required column)</li>
+<li>Join reordering (change the order of join operations)</li>
+</ul>
+<p>These rules are applied recursively (maybe the application of a rule enables the application of another and so on) until the plan reaches a <em>fixed point</em> and no more optimization can be done.</p>
+<h2 id="physical-optimization">Physical Optimization</h2>
+<p>Once you have a physical plan, you also need to estimate the execution time.
+The cost of operating on a certain dataset is characterized by the amount of time lost in terms of computation, CPU, I/O operations from the disk.</p>
+<ul>
+<li>I/O operations depends on the size of the data set</li>
+<li>The cost of the amount of computation depends on the cardinality of the dataset</li>
+</ul>
+<p><img alt="" src="cost.jpg" /></p>
+<p>Other important factors:</p>
+<ul>
+<li>Network throughput</li>
+<li>Disk throughput</li>
+<li>Allocation of resources</li>
+<li>Allocation of tasks</li>
+</ul>
+<p><strong>Rule based physical optimization</strong></p>
+<ul>
+<li>Operation pipelining</li>
+<li>Predicate push-down (filtering performed during physical scan)</li>
+</ul>
+<p><strong>Join method selection</strong></p>
+<ul>
+<li><strong>Broadcast Hash</strong> join (if you have two dataset to join and one is not very big, you can replicate the same table for all the partition of the other dataset to avoid reorganization)</li>
+<li><strong>Shuffle Hash</strong> join (data are reorganized based on the join attribute and the HJ method is applied)</li>
+</ul>
+<p>To select a join method, the following conditions need to be considered:</p>
+<p><img alt="" src="conditions.jpg" /></p>
+<h2 id="adaptive-query-execution">Adaptive Query Execution</h2>
+<p>Every time that you need to carry out a shuffle operation, the <strong>catalyst</strong> process is repeated again, because there are many parameters that have to be checked.</p>
+<p><img alt="" src="catalyst.jpg" /></p>
+<p>The main idea of AQE is to do reviews at each stage boundary.</p>
+<p>If we want to carry out a join operation to identify the sales carried out in NY.
+The sales dataset is partitioned by the stores, so we have multiple partitions (blocks) depending on the store_id.</p>
+<p>WIthout optimization we would need to carry out the join on all the stores and then apply a filter on NY.</p>
+<p>With AQE, we can partition data through broadcast hash join.</p>
+<p><img alt="" src="dynamic.jpg" /></p>
+<p><strong>Drawbacks</strong></p>
+<ul>
+<li>The execution stops at each stage boundary for SPark to review its plan but the gain in performance in usually worth</li>
+<li>The Spark UI is more difficult to read as each stage becomes a different job</li>
 </ul>
 
   <hr>
@@ -638,11 +761,11 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 12, 2022 10:20:30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 19, 2022 09:59:29</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 27, 2022 14:56:54</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 19, 2022 09:59:29</span>
       
     
   </small>

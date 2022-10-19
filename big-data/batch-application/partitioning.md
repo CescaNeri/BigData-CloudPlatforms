@@ -93,3 +93,4 @@ Tuning memory can be done by setting the amount of memory per executor.
 We should keep in mind that executors with too much memory often result in excessive garbage collection delays.
 
 ![](memory.jpg)
+

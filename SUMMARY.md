@@ -2,3 +2,4 @@
 * [Infrastructure and Architecture](big-data/infrastructures-architectures/)
 * [Distributed File Systems](big-data/distributed-file-system/)
 * [Batch Application](big-data/batch-application/)
+* [SQL on Hadoop](big-data/sql-hadoop/)
