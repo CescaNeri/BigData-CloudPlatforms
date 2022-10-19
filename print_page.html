@@ -679,6 +679,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/streaming/architecture.html" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -911,6 +925,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-streaming-architecture" class="md-nav__link">
+    16. Architecture
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1135,6 +1156,13 @@
           <li class="md-nav__item">
   <a href="#big-data-streaming-data-streaming" class="md-nav__link">
     15. Data Streaming Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-data-streaming-architecture" class="md-nav__link">
+    16. Architecture
   </a>
   
 </li>
@@ -2246,8 +2274,63 @@ The sales dataset is partitioned by the stores, so we have multiple partitions (
 <p>Big data is not just about <em>batch analysis</em>, but also about analyzing <strong>data streams</strong>.</p>
 <p>Streaming data processing is a big deal in big data for many reasons:</p>
 <ul>
-<li>Latency ()</li>
-<li>Workload balancing</li>
+<li>Latency (produce results in a more timely manner)</li>
+<li>Workload balancing (distribute the workload in an efficient way)</li>
+</ul>
+<p>Despite this business-driven surge of interest in streaming, batch system are generally more mature than their streaming brethren.</p>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li>Operational monitoring</li>
+<li>Web analytics</li>
+<li>Online advertising</li>
+<li>Social media</li>
+<li>Intern of Things</li>
+</ul>
+<h2 id="big-data-streaming-data-streaming-real-time-data-streaming">Real time Data Streaming</h2>
+<p><img alt="" src="big-data/streaming/real-time.jpg" /></p>
+<p>For some systems, real-time is crucial. For example, a system that displays stock options has no tolerance for delay.</p>
+<p>In some systems, delays would imply the total system failure (like with pacemaker).</p>
+<h2 id="big-data-streaming-data-streaming-streaming-system">Streaming System</h2>
+<p>The term streaming has been used for a variety of different things but in our context, a system for data streaming is a type of data processing engine that is designed with infinite datasets in mind.</p>
+<p>Both batch engines and streaming engines can be used to process infinite datasets.</p>
+<p><strong>Data Streaming Characteristics</strong>:</p>
+<ul>
+<li>Infinite dataset (no control over the order in which elements arrive)</li>
+<li>Infinite computation (there must be a plan to avoid overflowing and enable auto-scalability)</li>
+<li>Low-latency , approximate and speculative results<ul>
+<li>Since we want to process data in real-time, data can usually be processes a single time</li>
+<li>Only a fraction of the dataset can be kept in memory for analysis</li>
+<li>Approximation may be required to accommodate the low-latency requirements</li>
+</ul>
+</li>
+</ul>
+<h2 id="big-data-streaming-data-streaming-data-stream-models">Data Stream Models</h2>
+<ul>
+<li><strong>Time series Model</strong> (stock prices)</li>
+<li><strong>Cash Register Model</strong> (packages sent to IP addresses)</li>
+<li><strong>Turnstile Model</strong> (people entering a subway)</li>
+</ul></section><section class="print-page" id="big-data-streaming-architecture"><h1 id="big-data-streaming-architecture-architecture">Architecture</h1>
+<p><img alt="" src="big-data/streaming/architecture.jpg" /></p>
+<p>There is a lot of data movements among the different phases, which can be handles directly in the application that carry out the different activities or relying on a <strong>message queueing service</strong>.</p>
+<p>This message queueing service works as a message bus connected to the single applications.</p>
+<h2 id="big-data-streaming-architecture-message-queuing-service">Message Queuing Service</h2>
+<p>The message queueing tier handles the transportation of data between different tiers.</p>
+<ul>
+<li>By decoupling the pipeline of operations, each node in the cluster will do one job only</li>
+<li>Message queueing provides a solid framework for a safe communication between such nodes</li>
+<li>Message queuing handles funneling of n data streams to m consumers</li>
+</ul>
+<p>In the message queueing system, we have he notion of a <strong>borker</strong>, which handles the communication, by means of queues.
+The broker creates different queues, one for each topic, and keeps the data for a certain amount of time.</p>
+<p><img alt="" src="big-data/streaming/broker.jpg" /></p>
+<p>We can decide the level of <strong>delivery semantics</strong>, which refers to the level of precision in sending the message form producer to consumer.</p>
+<ul>
+<li><strong>Exactly once</strong>: a message is never lost and is read once and only once </li>
+<li><strong>At most once</strong>: a message may get lost, but it will never be read twice</li>
+<li><strong>At least once</strong>: a message will never be lost, but it may be read twice<ul>
+<li>Less control but you avoid data getting lost (tradeoff)</li>
+</ul>
+</li>
 </ul></section><h1 class='nav-section-title-end'>Ended: Data Streaming</h1></div>
 
 
