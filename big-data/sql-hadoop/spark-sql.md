@@ -105,10 +105,3 @@ With AQE, we can partition data through broadcast hash join.
 
 - The execution stops at each stage boundary for SPark to review its plan but the gain in performance in usually worth
 - The Spark UI is more difficult to read as each stage becomes a different job
-
-
-
-
-
-
-

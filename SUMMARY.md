@@ -3,3 +3,5 @@
 * [Distributed File Systems](big-data/distributed-file-system/)
 * [Batch Application](big-data/batch-application/)
 * [SQL on Hadoop](big-data/sql-hadoop/)
+* [NoSQL DBMSs](big-data/nosql-dbms/)
+* [Data Streaming](big-data/streaming/)

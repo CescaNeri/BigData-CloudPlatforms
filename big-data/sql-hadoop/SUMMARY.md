@@ -1,1 +1,1 @@
-* [Apache Hive](apache-hive.md)
+* [Spark SQL](spark-sql.md)
