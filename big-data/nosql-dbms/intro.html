@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nosql-dbms" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -620,10 +625,50 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="intro.html" class="md-nav__link md-nav__link--active">
         Introduction
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nosql-in-the-big-data-world" class="md-nav__link">
+    NoSQL in the Big Data world
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    Data Models
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -744,6 +789,30 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nosql-in-the-big-data-world" class="md-nav__link">
+    NoSQL in the Big Data world
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    Data Models
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -762,16 +831,42 @@
 
 
 
-  <h1>Introduction</h1>
-
-
+<h1 id="nosql-dbms">NoSQL DBMS</h1>
+<p>Relational DBMS have lots of features like ACID properties, data integration and normalization schemas, standard model and query language and robustness.</p>
+<p>However, a part from advantages, RDBMS have also weaknesses:</p>
+<ul>
+<li>Impedance mismatch (data are stored according to the relational model, but applications to modify them typically rely on the object-oriented model)</li>
+<li>Painful scaling-out (not suited for a cluster architecture and distributed environments)</li>
+<li>Consistency vs latency (today's applications require high reading/writing throughput with low latency)</li>
+<li>Schema rigidity (schema evolution is often expensive)</li>
+</ul>
+<h2 id="nosql-in-the-big-data-world">NoSQL in the Big Data world</h2>
+<p>NoSQL systems are mainly used for operational workloads (<strong>OLTP</strong>).</p>
+<p>Big data technologies are mainly used for analytical workloads (<strong>OLAP</strong>).</p>
+<h2 id="data-models">Data Models</h2>
+<p>One of the key challenges is to understand which one fits best with the required application:</p>
+<p><img alt="" src="data-model.jpg" /></p>
+<p><strong>Graph Data Model</strong></p>
+<p>Each database contains one or more graphs. 
+Each graph contains <strong>vertices</strong> and <strong>arcs</strong>.</p>
+<ul>
+<li>Vertices: usually represent real-world entities</li>
+<li>Arcs: represent direct relationships between the vertices</li>
+</ul>
+<p>The graph data model is intrinsically different form the others:</p>
+<ul>
+<li>It is focused on the relationships rather than on the entities per-se</li>
+<li>It has limited <strong>scalability</strong> (it is often possible to shard a graph on several machines without cutting several arcs)</li>
+<li>It is a data-driven modeling</li>
+<li>It is based on the concept of <strong>encapsulation</strong></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 19, 2022 10:08:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 10:06:14</span>
       
         <br>
         Created:
@@ -789,7 +884,7 @@
   
     <div class="md-source-date">
       <small>
-          Authors: <span class='git-page-authors git-authors'></span>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:104086181+cescaneri@users.noreply.github.com'>Francesca Neri</a></span>
       </small>
     </div>
   

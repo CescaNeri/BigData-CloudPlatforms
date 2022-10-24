@@ -2294,7 +2294,35 @@ The sales dataset is partitioned by the stores, so we have multiple partitions (
                         <h1 class='nav-section-title' id='section-nosql-dbmss'>
                             NoSQL DBMSs <a class='headerlink' href='#section-nosql-dbmss' title='Permanent link'>↵</a>
                         </h1>
-                        <h1 class='nav-section-title-end'>Ended: NoSQL DBMSs</h1>
+                        <section class="print-page" id="big-data-nosql-dbms-intro"><h1 id="big-data-nosql-dbms-intro-nosql-dbms">NoSQL DBMS</h1>
+<p>Relational DBMS have lots of features like ACID properties, data integration and normalization schemas, standard model and query language and robustness.</p>
+<p>However, a part from advantages, RDBMS have also weaknesses:</p>
+<ul>
+<li>Impedance mismatch (data are stored according to the relational model, but applications to modify them typically rely on the object-oriented model)</li>
+<li>Painful scaling-out (not suited for a cluster architecture and distributed environments)</li>
+<li>Consistency vs latency (today's applications require high reading/writing throughput with low latency)</li>
+<li>Schema rigidity (schema evolution is often expensive)</li>
+</ul>
+<h2 id="big-data-nosql-dbms-intro-nosql-in-the-big-data-world">NoSQL in the Big Data world</h2>
+<p>NoSQL systems are mainly used for operational workloads (<strong>OLTP</strong>).</p>
+<p>Big data technologies are mainly used for analytical workloads (<strong>OLAP</strong>).</p>
+<h2 id="big-data-nosql-dbms-intro-data-models">Data Models</h2>
+<p>One of the key challenges is to understand which one fits best with the required application:</p>
+<p><img alt="" src="big-data/nosql-dbms/data-model.jpg" /></p>
+<p><strong>Graph Data Model</strong></p>
+<p>Each database contains one or more graphs. 
+Each graph contains <strong>vertices</strong> and <strong>arcs</strong>.</p>
+<ul>
+<li>Vertices: usually represent real-world entities</li>
+<li>Arcs: represent direct relationships between the vertices</li>
+</ul>
+<p>The graph data model is intrinsically different form the others:</p>
+<ul>
+<li>It is focused on the relationships rather than on the entities per-se</li>
+<li>It has limited <strong>scalability</strong> (it is often possible to shard a graph on several machines without cutting several arcs)</li>
+<li>It is a data-driven modeling</li>
+<li>It is based on the concept of <strong>encapsulation</strong></li>
+</ul></section><h1 class='nav-section-title-end'>Ended: NoSQL DBMSs</h1>
                         <h1 class='nav-section-title' id='section-data-streaming'>
                             Data Streaming <a class='headerlink' href='#section-data-streaming' title='Permanent link'>↵</a>
                         </h1>
