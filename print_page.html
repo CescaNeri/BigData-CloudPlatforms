@@ -631,6 +631,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/nosql-dbms/consistency.html" class="md-nav__link">
+        Managing Consistency
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -919,6 +933,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-nosql-dbms-consistency" class="md-nav__link">
+    15. Managing Consistency
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -934,21 +955,21 @@
         
           <li class="md-nav__item">
   <a href="#big-data-streaming-data-streaming" class="md-nav__link">
-    15. Data Streaming Introduction
+    16. Data Streaming Introduction
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#big-data-streaming-architecture" class="md-nav__link">
-    16. Architecture
+    17. Architecture
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#big-data-streaming-algorithms" class="md-nav__link">
-    17. Algorithms
+    18. Algorithms
   </a>
   
 </li>
@@ -1161,6 +1182,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-nosql-dbms-consistency" class="md-nav__link">
+    15. Managing Consistency
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1176,21 +1204,21 @@
         
           <li class="md-nav__item">
   <a href="#big-data-streaming-data-streaming" class="md-nav__link">
-    15. Data Streaming Introduction
+    16. Data Streaming Introduction
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#big-data-streaming-architecture" class="md-nav__link">
-    16. Architecture
+    17. Architecture
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#big-data-streaming-algorithms" class="md-nav__link">
-    17. Algorithms
+    18. Algorithms
   </a>
   
 </li>
@@ -2378,7 +2406,33 @@ The loss of a node does not compromise reads nor writes.</p>
 <li>Conflicts</li>
 <li>Delay in write propagation can be a source of inconsistency</li>
 <li>Two users may update the same value from different replicas</li>
-</ul></section><h1 class='nav-section-title-end'>Ended: NoSQL DBMSs</h1>
+</ul></section><section class="print-page" id="big-data-nosql-dbms-consistency"><h1 id="big-data-nosql-dbms-consistency-managing-consistency">Managing Consistency</h1>
+<p>RDBMS come from decades of widespread usage with a strong focus on data consistency and years of research activities to optimize performances.</p>
+<p>NoSQL systems are designed to succeed  where RDBMS fail:</p>
+<ul>
+<li>Strong focus on data sharding and high availability</li>
+<li>Quite simple systems</li>
+<li>Speed and manageability rather than consistency at all costs</li>
+</ul>
+<h2 id="big-data-nosql-dbms-consistency-cap-theorem">CAP Theorem</h2>
+<p>According to the CAP theorem, only two of the following three properties can be guaranteed:</p>
+<ul>
+<li><strong>Consistency</strong> (every node returns the same, most recent, successful write)</li>
+<li><strong>Availability</strong> </li>
+<li><strong>Partition Tolerance</strong> (the system continues to function and upholds its consistency guarantees in spite of network partitions)</li>
+</ul>
+<p>In distributed systems, network partitioning is inevitably a possibility.</p>
+<p>It sacrifices consistency over latency.</p>
+<h2 id="big-data-nosql-dbms-consistency-pacelc-theorem">PACELC Theorem</h2>
+<p>It is an evolution of the CAP theorem.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">{</span><span class="n">Partition</span><span class="p">}</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="p">{</span><span class="n">Availability</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Consistency</span><span class="o">?</span><span class="p">}</span><span class="w"></span>
+<span class="n">Else</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span><span class="n">Latency</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">Consistency</span><span class="o">?</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="" src="big-data/nosql-dbms/consistency.jpg" /></p>
+<p>Inconsistencies are tolerated in this area because latency is considered as being much more important.</p>
+<p>For example, for Amazon, it is more important that users can navigate quickly rather than consistency in products data.</p>
+<p>This because inconsistency does not impact user experience that much as latency would be.</p></section><h1 class='nav-section-title-end'>Ended: NoSQL DBMSs</h1>
                         <h1 class='nav-section-title' id='section-data-streaming'>
                             Data Streaming <a class='headerlink' href='#section-data-streaming' title='Permanent link'>↵</a>
                         </h1>
