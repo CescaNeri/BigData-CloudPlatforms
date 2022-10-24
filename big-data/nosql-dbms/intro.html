@@ -666,6 +666,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sharding-data" class="md-nav__link">
+    Sharding Data
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -812,6 +819,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sharding-data" class="md-nav__link">
+    Sharding Data
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -860,13 +874,69 @@ Each graph contains <strong>vertices</strong> and <strong>arcs</strong>.</p>
 <li>It is a data-driven modeling</li>
 <li>It is based on the concept of <strong>encapsulation</strong></li>
 </ul>
+<p><strong>Document Data Model</strong></p>
+<p>Each database contains one or more collections, each of which contains a list of documents (JSON).
+Each document contains a set of fields and each field correspond to a key-value pair.</p>
+<p>Depending on the <strong>query</strong> that I want to carry out, I can choose the most suitable model.</p>
+<p><strong>Key-value Data Model</strong></p>
+<p>Each database contains one or more collections and each collection contains a list of key-value pairs.</p>
+<p><strong>Wide Column Data Model</strong></p>
+<p>Each database contains one or more column families and each column family contains a list of row in the form of a key-value pair.</p>
+<p>Each column is a key-value pair itself while rows specify only the columns for which a value exists.</p>
+<p>The query language expressiveness is in between key-value and document data models.</p>
+<h2 id="sharding-data">Sharding Data</h2>
+<p>One of the strengths of NoSQL systems is their <strong>scale-out capability</strong>.
+Two aspects must be considered when deploying on a cluster:</p>
+<ul>
+<li>Sharding (subdividing data in shards that are stored in different machines)</li>
+<li>Replication  (data is copied on several nodes)</li>
+</ul>
+<p><strong>Master-Slave Replication</strong></p>
+<p>Master: manager of the data</p>
+<ul>
+<li>It handles each and every write operation</li>
+<li>It can be chosen or drawn</li>
+</ul>
+<p>Slaves: enables read operations</p>
+<ul>
+<li>It is in sync with the master</li>
+<li>It can become master if the latter fails</li>
+</ul>
+<p>Pros and cons of the master-slave replication:</p>
+<p>PROS:</p>
+<ul>
+<li>Easy handles many read requests</li>
+<li>Useful when the workload mainly consists of reads</li>
+<li>Useful to avoid write conflicts</li>
+</ul>
+<p>CONS:</p>
+<ul>
+<li>The master is a bottleneck</li>
+<li>Delay in write propagation can be a source of inconsistency</li>
+<li>Not ideal when the workload mainly consists or writes</li>
+</ul>
+<p><strong>Peer-to-peer Replication</strong></p>
+<p>Each node has the same importance and can handle write operations.
+The loss of a node does not compromise reads nor writes.</p>
+<p>Pros and cons of the peer-to-peer replication:</p>
+<p>PROS:</p>
+<ul>
+<li>The failure of a node does not interrupt read or write requests</li>
+<li>Write performances easily scale by adding new nodes</li>
+</ul>
+<p>CONS:</p>
+<ul>
+<li>Conflicts</li>
+<li>Delay in write propagation can be a source of inconsistency</li>
+<li>Two users may update the same value from different replicas</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 10:06:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 10:46:39</span>
       
         <br>
         Created:
