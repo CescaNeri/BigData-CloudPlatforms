@@ -97,7 +97,24 @@ They can be based on:
 
 Since late date (data that arrive after the watermark is defined) is realistic, a policy for **allowed lateness** must be defined.
 
+## Algorithms
 
+Consider *n* the space of events captured by the data stream.
+
+Streaming algorithm have the following requirements:
+
+- One-pass (once examined, items must be discarded)
+- Use small space for the internal state
+- Fast update of the internal state
+- Fast computation of answers
+- Provide approximated answers
+
+Analyzing a data stream is challenging due to space constraints, time constraints and algorithm infeasibility in one-pass.
+
+One solution is to rely on *approximated algorithms*, where approximation can be achieved by relying on two main concepts:
+
+- Sampling (sampling algorithms are known on time series and cash register models)
+- Random projections (relies on dimensionality reduction using projection along random vectors)
 
 
 

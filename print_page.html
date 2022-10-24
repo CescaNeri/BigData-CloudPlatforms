@@ -693,6 +693,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="big-data/streaming/algorithms.html" class="md-nav__link">
+        Algorithms
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -932,6 +946,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#big-data-streaming-algorithms" class="md-nav__link">
+    17. Algorithms
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1163,6 +1184,13 @@
           <li class="md-nav__item">
   <a href="#big-data-streaming-architecture" class="md-nav__link">
     16. Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-data-streaming-algorithms" class="md-nav__link">
+    17. Algorithms
   </a>
   
 </li>
@@ -2391,7 +2419,32 @@ They can be based on:</p>
 <li>Element count</li>
 <li>Record features</li>
 </ul>
-<p>Since late date (data that arrive after the watermark is defined) is realistic, a policy for <strong>allowed lateness</strong> must be defined.</p></section><h1 class='nav-section-title-end'>Ended: Data Streaming</h1></div>
+<p>Since late date (data that arrive after the watermark is defined) is realistic, a policy for <strong>allowed lateness</strong> must be defined.</p>
+<h2 id="big-data-streaming-architecture-algorithms">Algorithms</h2>
+<p>Consider <em>n</em> the space of events captured by the data stream.</p>
+<p>Streaming algorithm have the following requirements:</p>
+<ul>
+<li>One-pass (once examined, items must be discarded)</li>
+<li>Use small space for the internal state</li>
+<li>Fast update of the internal state</li>
+<li>Fast computation of answers</li>
+<li>Provide approximated answers</li>
+</ul>
+<p>Analyzing a data stream is challenging due to space constraints, time constraints and algorithm infeasibility in one-pass.</p>
+<p>One solution is to rely on <em>approximated algorithms</em>, where approximation can be achieved by relying on two main concepts:</p>
+<ul>
+<li>Sampling (sampling algorithms are known on time series and cash register models)</li>
+<li>Random projections (relies on dimensionality reduction using projection along random vectors)</li>
+</ul></section><section class="print-page" id="big-data-streaming-algorithms"><h1 id="big-data-streaming-algorithms-algorithms">Algorithms</h1>
+<h2 id="big-data-streaming-algorithms-random-sampling-with-a-reservoir">Random Sampling with a Reservoir</h2>
+<p>Random sampling is a common technique in data streaming.</p>
+<p>Use case: <em>YouTube</em></p>
+<p>The goal is to perform a real-time statistical analysis of the watched videos. On the surface it seems pretty easy, but, how do we know that data is random?</p>
+<p><strong>Reservoir sampling</strong> is based on the notion of reservoir.
+We cannot hold a predetermined number of stream values but, when a new value arrives, we can probabilistically determine whether to add it to out collection or to discard it.</p>
+<p>The reservoir is always filled with the first <em>r</em> values in the stream, where r is the size of the reservoir.</p>
+<p>For any element, the probability to go inside or outside the reservoir is the same.</p>
+<p><img alt="" src="big-data/streaming/reservoir.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Data Streaming</h1></div>
 
 
 

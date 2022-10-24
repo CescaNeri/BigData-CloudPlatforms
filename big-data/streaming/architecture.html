@@ -735,10 +735,31 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    Algorithms
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms.html" class="md-nav__link">
+        Algorithms
+      </a>
     </li>
   
 
@@ -808,6 +829,13 @@
         <li class="md-nav__item">
   <a href="#windowing" class="md-nav__link">
     Windowing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    Algorithms
   </a>
   
 </li>
@@ -914,13 +942,29 @@ They can be based on:</p>
 <li>Record features</li>
 </ul>
 <p>Since late date (data that arrive after the watermark is defined) is realistic, a policy for <strong>allowed lateness</strong> must be defined.</p>
+<h2 id="algorithms">Algorithms</h2>
+<p>Consider <em>n</em> the space of events captured by the data stream.</p>
+<p>Streaming algorithm have the following requirements:</p>
+<ul>
+<li>One-pass (once examined, items must be discarded)</li>
+<li>Use small space for the internal state</li>
+<li>Fast update of the internal state</li>
+<li>Fast computation of answers</li>
+<li>Provide approximated answers</li>
+</ul>
+<p>Analyzing a data stream is challenging due to space constraints, time constraints and algorithm infeasibility in one-pass.</p>
+<p>One solution is to rely on <em>approximated algorithms</em>, where approximation can be achieved by relying on two main concepts:</p>
+<ul>
+<li>Sampling (sampling algorithms are known on time series and cash register models)</li>
+<li>Random projections (relies on dimensionality reduction using projection along random vectors)</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 08:04:06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 08:36:19</span>
       
         <br>
         Created:
@@ -970,6 +1014,21 @@ They can be based on:</p>
           </div>
         </a>
       
+      
+        
+        <a href="algorithms.html" class="md-footer__link md-footer__link--next" aria-label="Next: Algorithms" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Algorithms
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
