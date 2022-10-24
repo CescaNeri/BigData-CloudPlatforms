@@ -721,6 +721,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowing" class="md-nav__link">
+    Windowing
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -784,6 +798,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowing" class="md-nav__link">
+    Windowing
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -826,13 +854,73 @@ The broker creates different queues, one for each topic, and keeps the data for 
 </ul>
 </li>
 </ul>
+<h2 id="analysis">Analysis</h2>
+<p>The analysis tier is the heart of the architecture and handles the analysis of the data.</p>
+<p>In a <strong>continuous query model</strong>, you issue a query once and then it is continuously executed against the data.</p>
+<ul>
+<li>Memory constraints (data cannot be processed all together)</li>
+<li>Time constraints (data that cannot be processed in time may have to be dropped) -&gt; <strong>load shedding</strong></li>
+<li>Algorithms may ose efficacy over time -&gt; <strong>concept dirft</strong></li>
+</ul>
+<p><img alt="" src="query.jpg" /></p>
+<p><strong>stateless query</strong> -&gt; each execution is independent from the other</p>
+<p><strong>Distributed Execution</strong>: it refers to an architecture that is common to different frameworks.</p>
+<p>We can consider three aspects:</p>
+<ol>
+<li>Message delivery semantics</li>
+<li>State management (where to store intermediate state)</li>
+<li>Fault tolerance <ul>
+<li>Job replication (many nodes carry out the same job)</li>
+<li>Rollback recovery (periodically store checkpoints and maintain a log of operations)</li>
+</ul>
+</li>
+</ol>
+<h2 id="windowing">Windowing</h2>
+<p>Windowing techniques can be adopted to carry out analysis on a per-window basis (instead of a per-item basis).</p>
+<p>In general, windows are defined by:</p>
+<ul>
+<li>Length (number of contained items)</li>
+<li>Period (period after which the items in the window are processed)</li>
+</ul>
+<p>We can identify two types of windows:</p>
+<ol>
+<li><strong>Sliding windows</strong> (define length and period in terms of stream time)<ul>
+<li>Fixed windows (length and period are the same)</li>
+<li>Overlapping windows (length is greater than the period)</li>
+<li>Sampling period (length is smaller than the period)</li>
+</ul>
+</li>
+<li><strong>Data-driven windows</strong> (define the length in terms of the content that comes with the data)</li>
+</ol>
+<p><strong>Stream time and Event time</strong></p>
+<p>Ideally, an event is processed exactly as it happens. In reality, there is a different between the time at which an event occurs (<strong>event time</strong>) and the time at which an event enters the streaming system (<strong>stream time</strong>).</p>
+<p>The time difference is called <strong>skew</strong> and it may be due to:</p>
+<ul>
+<li>Hardware issues</li>
+<li>Software issues</li>
+</ul>
+<p><strong>Windowing by stream time</strong></p>
+<p>It has an extremely straightforward implementation, windows are always complete and it is possible to infer information about the source as it is observed.</p>
+<p>On the other hand, event time cannot play an important role and, even if the data source sends events ordered by event item, it is not guaranteed that they arrive immediately or in the same order.</p>
+<p><strong>Windowing by event time</strong></p>
+<p>It is the gold standard of windowing.
+However, it is impossible to precisely know when the window can be closed. Also, extended window lifetime implies more buffering of data and most processing systems lack native support.</p>
+<p><strong>Triggers</strong> can be applied to declare intervals of intermediate processing of windows.
+They can be based on:</p>
+<ul>
+<li>Watermark progress</li>
+<li>Processing time progress</li>
+<li>Element count</li>
+<li>Record features</li>
+</ul>
+<p>Since late date (data that arrive after the watermark is defined) is realistic, a policy for <strong>allowed lateness</strong> must be defined.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 19, 2022 10:54:07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 08:04:06</span>
       
         <br>
         Created:
