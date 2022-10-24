@@ -51,3 +51,29 @@ if I know the maximum number of initial zeros ever observed is n, than i can gue
 
 ![](hyperloglog.jpg)
 
+## Membership
+
+Use case: *YouTube*
+
+The goal is to identify whether a certain video has been viewed.
+
+We can rely on an old data structure: **Bloom filters**.
+A bloom filter can return false positives, but no false negatives.
+
+A bloom filter is an array of m bits, with m > n.
+Incoming items are processed by a series of hash functions.
+
+The optimal number of hash functions depends on the desired probability of false positives.
+The optimal number of bits also depends on the number of expected elements.
+
+## Frequency
+
+Use case: *YouTube*
+
+We want to know how many times has a specific video been viewed today.
+
+We want a space efficient structure and the answer relies on hashes and builds on the concept of Bloom filter.
+
+**Count-Min Sketch**: it is the most common algorithm for this problem
+
+![](count-min.jpg)

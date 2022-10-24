@@ -742,6 +742,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#membership" class="md-nav__link">
+    Membership
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency" class="md-nav__link">
+    Frequency
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -812,6 +826,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#membership" class="md-nav__link">
+    Membership
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency" class="md-nav__link">
+    Frequency
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -865,13 +893,28 @@ We cannot hold a predetermined number of stream values but, when a new value arr
 </ul>
 <p>if I know the maximum number of initial zeros ever observed is n, than i can guess that it must have taken approximately 2^n attempts.</p>
 <p><img alt="" src="hyperloglog.jpg" /></p>
+<h2 id="membership">Membership</h2>
+<p>Use case: <em>YouTube</em></p>
+<p>The goal is to identify whether a certain video has been viewed.</p>
+<p>We can rely on an old data structure: <strong>Bloom filters</strong>.
+A bloom filter can return false positives, but no false negatives.</p>
+<p>A bloom filter is an array of m bits, with m &gt; n.
+Incoming items are processed by a series of hash functions.</p>
+<p>The optimal number of hash functions depends on the desired probability of false positives.
+The optimal number of bits also depends on the number of expected elements.</p>
+<h2 id="frequency">Frequency</h2>
+<p>Use case: <em>YouTube</em></p>
+<p>We want to know how many times has a specific video been viewed today.</p>
+<p>We want a space efficient structure and the answer relies on hashes and builds on the concept of Bloom filter.</p>
+<p><strong>Count-Min Sketch</strong>: it is the most common algorithm for this problem</p>
+<p><img alt="" src="count-min.jpg" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 08:58:18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 09:48:04</span>
       
         <br>
         Created:
