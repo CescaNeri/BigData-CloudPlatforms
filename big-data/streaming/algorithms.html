@@ -735,6 +735,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hyperloglog" class="md-nav__link">
+    Hyperloglog
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -798,6 +805,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hyperloglog" class="md-nav__link">
+    Hyperloglog
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -827,13 +841,37 @@ We cannot hold a predetermined number of stream values but, when a new value arr
 <p>The reservoir is always filled with the first <em>r</em> values in the stream, where r is the size of the reservoir.</p>
 <p>For any element, the probability to go inside or outside the reservoir is the same.</p>
 <p><img alt="" src="reservoir.jpg" /></p>
+<h2 id="hyperloglog">Hyperloglog</h2>
+<p>Count distinct elements.</p>
+<p>Use case: <em>Facebook</em></p>
+<p>The goal is to count the users that are connected to the website.</p>
+<p>There are two general categories for the <em>count-distinct</em> problem.
+<strong>Hash functions</strong> can be used to translate input items to a uniform distribution in some bounded domains.</p>
+<p><strong>Order statistics-based</strong> algorithms:</p>
+<ul>
+<li>Based on the evaluation of the order statistics</li>
+<li>Since the distribution is uniform, we know that the lowest value is 1/number of elements</li>
+<li>ONly the minimum value must be stored (no need to store hash tables)</li>
+</ul>
+<p><strong>Bit-pattern-based</strong> (HyperLogLog) algorithms:</p>
+<p>The basis of the HyperLogLog algorithm is the following observation:</p>
+<p>The cardinality of a multi-set of uniformly distributed random numbers can be estimated calculating the maximum number of leading zeros in the binary representation of each number in the set.</p>
+<p>Given a binary string, the probability to observe:</p>
+<ul>
+<li>1 initial zero: 50%</li>
+<li>2 initial zeros: 25%</li>
+<li>3 initial zeros: 12.5%</li>
+<li>n initial zeros: 1/n</li>
+</ul>
+<p>if I know the maximum number of initial zeros ever observed is n, than i can guess that it must have taken approximately 2^n attempts.</p>
+<p><img alt="" src="hyperloglog.jpg" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 08:36:19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 24, 2022 08:58:18</span>
       
         <br>
         Created:
