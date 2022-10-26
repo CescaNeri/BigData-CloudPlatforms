@@ -769,6 +769,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-platforms/introduction/data-management.html" class="md-nav__link">
+        Data Management
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1042,6 +1056,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-introduction-data-management" class="md-nav__link">
+    20. Data Management
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1307,6 +1328,13 @@
           <li class="md-nav__item">
   <a href="#cloud-platforms-introduction-intro" class="md-nav__link">
     19. From Databases to Data Platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-introduction-data-management" class="md-nav__link">
+    20. Data Management
   </a>
   
 </li>
@@ -2763,7 +2791,128 @@ Drawing a sharp line between storage, computation and analysis is hard. Architec
 <p><strong>Data Platform</strong></p>
 <p>AN integrated set of technologies that collectively meets an organization's end-to-end data needs such as acquisition, storage, preparation, delivery, and governance, as well as a security layer for users and applications.</p>
 <p>We need to relieve users from complexity as they are only interested in the result.</p>
-<p>Also, data transformation must be governed to prevent data platforms turning into a swamp.</p></section><h1 class='nav-section-title-end'>Ended: Cloud Platforms Introduction</h1></div>
+<p>Also, data transformation must be governed to prevent data platforms turning into a swamp.</p>
+<p><strong>Data Management</strong></p>
+<p>Requirements:</p>
+<ul>
+<li>Availability</li>
+<li>Consistency / Integrity</li>
+<li>Security</li>
+<li>Scalability</li>
+<li>Redundancy / Data Quality</li>
+</ul>
+<h2 id="cloud-platforms-introduction-intro-data-provenance-lineage">Data Provenance (lineage)</h2>
+<p>Data that describes the data by indicating the provenance.
+As soon as data arrive in the database, we need to know its provenience.</p>
+<p><em>Use Cases</em>: Research</p>
+<p>Collecting data is expensive so the scientific field is moving towards more collaborative research and organizational boundaries are disappearing.</p>
+<p>Sharing data and metadata across organizations is essential but you need to identify the sources in order to avoid bad quality data.</p>
+<p>For example, astronomers are creating an <strong>international Virtual Observatory</strong>.</p>
+<p>Compression of data can be either lossless of lossy. Compressing data in astronomy can result in data corruption.</p>
+<p><img alt="" src="cloud-platforms/introduction/provenance.jpg" /></p>
+<p>Decide the proper level of provenance is more art than science because storing too much data about provenance can be too burdensome.</p>
+<p><strong>Granularity</strong></p>
+<ul>
+<li>Fine-grained (instance-level): tracking data items</li>
+<li>Course-grained (schema-level): tracking dataset transformation</li>
+</ul>
+<p><strong>Queries</strong>:</p>
+<ul>
+<li>Where (which input did the output come from)</li>
+<li>How (how were the inputs manipulated)</li>
+<li>Why (why was data generated)</li>
+</ul>
+<p><img alt="" src="cloud-platforms/introduction/prov.jpg" /></p>
+<h2 id="cloud-platforms-introduction-intro-data-profiling">Data Profiling</h2>
+<p>In a data lake we have many different resources that need to be profiled.</p>
+<p>In a relational scenario, tables of a relational database are scanned to derive metadata, such as data types and value patterns, completeness and uniqueness of columns, key ad foreign keys, and occasionally, functional dependencies and association rules.</p>
+<p>At some point, collecting and managing data features can become too complex.</p>
+<p>Use cases:</p>
+<ul>
+<li>Query optimization</li>
+<li>Data cleansing</li>
+<li>Data integration and analytics</li>
+</ul>
+<p>However, the results of data profiling are computationally complex to discover.
+Verification of complex constraints on column combinations in a database.</p>
+<h2 id="cloud-platforms-introduction-intro-data-versioning">Data Versioning</h2>
+<p>Version control refers to a class of systems responsible for managing changes to computer programs, documents, or data collection.</p>
+<p>Changes are identified by a number / letter code, termed the revision / version number.</p>
+<p>However, data pipeline is not only about code but also about:</p>
+<ul>
+<li>Model Version control</li>
+<li>Data version control</li>
+<li>Model parameter tracking</li>
+<li>Model performance comparison</li>
+</ul>
+<p>Data versioning support <strong>CRUD</strong> (Create, REad, Update, Delete) operations with versions.</p>
+<p>Storing different versions of a program can result in storage issues. </p>
+<p><img alt="" src="cloud-platforms/introduction/versioning.jpg" /></p>
+<h2 id="cloud-platforms-introduction-intro-compression-and-entity-resolution">Compression and Entity Resolution</h2>
+<p><strong>Compression</strong> allows a concise representation of a dataset in a comprehensible and informative manner.</p>
+<p><strong>Entity resolution</strong> finds records that refer to the same entity across different data sources.</p>
+<p><em>Is using metadata enough?</em></p>
+<p>No, metadata can become bigger than data themselves and data management is still a research issue in data platforms.</p></section><section class="print-page" id="cloud-platforms-introduction-data-management"><h1 id="cloud-platforms-introduction-data-management-data-management">Data Management</h1>
+<p>Requirements:</p>
+<ul>
+<li>Availability</li>
+<li>Consistency / Integrity</li>
+<li>Security</li>
+<li>Scalability</li>
+<li>Redundancy / Data Quality</li>
+</ul>
+<h2 id="cloud-platforms-introduction-data-management-data-provenance-lineage">Data Provenance (lineage)</h2>
+<p>Data that describes the data by indicating the provenance.
+As soon as data arrive in the database, we need to know its provenience.</p>
+<p><em>Use Cases</em>: Research</p>
+<p>Collecting data is expensive so the scientific field is moving towards more collaborative research and organizational boundaries are disappearing.</p>
+<p>Sharing data and metadata across organizations is essential but you need to identify the sources in order to avoid bad quality data.</p>
+<p>For example, astronomers are creating an <strong>international Virtual Observatory</strong>.</p>
+<p>Compression of data can be either lossless of lossy. Compressing data in astronomy can result in data corruption.</p>
+<p><img alt="" src="cloud-platforms/introduction/provenance.jpg" /></p>
+<p>Decide the proper level of provenance is more art than science because storing too much data about provenance can be too burdensome.</p>
+<p><strong>Granularity</strong></p>
+<ul>
+<li>Fine-grained (instance-level): tracking data items</li>
+<li>Course-grained (schema-level): tracking dataset transformation</li>
+</ul>
+<p><strong>Queries</strong>:</p>
+<ul>
+<li>Where (which input did the output come from)</li>
+<li>How (how were the inputs manipulated)</li>
+<li>Why (why was data generated)</li>
+</ul>
+<p><img alt="" src="cloud-platforms/introduction/prov.jpg" /></p>
+<h2 id="cloud-platforms-introduction-data-management-data-profiling">Data Profiling</h2>
+<p>In a data lake we have many different resources that need to be profiled.</p>
+<p>In a relational scenario, tables of a relational database are scanned to derive metadata, such as data types and value patterns, completeness and uniqueness of columns, key ad foreign keys, and occasionally, functional dependencies and association rules.</p>
+<p>At some point, collecting and managing data features can become too complex.</p>
+<p>Use cases:</p>
+<ul>
+<li>Query optimization</li>
+<li>Data cleansing</li>
+<li>Data integration and analytics</li>
+</ul>
+<p>However, the results of data profiling are computationally complex to discover.
+Verification of complex constraints on column combinations in a database.</p>
+<h2 id="cloud-platforms-introduction-data-management-data-versioning">Data Versioning</h2>
+<p>Version control refers to a class of systems responsible for managing changes to computer programs, documents, or data collection.</p>
+<p>Changes are identified by a number / letter code, termed the revision / version number.</p>
+<p>However, data pipeline is not only about code but also about:</p>
+<ul>
+<li>Model Version control</li>
+<li>Data version control</li>
+<li>Model parameter tracking</li>
+<li>Model performance comparison</li>
+</ul>
+<p>Data versioning support <strong>CRUD</strong> (Create, REad, Update, Delete) operations with versions.</p>
+<p>Storing different versions of a program can result in storage issues. </p>
+<p><img alt="" src="cloud-platforms/introduction/versioning.jpg" /></p>
+<h2 id="cloud-platforms-introduction-data-management-compression-and-entity-resolution">Compression and Entity Resolution</h2>
+<p><strong>Compression</strong> allows a concise representation of a dataset in a comprehensible and informative manner.</p>
+<p><strong>Entity resolution</strong> finds records that refer to the same entity across different data sources.</p>
+<p><em>Is using metadata enough?</em></p>
+<p>No, metadata can become bigger than data themselves and data management is still a research issue in data platforms.</p></section><h1 class='nav-section-title-end'>Ended: Cloud Platforms Introduction</h1></div>
 
 
 
