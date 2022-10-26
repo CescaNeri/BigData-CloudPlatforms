@@ -21,6 +21,8 @@ Getting **value** from data is not (only) a matter of storage.
 A database is a **structured** and persistent collection of information about some aspect of the real world organized and stored in a way that facilitates efficient retrieval and modification.
 The structure of a database is determined by an abstract data model.
 
+Operational databases are application-oriented.
+
 **Data Warehouse**
 
 A collection of data that supports decision-making processes.
@@ -31,5 +33,12 @@ It provides the following features:
 - Not volatile
 
 Depending on the application or the workload, we need to identify the most suitable data model to adopt.
+
+Data warehouse allows Operational Data Storage, which integrate data from different applications.
+
+
+
+
+
 
 

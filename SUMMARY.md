@@ -5,3 +5,4 @@
 * [SQL on Hadoop](big-data/sql-hadoop/)
 * [NoSQL DBMSs](big-data/nosql-dbms/)
 * [Data Streaming](big-data/streaming/)
+* [Cloud Platforms Introduction](cloud-platforms/introduction/)
