@@ -1,6 +1,6 @@
 # Course and Exam Details
 
-**Matteo Francia** = Manager of the course, Cloud Platforms
+**Matteo Francia** = Manager of the course, Cloud Platforms (specialized in geo-spatial analytics)
 
 **Enrico Gallinucci** = Big Data (specialized in social data)
 
