@@ -2789,70 +2789,9 @@ It provides the following features:</p>
 <p>Data lakes have increasingly taken the role of data hubs.
 Drawing a sharp line between storage, computation and analysis is hard. Architectural borderlines are blurred and DL are often replaced by <strong>data platforms</strong> or <strong>ecosystem</strong>.</p>
 <p><strong>Data Platform</strong></p>
-<p>AN integrated set of technologies that collectively meets an organization's end-to-end data needs such as acquisition, storage, preparation, delivery, and governance, as well as a security layer for users and applications.</p>
+<p>An integrated set of technologies that collectively meets an organization's end-to-end data needs such as acquisition, storage, preparation, delivery, and governance, as well as a security layer for users and applications.</p>
 <p>We need to relieve users from complexity as they are only interested in the result.</p>
-<p>Also, data transformation must be governed to prevent data platforms turning into a swamp.</p>
-<p><strong>Data Management</strong></p>
-<p>Requirements:</p>
-<ul>
-<li>Availability</li>
-<li>Consistency / Integrity</li>
-<li>Security</li>
-<li>Scalability</li>
-<li>Redundancy / Data Quality</li>
-</ul>
-<h2 id="cloud-platforms-introduction-intro-data-provenance-lineage">Data Provenance (lineage)</h2>
-<p>Data that describes the data by indicating the provenance.
-As soon as data arrive in the database, we need to know its provenience.</p>
-<p><em>Use Cases</em>: Research</p>
-<p>Collecting data is expensive so the scientific field is moving towards more collaborative research and organizational boundaries are disappearing.</p>
-<p>Sharing data and metadata across organizations is essential but you need to identify the sources in order to avoid bad quality data.</p>
-<p>For example, astronomers are creating an <strong>international Virtual Observatory</strong>.</p>
-<p>Compression of data can be either lossless of lossy. Compressing data in astronomy can result in data corruption.</p>
-<p><img alt="" src="cloud-platforms/introduction/provenance.jpg" /></p>
-<p>Decide the proper level of provenance is more art than science because storing too much data about provenance can be too burdensome.</p>
-<p><strong>Granularity</strong></p>
-<ul>
-<li>Fine-grained (instance-level): tracking data items</li>
-<li>Course-grained (schema-level): tracking dataset transformation</li>
-</ul>
-<p><strong>Queries</strong>:</p>
-<ul>
-<li>Where (which input did the output come from)</li>
-<li>How (how were the inputs manipulated)</li>
-<li>Why (why was data generated)</li>
-</ul>
-<p><img alt="" src="cloud-platforms/introduction/prov.jpg" /></p>
-<h2 id="cloud-platforms-introduction-intro-data-profiling">Data Profiling</h2>
-<p>In a data lake we have many different resources that need to be profiled.</p>
-<p>In a relational scenario, tables of a relational database are scanned to derive metadata, such as data types and value patterns, completeness and uniqueness of columns, key ad foreign keys, and occasionally, functional dependencies and association rules.</p>
-<p>At some point, collecting and managing data features can become too complex.</p>
-<p>Use cases:</p>
-<ul>
-<li>Query optimization</li>
-<li>Data cleansing</li>
-<li>Data integration and analytics</li>
-</ul>
-<p>However, the results of data profiling are computationally complex to discover.
-Verification of complex constraints on column combinations in a database.</p>
-<h2 id="cloud-platforms-introduction-intro-data-versioning">Data Versioning</h2>
-<p>Version control refers to a class of systems responsible for managing changes to computer programs, documents, or data collection.</p>
-<p>Changes are identified by a number / letter code, termed the revision / version number.</p>
-<p>However, data pipeline is not only about code but also about:</p>
-<ul>
-<li>Model Version control</li>
-<li>Data version control</li>
-<li>Model parameter tracking</li>
-<li>Model performance comparison</li>
-</ul>
-<p>Data versioning support <strong>CRUD</strong> (Create, REad, Update, Delete) operations with versions.</p>
-<p>Storing different versions of a program can result in storage issues. </p>
-<p><img alt="" src="cloud-platforms/introduction/versioning.jpg" /></p>
-<h2 id="cloud-platforms-introduction-intro-compression-and-entity-resolution">Compression and Entity Resolution</h2>
-<p><strong>Compression</strong> allows a concise representation of a dataset in a comprehensible and informative manner.</p>
-<p><strong>Entity resolution</strong> finds records that refer to the same entity across different data sources.</p>
-<p><em>Is using metadata enough?</em></p>
-<p>No, metadata can become bigger than data themselves and data management is still a research issue in data platforms.</p></section><section class="print-page" id="cloud-platforms-introduction-data-management"><h1 id="cloud-platforms-introduction-data-management-data-management">Data Management</h1>
+<p>Also, data transformation must be governed to prevent data platforms turning into a swamp.</p></section><section class="print-page" id="cloud-platforms-introduction-data-management"><h1 id="cloud-platforms-introduction-data-management-data-management">Data Management</h1>
 <p>Requirements:</p>
 <ul>
 <li>Availability</li>
@@ -2912,7 +2851,30 @@ Verification of complex constraints on column combinations in a database.</p>
 <p><strong>Compression</strong> allows a concise representation of a dataset in a comprehensible and informative manner.</p>
 <p><strong>Entity resolution</strong> finds records that refer to the same entity across different data sources.</p>
 <p><em>Is using metadata enough?</em></p>
-<p>No, metadata can become bigger than data themselves and data management is still a research issue in data platforms.</p></section><h1 class='nav-section-title-end'>Ended: Cloud Platforms Introduction</h1></div>
+<p>No, metadata can become bigger than data themselves and data management is still a research issue in data platforms.</p>
+<h2 id="cloud-platforms-introduction-data-management-data-lakehouse">Data Lakehouse</h2>
+<p>Data lakehouse is a data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouse, enabling business intelligence and machine learning on all data.</p>
+<p>The idea of data lakehouse comes from <em>data bricks</em>: they analyze metadata internally but is subject to vendor lock in.</p>
+<p><img alt="" src="cloud-platforms/introduction/lakehouse.jpg" /></p>
+<h2 id="cloud-platforms-introduction-data-management-data-fabric">Data Fabric</h2>
+<p>Frictionless access and sharing of data in a distributed data environment.</p>
+<ul>
+<li>It enables a single and consistent data management framework, which allows seamless data access and processing by design across otherwise siloed storage</li>
+<li>Leverages human and machine capabilities to access data in place</li>
+<li>Continuously identifies and connects data from disparate applications to discover unique relationships </li>
+</ul>
+<p>It is a unified <strong>architecture</strong> with an integrated set of technologies and services.</p>
+<p>The idea is good but it cannot be applied to companies because, for example, data belonging to a country cannot be shared to other countries.</p>
+<h2 id="cloud-platforms-introduction-data-management-data-mesh-hot-topic-super-new">Data Mesh - hot topic (super new)</h2>
+<p>Distributed data architecture, under centralized governance and standardization for interoperability, enabled by a shared and harmonized self-serve data infrastructure.</p>
+<p>In this case we have common guidelines that must be followed by everybody (domain-oriented decentralized data ownership).</p>
+<h2 id="cloud-platforms-introduction-data-management-hadoop-based-data-platform">Hadoop-based data platform</h2>
+<p><img alt="" src="cloud-platforms/introduction/hadoop.jpg" /></p>
+<p>Many levels of complexity are hidden in these data platforms.</p>
+<h2 id="cloud-platforms-introduction-data-management-data-platform-job-positions">Data Platform - Job Positions</h2>
+<p><img alt="" src="cloud-platforms/introduction/jobs.jpg" /></p>
+<h2 id="cloud-platforms-introduction-data-management-dataops">DataOps</h2>
+<p>From DevOps to DataOps: a collaborative data management practice focused on improving the communication, integration and automation of data flows between data managers and data consumers across an organization.</p></section><h1 class='nav-section-title-end'>Ended: Cloud Platforms Introduction</h1></div>
 
 
 
