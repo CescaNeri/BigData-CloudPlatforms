@@ -86,3 +86,43 @@ Storing different versions of a program can result in storage issues.
 *Is using metadata enough?*
 
 No, metadata can become bigger than data themselves and data management is still a research issue in data platforms.
+
+## Data Lakehouse
+
+Data lakehouse is a data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouse, enabling business intelligence and machine learning on all data.
+
+The idea of data lakehouse comes from *data bricks*: they analyze metadata internally but is subject to vendor lock in.
+
+![](lakehouse.jpg)
+
+## Data Fabric
+
+Frictionless access and sharing of data in a distributed data environment.
+
+- It enables a single and consistent data management framework, which allows seamless data access and processing by design across otherwise siloed storage
+- Leverages human and machine capabilities to access data in place
+- Continuously identifies and connects data from disparate applications to discover unique relationships 
+
+It is a unified **architecture** with an integrated set of technologies and services.
+
+The idea is good but it cannot be applied to companies because, for example, data belonging to a country cannot be shared to other countries.
+
+## Data Mesh - hot topic (super new)
+
+Distributed data architecture, under centralized governance and standardization for interoperability, enabled by a shared and harmonized self-serve data infrastructure.
+
+In this case we have common guidelines that must be followed by everybody (domain-oriented decentralized data ownership).
+
+## Hadoop-based data platform
+
+![](hadoop.jpg)
+
+Many levels of complexity are hidden in these data platforms.
+
+## Data Platform - Job Positions
+
+![](jobs.jpg)
+
+## DataOps
+
+From DevOps to DataOps: a collaborative data management practice focused on improving the communication, integration and automation of data flows between data managers and data consumers across an organization.
