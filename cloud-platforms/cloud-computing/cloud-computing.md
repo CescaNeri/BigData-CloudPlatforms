@@ -72,4 +72,40 @@ On a cloud architecture, you can rely on serverless or managed services.
 - Do not have to set up any machines, the management and backup are taken care for you
 - Pay for machine runtime no matter how long you run the machines and resources that your application uses
 
+Understanding architectures is paramount to successful systems.
+Good architectures help to scale.
 
+**XaaS** (anything as a service)
+
+A collective term that refers to the delivery of anything as a service.
+It encompasses the products, tools and technologies that vendors deliver to users.
+
+![](models.jpg)
+
+Paas and containers are potential solutions to inconsistent infrastructures.
+It provides a platform for users to run their software in which developers write software targeting features/capabilities of the platform.
+
+**Containers** and **virtual machines** are packaged computing environments:
+
+- Containers (self-contained environments)
+- Virtual machines (emulate hardware/software systems on top of hypervisor)
+
+**FaaS** (function as a service)
+
+Coding environment, cloud provider provisions platform tu run the code.
+Infrastructure provisioning and management are invisible to the developer.
+
+Faas is based on a serverless approach, use a compute service to execute code on demand.
+Every function could be considered as a standalone service.
+
+Faas is not appropriate for latency-sensitive applications.
+
+**SaaS** (software as a service)
+
+Application environment where access cloud-based apps run over the internet.
+
+**Data-driven companies**
+
+1. Is the technological infrastructure appropriate to support data collection and analysis?
+2. Are processes extensively digitalized and produce reliable data?
+3. Do we have the right people to drive the project and exploit the result?
