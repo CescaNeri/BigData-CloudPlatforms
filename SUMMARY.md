@@ -6,3 +6,5 @@
 * [NoSQL DBMSs](big-data/nosql-dbms/)
 * [Data Streaming](big-data/streaming/)
 * [Cloud Platforms Introduction](cloud-platforms/introduction/)
+* [Cloud Computing](cloud-platforms/cloud-computing/)
+* [AWS Lab](cloud-platforms/aws-lab/)
