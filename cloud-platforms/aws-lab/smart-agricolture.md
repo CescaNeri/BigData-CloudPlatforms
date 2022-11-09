@@ -38,6 +38,8 @@ We need to create a storage space:
 
 > Services - Storage -S3
 
+Then, we create a bucket:
+
 > Create Bucket
 
 Buckets need to have a **unique name** (landing-raw-wateringsensors-789), we need to choose the location, and ACL (access control list).
