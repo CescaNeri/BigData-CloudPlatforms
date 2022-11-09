@@ -948,6 +948,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#organizing-data-lake" class="md-nav__link">
+    Organizing Data Lake
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -999,13 +1006,63 @@ To choose the most suitable storage platform, we need to consider:</p>
 <li>Access frequency (how often do we access data)</li>
 <li>Analysis to be performed</li>
 </ul>
+<p><strong>AWS S3</strong> - serverless AWS storage service</p>
+<p>AWS S3 saves data as objects within buckets. An object is composed of a file and any metadata that describes that file.</p>
+<p><strong>Buckets</strong> are logical containers for objects.</p>
+<p>Benefits of AWS S3:</p>
+<ul>
+<li>Centralized data architecture</li>
+<li>Decoupling of storage from compute and data processing</li>
+</ul>
+<p><strong>Access frequency (AWS)</strong></p>
+<p>Object storage classes:</p>
+<ul>
+<li>Standard (general purpose)</li>
+<li>Infrequent (rapid access)</li>
+<li>One Zone-IA (lower cost option for infrequently accessed data)</li>
+<li>Glacier (low cost storage class for data archiving)</li>
+<li>Deep Glacier (long-term retention for data accessed once or twice a year)</li>
+<li>Intelligent-Tiering (move objects between access tiers when access patterns change)</li>
+</ul>
+<p><strong>Lifecycle</strong> configuration: a set of rules that define actions that Amazon S3 applies to a group of objects.</p>
+<p>We can identify two types of actions:</p>
+<ol>
+<li>Transition (object transition to another storage class)</li>
+<li>Expiration (AWS deletes expired objects)</li>
+</ol>
+<h2 id="organizing-data-lake">Organizing Data Lake</h2>
+<p>Having consistent principles on how to organize your data is important to build standardized pipelines with the same design with regard to where read/write.
+Also, standardization makes it easier to manage your pipelines at scale and helps users search for data in the storage.</p>
+<p><img alt="" src="data-lake1.jpg" /></p>
+<p><img alt="" src="data-lake2.jpg" /></p>
+<p>Using folders to organize data inside areas into a logical structure can be useful:</p>
+<blockquote>
+<p>Namespace</p>
+</blockquote>
+<p>Logically group multiple pipelines together.</p>
+<blockquote>
+<p>Pipeline name</p>
+</blockquote>
+<p>Each data pipeline should have a name that reflects its purpose.</p>
+<blockquote>
+<p>Data source name</p>
+</blockquote>
+<p>Ingestion layer will assign a name to each data source you bring into the platform</p>
+<blockquote>
+<p>BatchId</p>
+</blockquote>
+<p>Unique identifier for any batch of data that is saved into LA.</p>
+<p>Different areas will have slightly different folder structures:</p>
+<blockquote>
+<p>/landing/ETL/sales_oracle_ingest/customers/01DFTFX89YDFAXREPJTR94</p>
+</blockquote>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 11:00:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 11:50:21</span>
       
         <br>
         Created:
