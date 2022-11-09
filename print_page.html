@@ -831,6 +831,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-platforms/cloud-computing/data-pipeline.html" class="md-nav__link">
+        Data Pipeline
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1193,6 +1207,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-cloud-computing-data-pipeline" class="md-nav__link">
+    22. Data Pipeline
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1208,14 +1229,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    22. California Housing System
+    23. California Housing System
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
-    23. Smart Agriculture
+    24. Smart Agriculture
   </a>
   
 </li>
@@ -1516,6 +1537,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-cloud-computing-data-pipeline" class="md-nav__link">
+    22. Data Pipeline
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1531,14 +1559,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    22. California Housing System
+    23. California Housing System
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
-    23. Smart Agriculture
+    24. Smart Agriculture
   </a>
   
 </li>
@@ -3180,7 +3208,88 @@ Every function could be considered as a standalone service.</p>
 <li>Is the technological infrastructure appropriate to support data collection and analysis?</li>
 <li>Are processes extensively digitalized and produce reliable data?</li>
 <li>Do we have the right people to drive the project and exploit the result?</li>
-</ol></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
+</ol></section><section class="print-page" id="cloud-platforms-cloud-computing-data-pipeline"><h1 id="cloud-platforms-cloud-computing-data-pipeline-building-data-pipelines-in-the-cloud">Building Data Pipelines in the Cloud</h1>
+<p><strong>Data pipeline:</strong> a sequence of operations to transform and consume raw data</p>
+<p><img alt="" src="cloud-platforms/cloud-computing/pipeline.jpg" /></p>
+<p>The pyramid abstracts tons of techniques which if we want to provide them as services, architecting data pipelines on cloud requires:</p>
+<ul>
+<li>Standardization</li>
+<li>Integration</li>
+<li>Orchestration</li>
+<li>Accessibility through simple APIs</li>
+</ul>
+<p><strong>Data pipeline in AWS:</strong></p>
+<p><img alt="" src="cloud-platforms/cloud-computing/aws.jpg" /></p>
+<p>With stream data, data are <em>pushed</em> in the data platform, while with batch data, data are <em>pulled</em> from the repository.</p>
+<p><strong>Data pipeline in Google cloud:</strong></p>
+<p><img alt="" src="cloud-platforms/cloud-computing/google.jpg" /></p>
+<p>The organization of the services is the same, both in AWS and in Google.</p>
+<h2 id="cloud-platforms-cloud-computing-data-pipeline-pipeline-organization">Pipeline Organization</h2>
+<ol>
+<li>Ingestion  (collect raw data from transaction, logs and IoT devices)</li>
+<li>Transformation (make data consumable by sorting, aggregating, and applying business logic to produce meaningful analytical datasets)</li>
+<li>Consume data (querying and BI tools)</li>
+</ol>
+<p><img alt="" src="cloud-platforms/cloud-computing/organization.jpg" /></p>
+<p>This is not a sharp taxonomy, for example data streams can also be processed during the ingestion phase and databases can serve both processing and serving capabilities.</p>
+<h2 id="cloud-platforms-cloud-computing-data-pipeline-storage">Storage</h2>
+<p>The goal of storage is to persist data.
+To choose the most suitable storage platform, we need to consider:</p>
+<ul>
+<li>Storage model (how data are organized)</li>
+<li>Access frequency (how often do we access data)</li>
+<li>Analysis to be performed</li>
+</ul>
+<p><strong>AWS S3</strong> - serverless AWS storage service</p>
+<p>AWS S3 saves data as objects within buckets. An object is composed of a file and any metadata that describes that file.</p>
+<p><strong>Buckets</strong> are logical containers for objects.</p>
+<p>Benefits of AWS S3:</p>
+<ul>
+<li>Centralized data architecture</li>
+<li>Decoupling of storage from compute and data processing</li>
+</ul>
+<p><strong>Access frequency (AWS)</strong></p>
+<p>Object storage classes:</p>
+<ul>
+<li>Standard (general purpose)</li>
+<li>Infrequent (rapid access)</li>
+<li>One Zone-IA (lower cost option for infrequently accessed data)</li>
+<li>Glacier (low cost storage class for data archiving)</li>
+<li>Deep Glacier (long-term retention for data accessed once or twice a year)</li>
+<li>Intelligent-Tiering (move objects between access tiers when access patterns change)</li>
+</ul>
+<p><strong>Lifecycle</strong> configuration: a set of rules that define actions that Amazon S3 applies to a group of objects.</p>
+<p>We can identify two types of actions:</p>
+<ol>
+<li>Transition (object transition to another storage class)</li>
+<li>Expiration (AWS deletes expired objects)</li>
+</ol>
+<h2 id="cloud-platforms-cloud-computing-data-pipeline-organizing-data-lake">Organizing Data Lake</h2>
+<p>Having consistent principles on how to organize your data is important to build standardized pipelines with the same design with regard to where read/write.
+Also, standardization makes it easier to manage your pipelines at scale and helps users search for data in the storage.</p>
+<p><img alt="" src="cloud-platforms/cloud-computing/data-lake1.jpg" /></p>
+<p><img alt="" src="cloud-platforms/cloud-computing/data-lake2.jpg" /></p>
+<p>Using folders to organize data inside areas into a logical structure can be useful:</p>
+<blockquote>
+<p>Namespace</p>
+</blockquote>
+<p>Logically group multiple pipelines together.</p>
+<blockquote>
+<p>Pipeline name</p>
+</blockquote>
+<p>Each data pipeline should have a name that reflects its purpose.</p>
+<blockquote>
+<p>Data source name</p>
+</blockquote>
+<p>Ingestion layer will assign a name to each data source you bring into the platform</p>
+<blockquote>
+<p>BatchId</p>
+</blockquote>
+<p>Unique identifier for any batch of data that is saved into LA.</p>
+<p>Different areas will have slightly different folder structures:</p>
+<blockquote>
+<p>/landing/ETL/sales_oracle_ingest/customers/01DFTFX89YDFAXREPJTR94</p>
+</blockquote></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
                         <h1 class='nav-section-title' id='section-aws-lab'>
                             AWS Lab <a class='headerlink' href='#section-aws-lab' title='Permanent link'>↵</a>
                         </h1>
