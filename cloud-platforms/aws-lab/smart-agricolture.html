@@ -935,6 +935,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#load-data" class="md-nav__link">
+    Load data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook" class="md-nav__link">
+    Notebook
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1012,6 +1026,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#load-data" class="md-nav__link">
+    Load data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook" class="md-nav__link">
+    Notebook
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1066,13 +1094,40 @@ Then, we can choose ti keep it public or set it private.</p>
 <p>Ingestion pipeline -&gt; landing -&gt; algorithm -&gt; staging -&gt; algorithm</p>
 <p>We do not need to know how the storage work, we just need to know where data are stored (<strong>serverless service</strong>).
 It is pay-per-use, any time we move data from a bucket to another, we pay a certain amount of money.</p>
+<h2 id="load-data">Load data</h2>
+<p>Load a CSV data in the bucket.</p>
+<p>The first step is to understand the domain through <strong>AWS sagemaker</strong>.</p>
+<blockquote>
+<p>Notebook - notebook instance - create notebook instance - open Jupyter</p>
+</blockquote>
+<ol>
+<li>Choose a name for the notebook</li>
+<li>Choose the machine (ml.t3.medium)</li>
+</ol>
+<p><strong>AWS wrangler</strong> allows you to use AWS functionalities as if it was pandas (<em>maybe it is a python library</em>).</p>
+<h2 id="notebook">Notebook</h2>
+<p>As soon as you open the jupyter notebook, it asks you to select the <strong>kernel</strong>.</p>
+<blockquote>
+<p>conda_python3</p>
+</blockquote>
+<p><img alt="" src="data.jpg" /></p>
+<p>Get rid of missing and useless data.</p>
+<p><strong>Relational DataWarehouse</strong></p>
+<div class="highlight"><pre><span></span><code>FactTable: (timestamp, hour, date, month, year, sensor, distance, depth, value)
+
+DT-time: (timestamp, hour, date, month, year)
+
+DT-sensor: (sensor, dist, depth)
+
+RELATION: (timestamp, sensor, value)
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 08:54:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 09:47:15</span>
       
         <br>
         Created:
