@@ -13,7 +13,7 @@
     
     
       
-        <title>California Housing System - CescaNeri/BigData-CloudPlatforms</title>
+        <title>Smart Agriculture - CescaNeri/BigData-CloudPlatforms</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#california-house-pricing" class="md-skip">
+        <a href="#from-data-lake-to-data-warehouse" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              California Housing System
+              Smart Agriculture
             
           </span>
         </div>
@@ -865,6 +865,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="california-housing.html" class="md-nav__link">
+        California Housing System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -877,12 +891,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          California Housing System
+          Smart Agriculture
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="california-housing.html" class="md-nav__link md-nav__link--active">
-        California Housing System
+      <a href="smart-agricolture.html" class="md-nav__link md-nav__link--active">
+        Smart Agriculture
       </a>
       
         
@@ -901,15 +915,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#building-data-pipelines" class="md-nav__link">
-    Building Data Pipelines
+  <a href="#scenarios-of-dt-in-agriculture" class="md-nav__link">
+    Scenarios of DT in Agriculture
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#colab-notebook" class="md-nav__link">
-    Colab Notebook
+  <a href="#plan-of-action" class="md-nav__link">
+    Plan of Action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
   </a>
   
 </li>
@@ -918,20 +939,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="smart-agricolture.html" class="md-nav__link">
-        Smart Agriculture
-      </a>
     </li>
   
 
@@ -985,15 +992,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#building-data-pipelines" class="md-nav__link">
-    Building Data Pipelines
+  <a href="#scenarios-of-dt-in-agriculture" class="md-nav__link">
+    Scenarios of DT in Agriculture
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#colab-notebook" class="md-nav__link">
-    Colab Notebook
+  <a href="#plan-of-action" class="md-nav__link">
+    Plan of Action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
   </a>
   
 </li>
@@ -1011,71 +1025,58 @@
               
   
                 
-  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/cloud-platforms/aws-lab/california-housing.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/cloud-platforms/aws-lab/smart-agricolture.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="california-house-pricing">California House Pricing</h1>
-<p>Integrated lab: start from raw data and understand them through machine learning techniques</p>
-<h2 id="building-data-pipelines">Building Data Pipelines</h2>
-<p>Following the CRISP methodology, the steps to undertake to build a data pipeline include:</p>
-<ol>
-<li>Frame the problem and look at the big picture</li>
-<li>Get the data</li>
-<li>Explore the data to gain insights</li>
-<li>Prepare the data</li>
-<li>Explore different models and find the best ones</li>
-<li>Fine-tune your models</li>
-<li>Present your solution</li>
-<li>Launch, monitor, and maintain your system</li>
-</ol>
-<p><strong>Our Task:</strong></p>
-<p>The goal is to predict a district's median housing price.</p>
-<p>With continuous value, the type of analysis that we need to do is <strong>regression</strong>, while with qualitative data we need to do <strong>classification</strong>.</p>
-<div class="highlight"><pre><span></span><code>Supervised: data have labels that describe them
-Unsupervised: no labels
-</code></pre></div>
-<p>In this case, we will have to build a <strong>supervised</strong> model with <strong>regression</strong>.</p>
-<p><img alt="" src="crisp.jpg" /></p>
-<p>To measure the performance of our model, we should check the distance between our value and the real house price.</p>
-<h2 id="colab-notebook">Colab Notebook</h2>
-<ol>
-<li>Install dependencies (keep track of the libraries and their versions)<ul>
-<li>Dependency management</li>
+<h1 id="from-data-lake-to-data-warehouse">From Data Lake to Data Warehouse</h1>
+<p><strong>Context:</strong> Soil moisture monitoring</p>
+<p>Optimizing soil moisture is crucial for watering and crop performance:
+The <strong>goal</strong> is to build an expert system to save water while improving fruit quality, having the following information:</p>
+<ul>
+<li>Soils have different water retention</li>
+<li>Watering systems have different behaviors </li>
+<li>Plants have different water demand</li>
+<li>Sensors produce different measurements with different precisions</li>
 </ul>
-</li>
-<li>Read data<ul>
-<li>Pandas</li>
-<li>Sklearn</li>
-</ul>
-</li>
-<li>Dataset exploration (understand the semantic)</li>
-<li>Transform data (choose the right encoding system based on the data you have. We cannot use an ordinary encoding with nominal values like eye color)<ul>
-<li>One hot encoding</li>
-<li>Ordinary encoding </li>
-</ul>
-</li>
-<li>How to handle missing values:<ul>
-<li>Replace them with default values</li>
-<li>Drop the row</li>
-<li>Drop the column</li>
-</ul>
-</li>
-<li>Check data types and change them to minimize memory occupation (from float64 to float32)</li>
-</ol>
+<h2 id="scenarios-of-dt-in-agriculture">Scenarios of DT in Agriculture</h2>
+<p><strong>Scenario 1:</strong> The technician controls the watering system based on the experience, without the use of digital data / KPIs and automation.</p>
+<p><strong>Scenario 2:</strong> The control of the watering system is refined by observing sensor data (digitalized but no KPIs).</p>
+<p><strong>Scenario 3:</strong> Sensor data feeds a decision support system, knowing how to optimize KPIs, controls the watering system.</p>
+<h2 id="plan-of-action">Plan of Action</h2>
+<p>We need to understand how soil behaves.
+This can be done by simulating the soil behavior according to physical models.</p>
+<p>However, a fine tuning is required and we need to know and parametrize everything.
+Tuning can take months and is extremely time consuming.</p>
+<p>We can use <strong>sensors</strong> to observe the behavior of soil by observing its behavior with and without water.</p>
+<p><img alt="" src="kiwi.jpg" /></p>
+<p>They collected data for 2 years, generating 16GB of data.</p>
+<h2 id="aws">AWS</h2>
+<p>We need to create a storage space:</p>
+<blockquote>
+<p>Services - Storage -S3</p>
+<p>Create Bucket</p>
+</blockquote>
+<p>Buckets need to have a <strong>unique name</strong> (landing-raw-wateringsensors-789), we need to choose the location, and ACL (access control list).
+Then, we can choose ti keep it public or set it private.</p>
+<p>S3 automatically assign an id to each value, but if we add <strong>version control</strong>, it will also assign a <em>version id</em>, which will allow us to keep track or the versions.</p>
+<p><strong>Structure:</strong></p>
+<p>Ingestion pipeline -&gt; landing -&gt; algorithm -&gt; staging -&gt; algorithm</p>
+<p>We do not need to know how the storage work, we just need to know where data are stored (<strong>serverless service</strong>).
+It is pay-per-use, any time we move data from a bucket to another, we pay a certain amount of money.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 09:19:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 08:54:24</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 09:19:41</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 08:54:24</span>
       
     
   </small>
@@ -1107,7 +1108,7 @@ Unsupervised: no labels
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../cloud-computing/cloud-computing.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cloud Computing" rel="prev">
+        <a href="california-housing.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: California Housing System" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1116,26 +1117,11 @@ Unsupervised: no labels
               <span class="md-footer__direction">
                 Previous
               </span>
-              Cloud Computing
+              California Housing System
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="smart-agricolture.html" class="md-footer__link md-footer__link--next" aria-label="Next: Smart Agriculture" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Smart Agriculture
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

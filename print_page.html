@@ -872,7 +872,21 @@
   
     <li class="md-nav__item">
       <a href="cloud-platforms/aws-lab/california-housing.html" class="md-nav__link">
-        California House Pricing
+        California Housing System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-platforms/aws-lab/smart-agricolture.html" class="md-nav__link">
+        Smart Agriculture
       </a>
     </li>
   
@@ -1194,7 +1208,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    22. California House Pricing
+    22. California Housing System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
+    23. Smart Agriculture
   </a>
   
 </li>
@@ -1510,7 +1531,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    22. California House Pricing
+    22. California Housing System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
+    23. Smart Agriculture
   </a>
   
 </li>
@@ -3055,7 +3083,7 @@ Verification of complex constraints on column combinations in a database.</p>
                             Cloud Computing <a class='headerlink' href='#section-cloud-computing' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="cloud-platforms-cloud-computing-cloud-computing"><h1 id="cloud-platforms-cloud-computing-cloud-computing-cloud-computing">Cloud Computing</h1>
-<p>Cloud solutions ae not only related to increased volume of data, but also to changes in the inflow of data.</p>
+<p>Cloud solutions are not only related to increased volume of data, but also to changes in the inflow of data.</p>
 <p><strong>Cloud computing</strong> refers to a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources that can be rapidly provisioned and released with minimal management effort or service provider interaction.</p>
 <p>Cloud characteristics:</p>
 <ul>
@@ -3203,7 +3231,41 @@ Unsupervised: no labels
 </ul>
 </li>
 <li>Check data types and change them to minimize memory occupation (from float64 to float32)</li>
-</ol></section><h1 class='nav-section-title-end'>Ended: AWS Lab</h1></div>
+</ol></section><section class="print-page" id="cloud-platforms-aws-lab-smart-agricolture"><h1 id="cloud-platforms-aws-lab-smart-agricolture-from-data-lake-to-data-warehouse">From Data Lake to Data Warehouse</h1>
+<p><strong>Context:</strong> Soil moisture monitoring</p>
+<p>Optimizing soil moisture is crucial for watering and crop performance:
+The <strong>goal</strong> is to build an expert system to save water while improving fruit quality, having the following information:</p>
+<ul>
+<li>Soils have different water retention</li>
+<li>Watering systems have different behaviors </li>
+<li>Plants have different water demand</li>
+<li>Sensors produce different measurements with different precisions</li>
+</ul>
+<h2 id="cloud-platforms-aws-lab-smart-agricolture-scenarios-of-dt-in-agriculture">Scenarios of DT in Agriculture</h2>
+<p><strong>Scenario 1:</strong> The technician controls the watering system based on the experience, without the use of digital data / KPIs and automation.</p>
+<p><strong>Scenario 2:</strong> The control of the watering system is refined by observing sensor data (digitalized but no KPIs).</p>
+<p><strong>Scenario 3:</strong> Sensor data feeds a decision support system, knowing how to optimize KPIs, controls the watering system.</p>
+<h2 id="cloud-platforms-aws-lab-smart-agricolture-plan-of-action">Plan of Action</h2>
+<p>We need to understand how soil behaves.
+This can be done by simulating the soil behavior according to physical models.</p>
+<p>However, a fine tuning is required and we need to know and parametrize everything.
+Tuning can take months and is extremely time consuming.</p>
+<p>We can use <strong>sensors</strong> to observe the behavior of soil by observing its behavior with and without water.</p>
+<p><img alt="" src="cloud-platforms/aws-lab/kiwi.jpg" /></p>
+<p>They collected data for 2 years, generating 16GB of data.</p>
+<h2 id="cloud-platforms-aws-lab-smart-agricolture-aws">AWS</h2>
+<p>We need to create a storage space:</p>
+<blockquote>
+<p>Services - Storage -S3</p>
+<p>Create Bucket</p>
+</blockquote>
+<p>Buckets need to have a <strong>unique name</strong> (landing-raw-wateringsensors-789), we need to choose the location, and ACL (access control list).
+Then, we can choose ti keep it public or set it private.</p>
+<p>S3 automatically assign an id to each value, but if we add <strong>version control</strong>, it will also assign a <em>version id</em>, which will allow us to keep track or the versions.</p>
+<p><strong>Structure:</strong></p>
+<p>Ingestion pipeline -&gt; landing -&gt; algorithm -&gt; staging -&gt; algorithm</p>
+<p>We do not need to know how the storage work, we just need to know where data are stored (<strong>serverless service</strong>).
+It is pay-per-use, any time we move data from a bucket to another, we pay a certain amount of money.</p></section><h1 class='nav-section-title-end'>Ended: AWS Lab</h1></div>
 
 
 
