@@ -52,4 +52,42 @@ Ingestion pipeline -> landing -> algorithm -> staging -> algorithm
 We do not need to know how the storage work, we just need to know where data are stored (**serverless service**).
 It is pay-per-use, any time we move data from a bucket to another, we pay a certain amount of money.
 
+## Load data
+
+Load a CSV data in the bucket.
+
+The first step is to understand the domain through **AWS sagemaker**.
+
+> Notebook - notebook instance - create notebook instance - open Jupyter
+
+1. Choose a name for the notebook
+2. Choose the machine (ml.t3.medium)
+
+**AWS wrangler** allows you to use AWS functionalities as if it was pandas (*maybe it is a python library*).
+
+## Notebook
+
+As soon as you open the jupyter notebook, it asks you to select the **kernel**.
+
+> conda_python3
+
+![](data.jpg)
+
+Get rid of missing and useless data.
+
+**Relational DataWarehouse**
+
+```
+
+FactTable: (timestamp, hour, date, month, year, sensor, distance, depth, value)
+
+DT-time: (timestamp, hour, date, month, year)
+
+DT-sensor: (sensor, dist, depth)
+
+RELATION: (timestamp, sensor, value)
+
+```
+
+
 
