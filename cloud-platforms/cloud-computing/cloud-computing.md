@@ -1,6 +1,6 @@
 # Cloud Computing
 
-Cloud solutions ae not only related to increased volume of data, but also to changes in the inflow of data.
+Cloud solutions are not only related to increased volume of data, but also to changes in the inflow of data.
 
 **Cloud computing** refers to a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources that can be rapidly provisioned and released with minimal management effort or service provider interaction.
 
