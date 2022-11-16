@@ -3419,7 +3419,20 @@ But, if the DT-sensor primary key was composed just by coordinates, the addition
 <p>security settings - security group - inbound rules - add new rule - all traffic - source: anywhere ipv4</p>
 </blockquote>
 <h2 id="cloud-platforms-aws-lab-smart-agricolture-tableau">Tableau</h2>
-<p>Import data from <strong>server</strong> (postgreSQL) - server name (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com), username and password.</p></section><h1 class='nav-section-title-end'>Ended: AWS Lab</h1></div>
+<p>Import data from <strong>server</strong> (postgreSQL) - server name (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com), username and password.</p>
+<blockquote>
+<p>sheet1 - Groupby: folder</p>
+</blockquote>
+<p>We are missing hierarchies:</p>
+<blockquote>
+<p>select the attributes (date, month, timestamp, year) - new folder - </p>
+</blockquote>
+<p>We need to create the <em>sensor</em> dimension table:</p>
+<blockquote>
+<p>select the attributes (depth, dist, sensor) - new folder</p>
+</blockquote>
+<p>Then, we create a new hierarchy with <em>dist</em> and <em>sensor</em> and one with <em>depth</em> and <em>sensor</em>.
+We put both hierarchies in the <strong>sensor</strong> folder.</p></section><h1 class='nav-section-title-end'>Ended: AWS Lab</h1></div>
 
 
 
