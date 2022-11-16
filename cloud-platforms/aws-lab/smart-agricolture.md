@@ -112,6 +112,20 @@ We need to change a **security option** because we want to use Tableau for analy
 
 Import data from **server** (postgreSQL) - server name (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com), username and password.
 
+> sheet1 - Groupby: folder
+
+We are missing hierarchies:
+
+> select the attributes (date, month, timestamp, year) - new folder - 
+
+We need to create the *sensor* dimension table:
+
+> select the attributes (depth, dist, sensor) - new folder
+
+Then, we create a new hierarchy with *dist* and *sensor* and one with *depth* and *sensor*.
+We put both hierarchies in the **sensor** folder.
+
+
 
 
 
