@@ -963,6 +963,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#amazon-rds-relational-db" class="md-nav__link">
+    Amazon RDS (Relational DB)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tableau" class="md-nav__link">
+    Tableau
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1054,6 +1068,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#amazon-rds-relational-db" class="md-nav__link">
+    Amazon RDS (Relational DB)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tableau" class="md-nav__link">
+    Tableau
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1098,7 +1126,7 @@ Tuning can take months and is extremely time consuming.</p>
 <h2 id="aws">AWS</h2>
 <p>We need to create a storage space:</p>
 <blockquote>
-<p>Services - Storage -S3</p>
+<p>Services - Storage - S3</p>
 </blockquote>
 <p>Then, we create a bucket:</p>
 <blockquote>
@@ -1138,13 +1166,28 @@ DT-sensor: (sensor, dist, depth)
 
 RELATION: (timestamp, sensor, value)
 </code></pre></div>
+<h2 id="amazon-rds-relational-db">Amazon RDS (Relational DB)</h2>
+<blockquote>
+<p>Create DataBase (name: sensor-dwh, password: bigdata2022) - add public access</p>
+</blockquote>
+<p>We added the <em>sensor</em> attribute to the DT-sensor, which serves as <strong>primary key</strong>.</p>
+<p>If I have multiple fields, the primary key is not enough to identify values, we should add another attribute <em>field</em>.
+But, if the DT-sensor primary key was composed just by coordinates, the additional attribute would have to be added to the domain.</p>
+<p>By having the attribute sensor (sub-items: distance, depth, field), we can more easily model the <em>sensor hierarchy</em>, saving time, space and allowing granularity.</p>
+<p>Once the database is created, a URL is assigned to it (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com).</p>
+<p>We need to change a <strong>security option</strong> because we want to use Tableau for analysis (which is outside AWS), so we need to allow the communication between AWS and external entities.</p>
+<blockquote>
+<p>security settings - security group - inbound rules - add new rule - all traffic - source: anywhere ipv4</p>
+</blockquote>
+<h2 id="tableau">Tableau</h2>
+<p>Import data from <strong>server</strong> (postgreSQL) - server name (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com), username and password.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 9, 2022 09:51:28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 16, 2022 09:22:31</span>
       
         <br>
         Created:
