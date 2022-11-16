@@ -3289,7 +3289,65 @@ Also, standardization makes it easier to manage your pipelines at scale and help
 <p>Different areas will have slightly different folder structures:</p>
 <blockquote>
 <p>/landing/ETL/sales_oracle_ingest/customers/01DFTFX89YDFAXREPJTR94</p>
-</blockquote></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
+</blockquote>
+<h2 id="cloud-platforms-cloud-computing-data-pipeline-supporting-data-pipelines">Supporting Data Pipelines</h2>
+<p>We can choose the XaaS configuration:</p>
+<ul>
+<li>IaaS (AWS EC2) - outsource virtual machines to the cloud</li>
+<li>PaaS (AWS EMR) - outsource the data ecosystem to the cloud</li>
+</ul>
+<p>If we want to build a cluster on premise, we will need to buy the hardware and the networking devices.
+On the other hand, by choosing a IaaS, you just need to define virtual machines while with PaaS, you just choose the cluster.</p>
+<ul>
+<li>On premise cost: the price of the hardware is depreciated in three years</li>
+<li>IaaS: on-demand price, you pay for the virtual machines even if you do not use them</li>
+</ul>
+<p>AWS offers different pricing and service solutions for EC2:</p>
+<ul>
+<li>On-Demand pricing: you pay for the machine time by the hour or the second (good for short-term commitments).</li>
+<li>Spot instances: you can request spare EC2 computing capacity when others are not using them (if the 'owner' needs it, AWS will stop your execution).<ul>
+<li>Hourly price is called <em>spot price</em></li>
+</ul>
+</li>
+</ul>
+<p>On the other hand, Amazon EMR allows you to have <strong>Spark clusters</strong>.
+The user access to the cluster and choose the level of abstraction.</p>
+<p>The price depends on the region in which you place the cluster.</p>
+<h2 id="cloud-platforms-cloud-computing-data-pipeline-aws-ec2">AWS EC2</h2>
+<p>Amazon Elastic Compute Cloud is a web service that provides resizable capacity, allowing complete control of computing resources:</p>
+<ul>
+<li>The <strong>instance type</strong> determined the hardware</li>
+<li>The <strong>Amazon Machine image</strong> is a software template (virtual machine image)</li>
+</ul>
+<h2 id="cloud-platforms-cloud-computing-data-pipeline-aws-emr">AWS EMR</h2>
+<p>Amazon EMR is a data platform based on the Hadoop stack in which you can have different types of cluster templates and scalability is managed by AWS.</p>
+<p>The cluster structure is composed by three nodes:</p>
+<ol>
+<li>Master node (controls the cluster, always up and running)</li>
+<li>Core node (core instances run data node daemons)</li>
+<li>Task instances</li>
+</ol>
+<p>Both master and core nodes must always be on, for this reason, this solution is expensive because machines are always up and running.</p>
+<p>The central component of Amazon EMR is the <strong>cluster</strong>.
+The node type identifies the role within the cluster:</p>
+<ul>
+<li><strong>Master</strong> node coordinates the distribution of data and tasks among other nodes</li>
+<li><strong>Core</strong> node runs and store data in the Hadoop Distributed File System</li>
+<li><strong>Task</strong> node only runs tasks</li>
+</ul>
+<p><strong>Spot instances cost strategies:</strong></p>
+<ul>
+<li>Capacity-optimized strategy (allocate instances into the most available pools)</li>
+<li>Lowest-price strategy (allocate instances in pools with lowest price at time of fulfillment)</li>
+</ul>
+<p><img alt="" src="cloud-platforms/cloud-computing/cluster.jpg" /></p>
+<p>Amazon EMR provides two main file systems.
+HDFS and EMRFS specify which file system to use by the prefix.</p>
+<blockquote>
+<p>hdfs://path or s3://DOC EXAMPLE BUCKET1/path</p>
+</blockquote>
+<p><strong>Command Line Interface</strong></p>
+<p>Clusters can be created using the CLI, which is useful for scalability and automation.</p></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
                         <h1 class='nav-section-title' id='section-aws-lab'>
                             AWS Lab <a class='headerlink' href='#section-aws-lab' title='Permanent link'>↵</a>
                         </h1>
