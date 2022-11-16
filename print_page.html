@@ -845,6 +845,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-platforms/cloud-computing/migration.html" class="md-nav__link">
+        Migration Case Study
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1214,6 +1228,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-cloud-computing-migration" class="md-nav__link">
+    23. Migration Case Study
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1229,14 +1250,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    23. California Housing System
+    24. California Housing System
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
-    24. Smart Agriculture
+    25. Smart Agriculture
   </a>
   
 </li>
@@ -1544,6 +1565,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-cloud-computing-migration" class="md-nav__link">
+    23. Migration Case Study
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1559,14 +1587,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    23. California Housing System
+    24. California Housing System
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
-    24. Smart Agriculture
+    25. Smart Agriculture
   </a>
   
 </li>
@@ -3347,7 +3375,32 @@ HDFS and EMRFS specify which file system to use by the prefix.</p>
 <p>hdfs://path or s3://DOC EXAMPLE BUCKET1/path</p>
 </blockquote>
 <p><strong>Command Line Interface</strong></p>
-<p>Clusters can be created using the CLI, which is useful for scalability and automation.</p></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
+<p>Clusters can be created using the CLI, which is useful for scalability and automation.</p></section><section class="print-page" id="cloud-platforms-cloud-computing-migration"><h1 id="cloud-platforms-cloud-computing-migration-cluster-migration">Cluster Migration</h1>
+<p>The goal is to evaluate the costs for a cloud/on-premises data platform.</p>
+<p><img alt="" src="cloud-platforms/cloud-computing/migration.jpg" /></p>
+<p>The average price for one machine (with the features needed) is €3000 and we need 18 machines.
+The total price for hardware is €10,602 a year for three years.</p>
+<p>Concerting the software cost, Cloudera Management System was free until March 2020 then, the cost for one node is €10,000, for a total amount of €180,000 a year.</p>
+<p>They started considering migrating to the cloud with AWS, moving a Hadoop cluster to the cloud.</p>
+<p>Steps:</p>
+<ul>
+<li>Coarse tuning (identify the dominating cost)</li>
+<li>Identify a suitable budget</li>
+<li>Implement and refine (wrong refinements can do a lot of damage)</li>
+</ul>
+<h2 id="cloud-platforms-cloud-computing-migration-on-cloud">On cloud</h2>
+<p>It makes no sense to move the cluster as-is because it is too expensive.
+There is no point in moving 18 machines if we are not using all of them.</p>
+<p>The first thing to do is to understand the <strong>workload</strong>: depending to the stack, the overall target of storage is 50 TB per year (satellite images).</p>
+<p>If we consider different tier plans, for example switching from standard to <em>infrequent access</em>, the overall cost is lower.</p>
+<p>Moving from HDFS to S3, the price is lower but you are losing performance (data locality).</p>
+<p>Given the software requirements, we need:</p>
+<ul>
+<li>1 Master node</li>
+<li>1 Core node</li>
+<li>4 Task nodes</li>
+</ul>
+<p><img alt="" src="cloud-platforms/cloud-computing/cloud-solution.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
                         <h1 class='nav-section-title' id='section-aws-lab'>
                             AWS Lab <a class='headerlink' href='#section-aws-lab' title='Permanent link'>↵</a>
                         </h1>
