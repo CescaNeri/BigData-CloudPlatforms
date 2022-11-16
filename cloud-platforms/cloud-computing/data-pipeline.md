@@ -102,3 +102,69 @@ Different areas will have slightly different folder structures:
 
 > /landing/ETL/sales_oracle_ingest/customers/01DFTFX89YDFAXREPJTR94
 
+## Supporting Data Pipelines
+
+We can choose the XaaS configuration:
+
+- IaaS (AWS EC2) - outsource virtual machines to the cloud
+- PaaS (AWS EMR) - outsource the data ecosystem to the cloud
+
+If we want to build a cluster on premise, we will need to buy the hardware and the networking devices.
+On the other hand, by choosing a IaaS, you just need to define virtual machines while with PaaS, you just choose the cluster.
+
+- On premise cost: the price of the hardware is depreciated in three years
+- IaaS: on-demand price, you pay for the virtual machines even if you do not use them
+
+AWS offers different pricing and service solutions for EC2:
+
+- On-Demand pricing: you pay for the machine time by the hour or the second (good for short-term commitments).
+- Spot instances: you can request spare EC2 computing capacity when others are not using them (if the 'owner' needs it, AWS will stop your execution).
+    - Hourly price is called *spot price*
+
+On the other hand, Amazon EMR allows you to have **Spark clusters**.
+The user access to the cluster and choose the level of abstraction.
+
+The price depends on the region in which you place the cluster.
+
+## AWS EC2
+
+Amazon Elastic Compute Cloud is a web service that provides resizable capacity, allowing complete control of computing resources:
+
+- The **instance type** determined the hardware
+- The **Amazon Machine image** is a software template (virtual machine image)
+
+## AWS EMR
+
+Amazon EMR is a data platform based on the Hadoop stack in which you can have different types of cluster templates and scalability is managed by AWS.
+
+The cluster structure is composed by three nodes:
+
+1. Master node (controls the cluster, always up and running)
+2. Core node (core instances run data node daemons)
+3. Task instances
+
+Both master and core nodes must always be on, for this reason, this solution is expensive because machines are always up and running.
+
+The central component of Amazon EMR is the **cluster**.
+The node type identifies the role within the cluster:
+
+- **Master** node coordinates the distribution of data and tasks among other nodes
+- **Core** node runs and store data in the Hadoop Distributed File System
+- **Task** node only runs tasks
+
+**Spot instances cost strategies:**
+
+- Capacity-optimized strategy (allocate instances into the most available pools)
+- Lowest-price strategy (allocate instances in pools with lowest price at time of fulfillment)
+
+![](cluster.jpg)
+
+Amazon EMR provides two main file systems.
+HDFS and EMRFS specify which file system to use by the prefix.
+
+> hdfs://path or s3://DOC EXAMPLE BUCKET1/path
+
+**Command Line Interface**
+
+Clusters can be created using the CLI, which is useful for scalability and automation.
+
