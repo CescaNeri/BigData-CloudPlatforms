@@ -36,7 +36,7 @@ They collected data for 2 years, generating 16GB of data.
 
 We need to create a storage space:
 
-> Services - Storage -S3
+> Services - Storage - S3
 
 Then, we create a bucket:
 
@@ -90,6 +90,31 @@ DT-sensor: (sensor, dist, depth)
 RELATION: (timestamp, sensor, value)
 
 ```
+
+## Amazon RDS (Relational DB)
+
+> Create DataBase (name: sensor-dwh, password: bigdata2022) - add public access
+
+We added the *sensor* attribute to the DT-sensor, which serves as **primary key**.
+
+If I have multiple fields, the primary key is not enough to identify values, we should add another attribute *field*.
+But, if the DT-sensor primary key was composed just by coordinates, the additional attribute would have to be added to the domain.
+
+By having the attribute sensor (sub-items: distance, depth, field), we can more easily model the *sensor hierarchy*, saving time, space and allowing granularity.
+
+Once the database is created, a URL is assigned to it (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com).
+
+We need to change a **security option** because we want to use Tableau for analysis (which is outside AWS), so we need to allow the communication between AWS and external entities.
+
+> security settings - security group - inbound rules - add new rule - all traffic - source: anywhere ipv4
+
+## Tableau
+
+Import data from **server** (postgreSQL) - server name (sensor-dwh.cepvkrc8ii6y.us-east-1.rds.amazonaws.com), username and password.
+
+
+
+
 
 
 
