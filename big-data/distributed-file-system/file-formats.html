@@ -1133,7 +1133,7 @@ Repetition level indicates at which level we have to create a new list for the c
 We have a notion of <em>row group</em> -&gt; the data are not fully columnar. We do not store all the values of each column continuously.
 Usually, we split the file into row groups (horizontal partitioning) and each block of rows store the data in a columnar way. </p>
 <ul>
-<li><strong>COlumn chunk</strong> (chunk of the data for a particular column)
+<li><strong>Column chunk</strong> (chunk of the data for a particular column)
 All the values of each columns is further subdivided into pages.
 The size of the row group is set to the same size of the block (each block corresponds to a row).
 <strong>Data page size</strong> -&gt; it can be tuned (smaller or larger) depending on what query we need to issue.</li>
@@ -1144,7 +1144,7 @@ The size of the row group is set to the same size of the block (each block corre
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 21, 2022 15:13:57</span>
       
         <br>
         Created:

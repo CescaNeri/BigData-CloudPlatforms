@@ -1118,23 +1118,21 @@
 <h1 id="hadoop-distributed-file-system">Hadoop Distributed File System</h1>
 <p>The first thing that software has to provide is <strong>abstraction</strong>, as we want to interact with the disks of the machines as if it was a single machine.
 We want a single reference and we want to talk to a single entity.</p>
-<ul>
-<li>Master-Slave architecture 
-A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.</li>
-</ul>
+<p><strong>Master-Slave architecture</strong> </p>
+<p>A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.</p>
 <p>The software needs to deal with <strong>big data</strong>:</p>
 <ul>
 <li>Files may be bigger than single disks</li>
 <li>We need to split files into smaller blocks and store them on different machines</li>
 </ul>
-<p>ALso, <strong>fault tolerance</strong> is of key importance: disks can fail, machines can be unreachable, but data should always be available.</p>
+<p>Also, <strong>fault tolerance</strong> is of key importance: disks can fail, machines can be unreachable, but data should always be available.</p>
 <ul>
-<li>we can store multiple copies of each block</li>
+<li>We can store multiple copies of each block</li>
 </ul>
 <h2 id="hdfs-definition">HDFS - definition</h2>
 <p>HDFS is filesystem designed for storing very large files with a streaming data access patterns, running on clusters of commodity hardware.</p>
 <ul>
-<li>Application that run on HDFS need streaming access to their data sets.<ul>
+<li>Applications that run on HDFS need streaming access to their data sets.<ul>
 <li>I do not want to continuously update data with batch operations.</li>
 <li>The emphasis is on high throughput of data access rather than low latency of data access</li>
 </ul>
@@ -1142,10 +1140,8 @@ A single entity works as a master and handles the storage of the data with a set
 </ul>
 <p><strong>Blocks</strong> -&gt; splitting files into block that range between 64MB and 1GB.
 We need blocks because files can be larger than disks.</p>
-<ul>
-<li>Why are blocks this big?
-We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. </li>
-</ul>
+<p><em>Why are blocks this big?</em></p>
+<p>We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. </p>
 <h2 id="master-slave-abstraction">Master - Slave Abstraction</h2>
 <p>Master service -&gt; <em>namenode</em></p>
 <ul>
@@ -1167,11 +1163,11 @@ Slaves -&gt; <em>datanodes</em></li>
 <ul>
 <li>Supported by configuring two separate machines as NNs:<ul>
 <li>One is active (up and running)</li>
-<li>The other is in standby
-In the event of failure of the active NN, the standby NN takes over.</li>
+<li>The other is in standby</li>
 </ul>
 </li>
 </ul>
+<p>In the event of failure of the active NN, the standby NN takes over.</p>
 <p>It s a more complex solution in terms of resources and communication with the network, but it guarantees that in case of failure, there will not be any downtime.</p>
 <h2 id="hdfs-federation">HDFS - federation</h2>
 <p>There is no need to have a single file system, but we can have many systems on the same cluster.
@@ -1191,7 +1187,7 @@ We can create multiple NN that manage different file systems.</p>
 <li>Hadoop models such concepts in a tree-liked fashion and computes the distance between nodes as their distance on the tree.</li>
 </ul>
 <p>The typical rule is to store the first <strong>replica</strong> on the node (n1) where the client issued the write command.
-Replica 2 is stores on a node (n2) in a rack (r2) different form n1.
+Replica 2 is stored on a node (n2) in a rack (r2) different form n1.
 Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
 <p><img alt="" src="racks.jpg" /></p>
 <p><strong>Hadoop 3</strong> alternative to simple replication:</p>
@@ -1202,7 +1198,7 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
 <li>Faster writes (when we need to write data, the data to write are less)</li>
 <li>DISADVANTAGES:<ul>
 <li>Higher CPU cost (whenever we want to access data, having split the blocks in further blocks, we need to rebuild the blocks)</li>
-<li>Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)</li>
+<li>Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are split in different machines. Therefore, we cannot apply the data locality principle.)</li>
 <li>Longer recovery time </li>
 </ul>
 </li>
@@ -1231,7 +1227,7 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 29, 2022 20:46:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 21, 2022 15:13:57</span>
       
         <br>
         Created:
