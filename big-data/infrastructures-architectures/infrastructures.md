@@ -74,10 +74,12 @@ Machines that store data are usually up and running 24/7 as data must be persist
 ## Other distributed architectures
 
 **Grid Computing**
+
 - Similar to cluster computing
 - Each node is set to perform a different task
 
 **High Performance Computing**
+
 Massively parallel systems specifically developed to solve CPU-intensive tasks.
 Big data systems are mostly data-intensive.
 
