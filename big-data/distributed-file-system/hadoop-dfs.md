@@ -3,31 +3,32 @@
 The first thing that software has to provide is **abstraction**, as we want to interact with the disks of the machines as if it was a single machine.
 We want a single reference and we want to talk to a single entity.
 
-- Master-Slave architecture 
-A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.
+**Master-Slave architecture** 
 
+A single entity works as a master and handles the storage of the data with a set of slaves that are running of single machines.
 
 The software needs to deal with **big data**:
 
 - Files may be bigger than single disks
 - We need to split files into smaller blocks and store them on different machines
 
-ALso, **fault tolerance** is of key importance: disks can fail, machines can be unreachable, but data should always be available.
+Also, **fault tolerance** is of key importance: disks can fail, machines can be unreachable, but data should always be available.
 
-- we can store multiple copies of each block
+- We can store multiple copies of each block
 
 ## HDFS - definition
 
 HDFS is filesystem designed for storing very large files with a streaming data access patterns, running on clusters of commodity hardware.
 
-- Application that run on HDFS need streaming access to their data sets.
+- Applications that run on HDFS need streaming access to their data sets.
     - I do not want to continuously update data with batch operations.
     - The emphasis is on high throughput of data access rather than low latency of data access
 
 **Blocks** -> splitting files into block that range between 64MB and 1GB.
 We need blocks because files can be larger than disks.
 
-- Why are blocks this big?
+*Why are blocks this big?*
+
 We focus on giving a high throughput as large files split into many small blocks require a huge number of seeks. 
 
 ## Master - Slave Abstraction
@@ -56,6 +57,7 @@ HA indicates a system that can tolerate faults.
 - Supported by configuring two separate machines as NNs:
     - One is active (up and running)
     - The other is in standby
+
 In the event of failure of the active NN, the standby NN takes over.
 
 It s a more complex solution in terms of resources and communication with the network, but it guarantees that in case of failure, there will not be any downtime.
@@ -83,7 +85,7 @@ Nodes are organized in racks, that are organized in data centers.
 - Hadoop models such concepts in a tree-liked fashion and computes the distance between nodes as their distance on the tree.
 
 The typical rule is to store the first **replica** on the node (n1) where the client issued the write command.
-Replica 2 is stores on a node (n2) in a rack (r2) different form n1.
+Replica 2 is stored on a node (n2) in a rack (r2) different form n1.
 Replica 3 is stored on a node different from n2 but tha belongs to r2.
 
 ![](racks.jpg)
@@ -96,7 +98,7 @@ Replica 3 is stored on a node different from n2 but tha belongs to r2.
 - Faster writes (when we need to write data, the data to write are less)
 - DISADVANTAGES:
     - Higher CPU cost (whenever we want to access data, having split the blocks in further blocks, we need to rebuild the blocks)
-    - Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are slit in different machines. Therefore, we cannot apply the data locality principle.)
+    - Loss of data locality (whenever we have a unit of work that is running on a certain machine, the system tries to instatiate this application as close to the data as possible. This works if all the data are in the same machine, but in this solution data are split in different machines. Therefore, we cannot apply the data locality principle.)
     - Longer recovery time 
 
 ## HDFS not always the best fit
