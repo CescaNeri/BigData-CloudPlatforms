@@ -1645,7 +1645,7 @@
                             Big Data Introduction <a class='headerlink' href='#section-big-data-introduction' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="big-data-introduction-intro"><h1 id="big-data-introduction-intro-big-data">Big Data</h1>
-<p>Nowadays, we produce more data than the capability of analyze them.</p>
+<p>Nowadays, we produce more data than the capability of analyzing them.</p>
 <ul>
 <li>Data grows faster than energy on chip</li>
 </ul>
@@ -1657,13 +1657,13 @@ They cannot store all the data but they need to analyze them and store the resul
 <p>How can we distinguish big data from normal data?
 The line is quite vague</p>
 <blockquote>
-<p>Big data exceeds the reach of commonly used hardware environments and software tools to capture, manage, and process it with in a tolerable elapsed time for its user population
-<em>- Teradata</em></p>
+<p>Big data exceeds the reach of commonly used hardware environments and software tools to capture, manage, and process it within a tolerable elapsed time for its user population</p>
+<p><em>- Teradata</em></p>
 </blockquote>
 <p>We can define Big Data following the V's principles:</p>
 <ul>
 <li>VOLUME (dataset that are particularly big)</li>
-<li>VELOCITY, interpreted in two ways:<ul>
+<li>VELOCITY - interpreted in two ways:<ul>
 <li>velocity in which data are injected </li>
 <li>speed of the analysis that you want to run</li>
 </ul>
@@ -1672,7 +1672,7 @@ The line is quite vague</p>
 <li>structured vs semi-structured (JSON)</li>
 </ul>
 </li>
-<li>VERACITY (in many cases, you are dealing on datasets which you cannot fully rely on)<ul>
+<li>VERACITY (in many cases, you are dealing with datasets which you cannot fully rely on)<ul>
 <li>especially true when you are dealing with social data </li>
 </ul>
 </li>
@@ -1682,7 +1682,7 @@ The line is quite vague</p>
 <h2 id="big-data-introduction-intro-big-data-hype">Big Data Hype</h2>
 <p>Big Data comes mainly from two phenomenons:</p>
 <ul>
-<li>explosion of social networks</li>
+<li>Explosion of social networks</li>
 <li>IoT (sensors, smart cities, wearables, industry 4.0)</li>
 </ul>
 <p>The data that comes from these two sources is quite enormous with respect to the amount of data produced by companies. </p>
@@ -1731,25 +1731,22 @@ Collecting Metadata is fundamental to understand, measure, and control the data.
 </ul>
 <p>There are some software tools that allow you to collect metadata. This is a job that cannot be fully integrated. </p>
 <ul>
-<li>human input is required in this phase :sad:</li>
+<li>Human input is required in this phase :sad:</li>
 </ul>
 <h2 id="big-data-introduction-life-cycle-extraction">Extraction</h2>
 <p>Depending on the analysis that you need to run, you work with specific data.</p>
 <ul>
 <li>Transformation and Normalization</li>
-<li>Cleaning and Error Handling<ul>
-<li>Very important because of the untrustworthy of big data</li>
-</ul>
-</li>
+<li>Cleaning and Error Handling (very important because of the untrustworthy of big data)</li>
 </ul>
 <h2 id="big-data-introduction-life-cycle-integration">Integration</h2>
 <p>In most cases, you will work with data coming from different sources, so, you will need to integrate them. </p>
-<p>The activities performed to integrate data:</p>
+<p>The activities performed to integrate data, include:</p>
 <ul>
-<li>discover the relationship between datasets</li>
-<li>standardization, conflict management and entity resolution<ul>
-<li>resolve heterogeneity and conflicts in data structure and semantics</li>
-<li>understand the trade-off of different modeling strategies</li>
+<li>Discover the relationship between datasets</li>
+<li>Standardization, conflict management and entity resolution<ul>
+<li>Resolve heterogeneity and conflicts in data structure and semantics</li>
+<li>Understand the trade-off of different modeling strategies</li>
 </ul>
 </li>
 </ul>
@@ -1763,8 +1760,8 @@ Collecting Metadata is fundamental to understand, measure, and control the data.
 <p>You need to be careful because sometimes it is common to rush to conclusions.
 It is important to verify the results:</p>
 <ul>
-<li>when you work with big data you should work on small artificial samples to verify expectations</li>
-<li>identify a subset of the data collected, analyze it and verify the results.</li>
+<li>When you work with big data you should work on small artificial samples to verify expectations</li>
+<li>Identify a subset of the data collected, analyze it and verify the results.</li>
 </ul>
 <p>It is interesting to remember that CORRELATION between data does not always mean that it is real.</p>
 <blockquote>
@@ -1777,27 +1774,27 @@ Many problems can happen in distributed environments. </p>
 <p>Since data is spread across machines, it is important to replicate those data. 
 Also, it will not be possible to update data at the same time so you will need to deal with consistency (eventual consistency).</p>
 <ul>
-<li>it may happen that data collected at the same time may refer to different momentos.</li>
+<li>It may happen that data collected at the same time may refer to different momentos.</li>
 </ul>
 <h2 id="big-data-introduction-data-processing-big-data-software-stack">Big Data Software Stack</h2>
 <p>New programming environments designed to get their parallelism not from a supercomputer but from computer clusters.</p>
 <p><strong>Apache Hadoop</strong></p>
 <ul>
-<li>automate the management of low level applications</li>
-<li>low-level tool, more advanced tools can be applied to it</li>
+<li>Automate the management of low level applications</li>
+<li>Low-level tool, more advanced tools can be applied to it</li>
 </ul>
 <p>It is a software library (framework) that allows for the distributed processing of large data sets across clusters of computers using simple programming models.</p>
 <p>Rather than relying on hardware to deliver high-availability and reliability, the library itself is designed to detect and handle failures at the application layer, so as to deliver a highly-available service on top of a cluster of computers.</p>
 <p><strong>Hadoop Modules</strong></p>
 <ul>
 <li>HDFS (Hadoop Distributed File System) - storage<ul>
-<li>layer that handles the storage of data across different machines</li>
-<li>provides ABSTRACTION on the storage of data</li>
+<li>Layer that handles the storage of data across different machines</li>
+<li>Provides ABSTRACTION on the storage of data</li>
 </ul>
 </li>
 <li>YARN (Yet Another Resource Negotiator) - computation<ul>
-<li>decides which unit of application runs in which machine</li>
-<li>if some unit of work fails in some machine, it will recreate it in another machine</li>
+<li>Decides which unit of application runs in which machine</li>
+<li>If some unit of work fails in some machine, it will recreate it in another machine</li>
 </ul>
 </li>
 <li>Map Reduce - analysis<ul>
@@ -1809,17 +1806,17 @@ Also, it will not be possible to update data at the same time so you will need t
 <p>Many different programming solutions can be applied on hadoop:</p>
 <ol>
 <li>Analytics (batch)<ul>
-<li>simple/complex computations over large amounts of stored data</li>
+<li>Simple/complex computations over large amounts of stored data</li>
 </ul>
 </li>
 <li>Interactive (real-time)<ul>
-<li>operational perspective </li>
+<li>Operational perspective </li>
 </ul>
 </li>
 <li>Streaming (near-real-time)<ul>
-<li>continuous analytics</li>
-<li>analysis run on continuously incoming data </li>
-<li>there is no much time and resources, you need to adopt some approximation algorithms </li>
+<li>Continuous analytics</li>
+<li>Analysis run on continuously incoming data </li>
+<li>There is no much time and resources, you need to adopt some approximation algorithms </li>
 </ul>
 </li>
 </ol>
@@ -1829,7 +1826,7 @@ Also, it will not be possible to update data at the same time so you will need t
 A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is kept in its original format and is processed to be queried only when needed. 
 It can store a varied amount of formats in big data  ecosystems, from unstructured, semi-structured, to structured data sources.  </p>
 <h2 id="big-data-introduction-data-processing-nosql-newsql-dbmss">NoSQL - NewSQL DBMSs</h2>
-<p>Relational DBMSs have not been designed to easily distributed. NoSQL DBMSs have risen to fill this gap.
+<p>Relational DBMSs have not been designed to be easily distributed. NoSQL DBMSs have risen to fill this gap.
 NewSQL is the latest frontier which combines the benefits from both relational and NoSQL worlds.</p>
 <h2 id="big-data-introduction-data-processing-techniques-for-big-data-analysis">Techniques for Big Data Analysis</h2>
 <ul>

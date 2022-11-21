@@ -11,26 +11,25 @@ Collecting Metadata is fundamental to understand, measure, and control the data.
 
 There are some software tools that allow you to collect metadata. This is a job that cannot be fully integrated. 
 
-- human input is required in this phase :sad:
+- Human input is required in this phase :sad:
 
 ## Extraction
 
 Depending on the analysis that you need to run, you work with specific data.
 
 - Transformation and Normalization
-- Cleaning and Error Handling
-    - Very important because of the untrustworthy of big data
+- Cleaning and Error Handling (very important because of the untrustworthy of big data)
 
 ## Integration
 
 In most cases, you will work with data coming from different sources, so, you will need to integrate them. 
 
-The activities performed to integrate data:
+The activities performed to integrate data, include:
 
-- discover the relationship between datasets
-- standardization, conflict management and entity resolution
-    - resolve heterogeneity and conflicts in data structure and semantics
-    - understand the trade-off of different modeling strategies
+- Discover the relationship between datasets
+- Standardization, conflict management and entity resolution
+    - Resolve heterogeneity and conflicts in data structure and semantics
+    - Understand the trade-off of different modeling strategies
 
 ## Analysis
 
@@ -43,8 +42,8 @@ The activities performed to integrate data:
 You need to be careful because sometimes it is common to rush to conclusions.
 It is important to verify the results:
 
-- when you work with big data you should work on small artificial samples to verify expectations
-- identify a subset of the data collected, analyze it and verify the results.
+- When you work with big data you should work on small artificial samples to verify expectations
+- Identify a subset of the data collected, analyze it and verify the results.
 
 It is interesting to remember that CORRELATION between data does not always mean that it is real.
 
