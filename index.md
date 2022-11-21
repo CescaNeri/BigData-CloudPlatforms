@@ -22,6 +22,13 @@
 
 Questions on all (theoretical and practical) aspects of the course, including both modules and seminars. 
 
+**Exam Dates:**
+
+- 21 December
+- 16 January
+- 30 January
+- 13 February
+
 
 
 
