@@ -1,6 +1,6 @@
 # Big Data
 
-Nowadays, we produce more data than the capability of analyze them.
+Nowadays, we produce more data than the capability of analyzing them.
 
 - Data grows faster than energy on chip
 
@@ -17,18 +17,19 @@ How can we distinguish big data from normal data?
 The line is quite vague
 
 
->Big data exceeds the reach of commonly used hardware environments and software tools to capture, manage, and process it with in a tolerable elapsed time for its user population
+>Big data exceeds the reach of commonly used hardware environments and software tools to capture, manage, and process it within a tolerable elapsed time for its user population
+
 > *- Teradata*
 
 We can define Big Data following the V's principles:
 
 - VOLUME (dataset that are particularly big)
-- VELOCITY, interpreted in two ways:
+- VELOCITY - interpreted in two ways:
     - velocity in which data are injected 
     - speed of the analysis that you want to run
 - VARIETY (many different formats of data)
     - structured vs semi-structured (JSON)
-- VERACITY (in many cases, you are dealing on datasets which you cannot fully rely on)
+- VERACITY (in many cases, you are dealing with datasets which you cannot fully rely on)
     - especially true when you are dealing with social data 
 
 ![](datav.jpg)
@@ -39,7 +40,7 @@ The 'V' concept can be extended but we only consider the first four as they are 
 
 Big Data comes mainly from two phenomenons:
 
-- explosion of social networks
+- Explosion of social networks
 - IoT (sensors, smart cities, wearables, industry 4.0)
 
 The data that comes from these two sources is quite enormous with respect to the amount of data produced by companies. 

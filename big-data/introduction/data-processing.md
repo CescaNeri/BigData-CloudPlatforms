@@ -6,7 +6,7 @@ Many problems can happen in distributed environments.
 Since data is spread across machines, it is important to replicate those data. 
 Also, it will not be possible to update data at the same time so you will need to deal with consistency (eventual consistency).
 
-- it may happen that data collected at the same time may refer to different momentos.
+- It may happen that data collected at the same time may refer to different momentos.
 
 ## Big Data Software Stack
 
@@ -14,8 +14,8 @@ New programming environments designed to get their parallelism not from a superc
 
 **Apache Hadoop**
 
-- automate the management of low level applications
-- low-level tool, more advanced tools can be applied to it
+- Automate the management of low level applications
+- Low-level tool, more advanced tools can be applied to it
 
 It is a software library (framework) that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
 
@@ -24,11 +24,11 @@ Rather than relying on hardware to deliver high-availability and reliability, th
 **Hadoop Modules**
 
 - HDFS (Hadoop Distributed File System) - storage
-    - layer that handles the storage of data across different machines
-    - provides ABSTRACTION on the storage of data
+    - Layer that handles the storage of data across different machines
+    - Provides ABSTRACTION on the storage of data
 - YARN (Yet Another Resource Negotiator) - computation
-    - decides which unit of application runs in which machine
-    - if some unit of work fails in some machine, it will recreate it in another machine
+    - Decides which unit of application runs in which machine
+    - If some unit of work fails in some machine, it will recreate it in another machine
 - Map Reduce - analysis
     - YARN-based system for parallel processing of large data sets
 
@@ -37,13 +37,13 @@ Rather than relying on hardware to deliver high-availability and reliability, th
 Many different programming solutions can be applied on hadoop:
 
 1. Analytics (batch)
-    - simple/complex computations over large amounts of stored data
+    - Simple/complex computations over large amounts of stored data
 2. Interactive (real-time)
-    - operational perspective 
+    - Operational perspective 
 3. Streaming (near-real-time)
-    - continuous analytics
-    - analysis run on continuously incoming data 
-    - there is no much time and resources, you need to adopt some approximation algorithms 
+    - Continuous analytics
+    - Analysis run on continuously incoming data 
+    - There is no much time and resources, you need to adopt some approximation algorithms 
 
 ## Big Data Flow
 
@@ -55,7 +55,7 @@ It can store a varied amount of formats in big data  ecosystems, from unstructur
 
 ## NoSQL - NewSQL DBMSs
 
-Relational DBMSs have not been designed to easily distributed. NoSQL DBMSs have risen to fill this gap.
+Relational DBMSs have not been designed to be easily distributed. NoSQL DBMSs have risen to fill this gap.
 NewSQL is the latest frontier which combines the benefits from both relational and NoSQL worlds.
 
 ## Techniques for Big Data Analysis
@@ -75,6 +75,7 @@ NewSQL is the latest frontier which combines the benefits from both relational a
 - Cloud computing
 
 ## Goals of Analytics
+
 - Descriptive Analytics (give insights into the past)
 - Diagnostic Analytics (understand why something has happened)
     - integrating the dataset analyzed with other data to look for correlation paths
