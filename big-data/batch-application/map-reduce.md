@@ -107,6 +107,7 @@ public class WordCountReducerextendsReducer<Text, IntWritable, Text, IntWritable
 ```
 
 ## Combiners
+
 When the reduce function is associative and commutative, we can push some of what the reducers do to the Map tasks. 
 In this case, we also apply a combiner to the Map function. The combiner function must be **associative** and **commutative.**
 
