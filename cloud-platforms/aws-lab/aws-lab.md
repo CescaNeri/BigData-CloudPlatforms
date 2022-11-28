@@ -10,11 +10,14 @@ We start by creating 2 buckets:
 Then, we upload the three csv filed on the landing bucket and we merge the data into a single data frame:
 
 ```python
-file_names = ["s3://staging-clean-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv", "s3://staging-clean-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv", "s3://staging-clean-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv",]
+file_names = ["s3://staging-clean-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv", 
+"s3://staging-clean-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv", 
+"s3://staging-clean-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv",]
     
 df = pd.concat(map(pd.read_csv, ["s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv", 
                                 "s3://landing-raw-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv", 
-                                "s3://landing-raw-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv"]), ignore_index = True)
+                                "s3://landing-raw-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv"]), 
+                                ignore_index = True)
 print(df)
 ```
 
@@ -45,8 +48,11 @@ The variables contained in the data frame are:
 - Unit Sales
     
 > DT_Customer = (C.City, C.Country, C.State, Customer, Yearly_Income)
+
 > DT_Product = (Category, Subcategory, Family, Product)
+
 > DT_Store = (S.City, S.Country, S.State, Store, Type)
+
 > DT_Date = (Sales_Date)
 
 > FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, *Store_Cost*, *Store_Sales*, *Unit_Sales*)
