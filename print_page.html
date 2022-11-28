@@ -921,6 +921,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-platforms/aws-lab/aws-lab.html" class="md-nav__link">
+        AWS Lab
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1262,6 +1276,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-aws-lab-aws-lab" class="md-nav__link">
+    26. AWS Lab
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1595,6 +1616,13 @@
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
     25. Smart Agriculture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-aws-lab-aws-lab" class="md-nav__link">
+    26. AWS Lab
   </a>
   
 </li>
@@ -3538,7 +3566,76 @@ But, if the DT-sensor primary key was composed just by coordinates, the addition
 <p>select the attributes (depth, dist, sensor) - new folder</p>
 </blockquote>
 <p>Then, we create a new hierarchy with <em>dist</em> and <em>sensor</em> and one with <em>depth</em> and <em>sensor</em>.
-We put both hierarchies in the <strong>sensor</strong> folder.</p></section><h1 class='nav-section-title-end'>Ended: AWS Lab</h1></div>
+We put both hierarchies in the <strong>sensor</strong> folder.</p></section><section class="print-page" id="cloud-platforms-aws-lab-aws-lab"><h1 id="cloud-platforms-aws-lab-aws-lab-aws-lab">AWS Lab</h1>
+<h2 id="cloud-platforms-aws-lab-aws-lab-data-ingestion">Data Ingestion</h2>
+<p>We start by creating 2 buckets:</p>
+<blockquote>
+<p>landing_bucket = "s3://landing-raw-sales-911/"
+staging_bucket = "s3://staging-clean-sales-911/"</p>
+</blockquote>
+<p>Then, we upload the three csv filed on the landing bucket and we merge the data into a single data frame:</p>
+<div class="highlight"><pre><span></span><code><span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;s3://staging-clean-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://staging-clean-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://staging-clean-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv&quot;</span><span class="p">,]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv&quot;</span><span class="p">,</span> 
+                                <span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv&quot;</span><span class="p">,</span> 
+                                <span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv&quot;</span><span class="p">]),</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+<p>Now that we have manipulated data, we store them into the staging bucket:</p>
+<div class="highlight"><pre><span></span><code><span class="n">wr</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">staging_bucket</span> <span class="o">+</span> <span class="s2">&quot;merged-sales-fact&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="cloud-platforms-aws-lab-aws-lab-data-understanding">Data Understanding</h2>
+<p>We study the dataset trying to identify the domain:</p>
+<blockquote>
+<p>df.info()</p>
+</blockquote>
+<p>The variables contained in the data frame are:</p>
+<ul>
+<li>Customer City -&gt; State -&gt; Country</li>
+<li>Customer</li>
+<li>Yearly Income</li>
+<li>Category -&gt; Subcategory -&gt; Family -&gt; Product</li>
+<li>Store City -&gt; State -&gt; Country</li>
+<li>Store</li>
+<li>Type</li>
+<li>Sales Date</li>
+<li>Store Cost</li>
+<li>Store Sales</li>
+<li>Unit Sales</li>
+</ul>
+<blockquote>
+<p>DT_Customer = (C.City, C.Country, C.State, Customer, Yearly_Income)
+DT_Product = (Category, Subcategory, Family, Product)
+DT_Store = (S.City, S.Country, S.State, Store, Type)
+DT_Date = (Sales_Date)</p>
+<p>FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, <em>Store_Cost</em>, <em>Store_Sales</em>, <em>Unit_Sales</em>)</p>
+</blockquote>
+<p>Then, we create a relational DW and we load the tables:</p>
+<div class="highlight"><pre><span></span><code><span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;database-lab.cepvkrc8ii6y.us-east-1.rds.amazonaws.com&quot;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">5432</span>
+<span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;postgres&quot;</span>
+<span class="n">pwd</span> <span class="o">=</span> <span class="s2">&quot;bigdata2022&quot;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;postgres&quot;</span>
+
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;postgresql://</span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">@</span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">port</span><span class="p">),</span> <span class="n">db</span><span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">dt_customer</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;customer&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="n">dt_product</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="n">dt_store</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+<span class="n">dt_date</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+
+<span class="n">ft_sales</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;sale&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="cloud-platforms-aws-lab-aws-lab-tableau">Tableau</h2>
+<p>We load the data on Tableau through Server (PostGRE) and we define query the data to obtain relevant information.</p>
+<p><img alt="" src="cloud-platforms/aws-lab/screen-1.jpg" /></p>
+<p><img alt="" src="cloud-platforms/aws-lab/screen-2.jpg" /></p>
+<p><img alt="" src="cloud-platforms/aws-lab/screen-3.jpg" /></p>
+<p><img alt="" src="cloud-platforms/aws-lab/screen-4.jpg" /></p>
+<p><img alt="" src="cloud-platforms/aws-lab/screen-5.jpg" /></p>
+<p><img alt="" src="cloud-platforms/aws-lab/screen-6.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: AWS Lab</h1></div>
 
 
 
