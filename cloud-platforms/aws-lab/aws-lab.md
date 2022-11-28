@@ -2,18 +2,15 @@
 
 ## Data Ingestion
 
-We start by creating 2 buckets:
+We start by creating 2 buckets, one for raw data (*landing*) and one for cleaned data (*staging*):
 
-> landing_bucket = "s3://landing-raw-sales-911/"
-> staging_bucket = "s3://staging-clean-sales-911/"
+**landing_bucket** = "s3://landing-raw-sales-911/"
 
-Then, we upload the three csv filed on the landing bucket and we merge the data into a single data frame:
+**staging_bucket** = "s3://staging-clean-sales-911/"
+
+Then, we upload the three csv filed on the **landing bucket** and we merge the data into a single data frame:
 
 ```python
-file_names = ["s3://staging-clean-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv", 
-"s3://staging-clean-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv", 
-"s3://staging-clean-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv",]
-    
 df = pd.concat(map(pd.read_csv, ["s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv", 
                                 "s3://landing-raw-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv", 
                                 "s3://landing-raw-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv"]), 
@@ -21,7 +18,7 @@ df = pd.concat(map(pd.read_csv, ["s3://landing-raw-sales-911/sales_fact_1997.sli
 print(df)
 ```
 
-Now that we have manipulated data, we store them into the staging bucket:
+Now that we have prepared data, we store them into the **staging bucket**:
 
 ```python
 wr.s3.to_csv(df = df, path = staging_bucket + "merged-sales-fact", index = False)
@@ -29,7 +26,7 @@ wr.s3.to_csv(df = df, path = staging_bucket + "merged-sales-fact", index = False
 
 ## Data Understanding
 
-We study the dataset trying to identify the domain:
+We study the dataset trying to identify the **domain**:
 
 > df.info()
 
@@ -46,18 +43,20 @@ The variables contained in the data frame are:
 - Store Cost
 - Store Sales
 - Unit Sales
+
+Based on the context and on the purpose of the analysis, we create the following tables:
     
-> DT_Customer = (C.City, C.Country, C.State, Customer, Yearly_Income)
+**DT_Customer** = (C.City, C.Country, C.State, **Customer**, Yearly_Income)
 
-> DT_Product = (Category, Subcategory, Family, Product)
+**DT_Product** = (Category, Subcategory, Family, **Product**)
 
-> DT_Store = (S.City, S.Country, S.State, Store, Type)
+**DT_Store** = (S.City, S.Country, S.State, **Store**, Type)
 
-> DT_Date = (Sales_Date)
+**DT_Date** = (**Sales_Date**)
 
-> FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, *Store_Cost*, *Store_Sales*, *Unit_Sales*)
+**FT_Sale** = (Customer:DT_Customer, Product:DT_Product, Sales_Date, *Store_Cost*, *Store_Sales*, *Unit_Sales*)
 
-Then, we create a relational DW and we load the tables:
+Then, we create a relational DW with RDS and we load the tables that we created:
 
 ```python
 host = "database-lab.cepvkrc8ii6y.us-east-1.rds.amazonaws.com"
@@ -80,7 +79,15 @@ ft_sales.to_sql('sale', engine, index=False, if_exists='replace')
 
 ## Tableau
 
-We load the data on Tableau through Server (PostGRE) and we define query the data to obtain relevant information.
+*Set the public access and the security options*
+
+We load the data on Tableau through Server (PostGRE) and we are ready to query the Data Warehouse to get useful insights.
+
+### Exercise 1:
+
+Display the sum of store sales divided by state:
+
+*to be continued*
 
 ![](screen-1.jpg)
 
