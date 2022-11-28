@@ -975,6 +975,19 @@
     Tableau
   </a>
   
+    <nav class="md-nav" aria-label="Tableau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    Exercise 1:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1052,6 +1065,19 @@
     Tableau
   </a>
   
+    <nav class="md-nav" aria-label="Tableau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    Exercise 1:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1075,27 +1101,21 @@
 
 <h1 id="aws-lab">AWS Lab</h1>
 <h2 id="data-ingestion">Data Ingestion</h2>
-<p>We start by creating 2 buckets:</p>
-<blockquote>
-<p>landing_bucket = "s3://landing-raw-sales-911/"
-staging_bucket = "s3://staging-clean-sales-911/"</p>
-</blockquote>
-<p>Then, we upload the three csv filed on the landing bucket and we merge the data into a single data frame:</p>
-<div class="highlight"><pre><span></span><code><span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;s3://staging-clean-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv&quot;</span><span class="p">,</span> 
-<span class="s2">&quot;s3://staging-clean-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv&quot;</span><span class="p">,</span> 
-<span class="s2">&quot;s3://staging-clean-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv&quot;</span><span class="p">,]</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv&quot;</span><span class="p">,</span> 
+<p>We start by creating 2 buckets, one for raw data (<em>landing</em>) and one for cleaned data (<em>staging</em>):</p>
+<p><strong>landing_bucket</strong> = "s3://landing-raw-sales-911/"</p>
+<p><strong>staging_bucket</strong> = "s3://staging-clean-sales-911/"</p>
+<p>Then, we upload the three csv filed on the <strong>landing bucket</strong> and we merge the data into a single data frame:</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv&quot;</span><span class="p">,</span> 
                                 <span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv&quot;</span><span class="p">,</span> 
                                 <span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv&quot;</span><span class="p">]),</span> 
                                 <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
-<p>Now that we have manipulated data, we store them into the staging bucket:</p>
+<p>Now that we have prepared data, we store them into the <strong>staging bucket</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">wr</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">staging_bucket</span> <span class="o">+</span> <span class="s2">&quot;merged-sales-fact&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="data-understanding">Data Understanding</h2>
-<p>We study the dataset trying to identify the domain:</p>
+<p>We study the dataset trying to identify the <strong>domain</strong>:</p>
 <blockquote>
 <p>df.info()</p>
 </blockquote>
@@ -1113,14 +1133,13 @@ staging_bucket = "s3://staging-clean-sales-911/"</p>
 <li>Store Sales</li>
 <li>Unit Sales</li>
 </ul>
-<blockquote>
-<p>DT_Customer = (C.City, C.Country, C.State, Customer, Yearly_Income)</p>
-<p>DT_Product = (Category, Subcategory, Family, Product)</p>
-<p>DT_Store = (S.City, S.Country, S.State, Store, Type)</p>
-<p>DT_Date = (Sales_Date)</p>
-<p>FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, <em>Store_Cost</em>, <em>Store_Sales</em>, <em>Unit_Sales</em>)</p>
-</blockquote>
-<p>Then, we create a relational DW and we load the tables:</p>
+<p>Based on the context and on the purpose of the analysis, we create the following tables:</p>
+<p><strong>DT_Customer</strong> = (C.City, C.Country, C.State, <strong>Customer</strong>, Yearly_Income)</p>
+<p><strong>DT_Product</strong> = (Category, Subcategory, Family, <strong>Product</strong>)</p>
+<p><strong>DT_Store</strong> = (S.City, S.Country, S.State, <strong>Store</strong>, Type)</p>
+<p><strong>DT_Date</strong> = (<strong>Sales_Date</strong>)</p>
+<p><strong>FT_Sale</strong> = (Customer:DT_Customer, Product:DT_Product, Sales_Date, <em>Store_Cost</em>, <em>Store_Sales</em>, <em>Unit_Sales</em>)</p>
+<p>Then, we create a relational DW with RDS and we load the tables that we created:</p>
 <div class="highlight"><pre><span></span><code><span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;database-lab.cepvkrc8ii6y.us-east-1.rds.amazonaws.com&quot;</span>
 <span class="n">port</span> <span class="o">=</span> <span class="mi">5432</span>
 <span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;postgres&quot;</span>
@@ -1139,7 +1158,11 @@ staging_bucket = "s3://staging-clean-sales-911/"</p>
 <span class="n">ft_sales</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;sale&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="tableau">Tableau</h2>
-<p>We load the data on Tableau through Server (PostGRE) and we define query the data to obtain relevant information.</p>
+<p><em>Set the public access and the security options</em></p>
+<p>We load the data on Tableau through Server (PostGRE) and we are ready to query the Data Warehouse to get useful insights.</p>
+<h3 id="exercise-1">Exercise 1:</h3>
+<p>Display the sum of store sales divided by state:</p>
+<p><em>to be continued</em></p>
 <p><img alt="" src="screen-1.jpg" /></p>
 <p><img alt="" src="screen-2.jpg" /></p>
 <p><img alt="" src="screen-3.jpg" /></p>
@@ -1152,7 +1175,7 @@ staging_bucket = "s3://staging-clean-sales-911/"</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 28, 2022 12:40:39</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 28, 2022 13:46:59</span>
       
         <br>
         Created:
