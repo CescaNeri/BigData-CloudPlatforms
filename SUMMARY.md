@@ -7,4 +7,5 @@
 * [Data Streaming](big-data/streaming/)
 * [Cloud Platforms Introduction](cloud-platforms/introduction/)
 * [Cloud Computing](cloud-platforms/cloud-computing/)
-* [AWS Lab](cloud-platforms/aws-lab/)
+* [Cloud Lab](cloud-platforms/aws-lab/)
+* [AWS Lab](cloud-platforms/exercise/)
