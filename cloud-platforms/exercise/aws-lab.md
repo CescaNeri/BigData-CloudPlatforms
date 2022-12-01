@@ -115,7 +115,7 @@ Considering that the number of stores in each is city is the same (1), we have n
 
 ![](screen-6.jpg)
 
-Looking at the figure, we can clearly identify a pattern between the store sales and the type of store. The store type with highest volume of sales is the **Deluxe Supermarket**, followed by Supermarkets, Gourmet Supermarkets, Mid-size and Small Groceries.
+Looking at the figure, we can clearly identify a pattern between the store sales and the type of store. The store type with the highest volume of sales is the **Deluxe Supermarket**, followed by Supermarkets, Gourmet Supermarkets, Mid-size and Small Groceries.
 
 *Display the store sales for each Store Type. What discrepancy is possible to notice with respect to the previous chart?*
 
