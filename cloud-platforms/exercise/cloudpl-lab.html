@@ -1033,6 +1033,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    Considerations:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#design-and-build-a-relational-dwh" class="md-nav__link">
     Design and build a relational DWH
   </a>
@@ -1146,6 +1153,13 @@
         <li class="md-nav__item">
   <a href="#data-understanding" class="md-nav__link">
     Data understanding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    Considerations:
   </a>
   
 </li>
@@ -2266,13 +2280,13 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2311,195 +2325,6 @@ warnings.filterwarnings('ignore')</div>
     </div>
 
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Collecting awswrangler
-  Downloading awswrangler-2.17.0-py3-none-any.whl (251 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">251.6/251.6 KB</span> <span class="ansi-red-fg">6.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:01
-Collecting gremlinpython&lt;4.0.0,&gt;=3.5.2
-  Downloading gremlinpython-3.6.1-py2.py3-none-any.whl (73 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">73.3/73.3 KB</span> <span class="ansi-red-fg">18.2 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Collecting jsonpath-ng&lt;2.0.0,&gt;=1.5.3
-  Downloading jsonpath_ng-1.5.3-py3-none-any.whl (29 kB)
-Collecting numpy&lt;2.0.0,&gt;=1.21.0
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">17.1/17.1 MB</span> <span class="ansi-red-fg">33.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:0100:01
-Collecting redshift-connector&lt;2.1.0,&gt;=2.0.889
-  Downloading redshift_connector-2.0.909-py3-none-any.whl (112 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">112.1/112.1 KB</span> <span class="ansi-red-fg">24.1 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Collecting progressbar2&lt;5.0.0,&gt;=4.0.0
-  Downloading progressbar2-4.2.0-py2.py3-none-any.whl (27 kB)
-Collecting requests-aws4auth&lt;2.0.0,&gt;=1.1.1
-  Downloading requests_aws4auth-1.1.2-py2.py3-none-any.whl (24 kB)
-Collecting pg8000&lt;2.0.0,&gt;=1.20.0
-  Downloading pg8000-1.29.3-py3-none-any.whl (51 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">51.3/51.3 KB</span> <span class="ansi-red-fg">8.8 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Collecting opensearch-py&lt;3,&gt;=1
-  Downloading opensearch_py-2.0.0-py2.py3-none-any.whl (204 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">204.6/204.6 KB</span> <span class="ansi-red-fg">5.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
-Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.2.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from awswrangler) (1.3.4)
-Requirement already satisfied: boto3&lt;2.0.0,&gt;=1.24.11 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from awswrangler) (1.26.5)
-Collecting backoff&lt;3.0.0,&gt;=1.11.1
-  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
-Collecting botocore&lt;2.0.0,&gt;=1.27.11
-  Downloading botocore-1.29.17-py3-none-any.whl (10.0 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">10.0/10.0 MB</span> <span class="ansi-red-fg">97.4 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:0100:01
-Requirement already satisfied: openpyxl&lt;3.1.0,&gt;=3.0.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from awswrangler) (3.0.9)
-Collecting pymysql&lt;2.0.0,&gt;=1.0.0
-  Downloading PyMySQL-1.0.2-py3-none-any.whl (43 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">43.8/43.8 KB</span> <span class="ansi-red-fg">13.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: pyarrow&lt;8.1.0,&gt;=2.0.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from awswrangler) (7.0.0)
-Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from boto3&lt;2.0.0,&gt;=1.24.11-&gt;awswrangler) (0.10.0)
-Requirement already satisfied: s3transfer&lt;0.7.0,&gt;=0.6.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from boto3&lt;2.0.0,&gt;=1.24.11-&gt;awswrangler) (0.6.0)
-Requirement already satisfied: python-dateutil&lt;3.0.0,&gt;=2.1 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from botocore&lt;2.0.0,&gt;=1.27.11-&gt;awswrangler) (2.8.2)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.25.4 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from botocore&lt;2.0.0,&gt;=1.27.11-&gt;awswrangler) (1.26.8)
-Requirement already satisfied: nest-asyncio in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (1.5.1)
-Collecting isodate&lt;1.0.0,&gt;=0.6.0
-  Downloading isodate-0.6.1-py2.py3-none-any.whl (41 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">41.7/41.7 KB</span> <span class="ansi-red-fg">12.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: aiohttp&lt;=3.8.1,&gt;=3.8.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (3.8.1)
-Collecting aenum&lt;4.0.0,&gt;=1.4.5
-  Downloading aenum-3.1.11-py3-none-any.whl (131 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">131.5/131.5 KB</span> <span class="ansi-red-fg">37.8 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: decorator in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from jsonpath-ng&lt;2.0.0,&gt;=1.5.3-&gt;awswrangler) (5.1.0)
-Requirement already satisfied: ply in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from jsonpath-ng&lt;2.0.0,&gt;=1.5.3-&gt;awswrangler) (3.11)
-Requirement already satisfied: six in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from jsonpath-ng&lt;2.0.0,&gt;=1.5.3-&gt;awswrangler) (1.16.0)
-Requirement already satisfied: et-xmlfile in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from openpyxl&lt;3.1.0,&gt;=3.0.0-&gt;awswrangler) (1.0.1)
-Requirement already satisfied: certifi in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from opensearch-py&lt;3,&gt;=1-&gt;awswrangler) (2021.10.8)
-Requirement already satisfied: requests&lt;3.0.0,&gt;=2.4.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from opensearch-py&lt;3,&gt;=1-&gt;awswrangler) (2.26.0)
-Requirement already satisfied: pytz&gt;=2017.3 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from pandas&lt;2.0.0,&gt;=1.2.0-&gt;awswrangler) (2021.3)
-Collecting scramp&gt;=1.4.3
-  Downloading scramp-1.4.4-py3-none-any.whl (13 kB)
-Collecting python-utils&gt;=3.0.0
-  Downloading python_utils-3.4.5-py2.py3-none-any.whl (23 kB)
-Requirement already satisfied: packaging in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from redshift-connector&lt;2.1.0,&gt;=2.0.889-&gt;awswrangler) (21.3)
-Requirement already satisfied: beautifulsoup4&lt;5.0.0,&gt;=4.7.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from redshift-connector&lt;2.1.0,&gt;=2.0.889-&gt;awswrangler) (4.10.0)
-Requirement already satisfied: setuptools in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from redshift-connector&lt;2.1.0,&gt;=2.0.889-&gt;awswrangler) (59.4.0)
-Requirement already satisfied: lxml&gt;=4.6.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from redshift-connector&lt;2.1.0,&gt;=2.0.889-&gt;awswrangler) (4.8.0)
-Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (2.0.8)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (5.2.0)
-Requirement already satisfied: frozenlist&gt;=1.1.1 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (1.2.0)
-Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (4.0.1)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (1.7.2)
-Requirement already satisfied: attrs&gt;=17.3.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (21.2.0)
-Requirement already satisfied: aiosignal&gt;=1.1.2 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (1.2.0)
-Requirement already satisfied: soupsieve&gt;1.2 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from beautifulsoup4&lt;5.0.0,&gt;=4.7.0-&gt;redshift-connector&lt;2.1.0,&gt;=2.0.889-&gt;awswrangler) (2.3)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from requests&lt;3.0.0,&gt;=2.4.0-&gt;opensearch-py&lt;3,&gt;=1-&gt;awswrangler) (3.1)
-Collecting asn1crypto&gt;=1.5.1
-  Downloading asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">105.0/105.0 KB</span> <span class="ansi-red-fg">3.3 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from packaging-&gt;redshift-connector&lt;2.1.0,&gt;=2.0.889-&gt;awswrangler) (3.0.6)
-Requirement already satisfied: typing-extensions&gt;=3.6.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from async-timeout&lt;5.0,&gt;=4.0.0a3-&gt;aiohttp&lt;=3.8.1,&gt;=3.8.0-&gt;gremlinpython&lt;4.0.0,&gt;=3.5.2-&gt;awswrangler) (4.0.0)
-Installing collected packages: asn1crypto, aenum, scramp, python-utils, pymysql, numpy, jsonpath-ng, isodate, backoff, requests-aws4auth, progressbar2, pg8000, opensearch-py, botocore, gremlinpython, redshift-connector, awswrangler
-  Attempting uninstall: asn1crypto
-    Found existing installation: asn1crypto 1.4.0
-    Uninstalling asn1crypto-1.4.0:
-      Successfully uninstalled asn1crypto-1.4.0
-  Attempting uninstall: numpy
-    Found existing installation: numpy 1.20.3
-    Uninstalling numpy-1.20.3:
-      Successfully uninstalled numpy-1.20.3
-  Attempting uninstall: botocore
-    Found existing installation: botocore 1.24.19
-    Uninstalling botocore-1.24.19:
-      Successfully uninstalled botocore-1.24.19
-<span class="ansi-red-fg">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-daal4py 2021.3.0 requires daal==2021.2.3, which is not installed.
-numba 0.54.1 requires numpy&lt;1.21,&gt;=1.17, but you have numpy 1.23.5 which is incompatible.
-awscli 1.27.5 requires botocore==1.29.5, but you have botocore 1.29.17 which is incompatible.
-aiobotocore 2.0.1 requires botocore&lt;1.22.9,&gt;=1.22.8, but you have botocore 1.29.17 which is incompatible.</span><span class="ansi-red-fg">
-</span>Successfully installed aenum-3.1.11 asn1crypto-1.5.1 awswrangler-2.17.0 backoff-2.2.1 botocore-1.29.17 gremlinpython-3.6.1 isodate-0.6.1 jsonpath-ng-1.5.3 numpy-1.23.5 opensearch-py-2.0.0 pg8000-1.29.3 progressbar2-4.2.0 pymysql-1.0.2 python-utils-3.4.5 redshift-connector-2.0.909 requests-aws4auth-1.1.2 scramp-1.4.4
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Requirement already satisfied: pandas in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (1.3.4)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2017.3 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from pandas) (2021.3)
-Requirement already satisfied: numpy&gt;=1.17.3 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from pandas) (1.23.5)
-Requirement already satisfied: six&gt;=1.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.16.0)
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Requirement already satisfied: sklearn in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (0.0)
-Requirement already satisfied: scikit-learn in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from sklearn) (1.0.1)
-Requirement already satisfied: scipy&gt;=1.1.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from scikit-learn-&gt;sklearn) (1.5.3)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from scikit-learn-&gt;sklearn) (3.0.0)
-Requirement already satisfied: joblib&gt;=0.11 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from scikit-learn-&gt;sklearn) (1.1.0)
-Requirement already satisfied: numpy&gt;=1.14.6 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from scikit-learn-&gt;sklearn) (1.23.5)
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Collecting prov
-  Downloading prov-2.0.0-py3-none-any.whl (421 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">421.5/421.5 KB</span> <span class="ansi-red-fg">2.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:0100:01
-Requirement already satisfied: python-dateutil&gt;=2.2 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from prov) (2.8.2)
-Collecting rdflib&gt;=4.2.1
-  Downloading rdflib-6.2.0-py3-none-any.whl (500 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">500.3/500.3 KB</span> <span class="ansi-red-fg">12.0 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:01
-Requirement already satisfied: lxml&gt;=3.3.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from prov) (4.8.0)
-Requirement already satisfied: networkx&gt;=2.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from prov) (2.6.3)
-Requirement already satisfied: six&gt;=1.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from python-dateutil&gt;=2.2-&gt;prov) (1.16.0)
-Requirement already satisfied: setuptools in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from rdflib&gt;=4.2.1-&gt;prov) (59.4.0)
-Requirement already satisfied: isodate in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from rdflib&gt;=4.2.1-&gt;prov) (0.6.1)
-Requirement already satisfied: pyparsing in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from rdflib&gt;=4.2.1-&gt;prov) (3.0.6)
-Installing collected packages: rdflib, prov
-Successfully installed prov-2.0.0 rdflib-6.2.0
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Requirement already satisfied: seaborn in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (0.11.2)
-Requirement already satisfied: pandas&gt;=0.23 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from seaborn) (1.3.4)
-Requirement already satisfied: matplotlib&gt;=2.2 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from seaborn) (3.5.0)
-Requirement already satisfied: numpy&gt;=1.15 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from seaborn) (1.23.5)
-Requirement already satisfied: scipy&gt;=1.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from seaborn) (1.5.3)
-Requirement already satisfied: packaging&gt;=20.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (21.3)
-Requirement already satisfied: cycler&gt;=0.10 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (0.11.0)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (4.28.2)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (2.8.2)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (3.0.6)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (1.3.2)
-Requirement already satisfied: pillow&gt;=6.2.0 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (9.0.1)
-Requirement already satisfied: pytz&gt;=2017.3 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from pandas&gt;=0.23-&gt;seaborn) (2021.3)
-Requirement already satisfied: six&gt;=1.5 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=2.2-&gt;seaborn) (1.16.0)
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Collecting pydot
-  Downloading pydot-1.4.2-py2.py3-none-any.whl (21 kB)
-Requirement already satisfied: pyparsing&gt;=2.1.4 in /home/ec2-user/anaconda3/envs/python3/lib/python3.8/site-packages (from pydot) (3.0.6)
-Installing collected packages: pydot
-Successfully installed pydot-1.4.2
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span>Looking in indexes: https://pypi.org/simple, https://pip.repos.neuron.amazonaws.com
-Collecting graphviz
-  Downloading graphviz-0.20.1-py3-none-any.whl (47 kB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">47.0/47.0 KB</span> <span class="ansi-red-fg">1.2 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-Installing collected packages: graphviz
-Successfully installed graphviz-0.20.1
-<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
-You should consider upgrading via the &#39;/home/ec2-user/anaconda3/envs/python3/bin/python -m pip install --upgrade pip&#39; command.</span><span class="ansi-yellow-fg">
-</span></pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -2566,13 +2391,13 @@ import prov</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2608,94 +2433,6 @@ print(df)
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>      C. City C. Country C. State  Customer Yearly Income           Category  \
-0      Albany        USA       OR       117  $90K - $110K       Baking Goods   
-1      Albany        USA       OR       117  $90K - $110K       Baking Goods   
-2      Albany        USA       OR       117  $90K - $110K       Baking Goods   
-3      Albany        USA       OR       117  $90K - $110K  Bathroom Products   
-4      Albany        USA       OR       117  $90K - $110K      Beer and Wine   
-...       ...        ...      ...       ...           ...                ...   
-86824  Yakima        USA       WA     10226   $10K - $30K   Jams and Jellies   
-86825  Yakima        USA       WA     10226   $10K - $30K               Meat   
-86826  Yakima        USA       WA     10226   $10K - $30K              Pizza   
-86827  Yakima        USA       WA     10226   $10K - $30K         Vegetables   
-86828  Yakima        USA       WA     10226   $10K - $30K         Vegetables   
-
-            Subcategory          Family  \
-0           Cooking Oil            Food   
-1                Sauces            Food   
-2                 Sugar            Food   
-3           Conditioner  Non-Consumable   
-4                  Wine           Drink   
-...                 ...             ...   
-86824     Peanut Butter            Food   
-86825          Hot Dogs            Food   
-86826             Pizza            Food   
-86827  Fresh Vegetables            Food   
-86828  Fresh Vegetables            Food   
-
-                                          Product S. City S. Country S. State  \
-0                                  Super Corn Oil   Salem        USA       OR   
-1                          Landslide Tomato Sauce   Salem        USA       OR   
-2                           Landslide Brown Sugar   Salem        USA       OR   
-3      Consolidated Silky Smooth Hair Conditioner   Salem        USA       OR   
-4                               Pearl Merlot Wine   Salem        USA       OR   
-...                                           ...     ...        ...      ...   
-86824                  Plato Chunky Peanut Butter  Yakima        USA       WA   
-86825               Cutting Edge Chicken Hot Dogs  Yakima        USA       WA   
-86826              PigTail Frozen Pepperoni Pizza  Yakima        USA       WA   
-86827                                Ebony Garlic  Yakima        USA       WA   
-86828                       Hermanos Green Pepper  Yakima        USA       WA   
-
-       Store                Type             Sales Date  Store Cost  \
-0         13  Deluxe Supermarket  1/21/1997 12:00:00 AM      2.1177   
-1         13  Deluxe Supermarket  1/21/1997 12:00:00 AM      1.6500   
-2         13  Deluxe Supermarket  1/21/1997 12:00:00 AM      5.3760   
-3         13  Deluxe Supermarket  1/21/1997 12:00:00 AM      1.1466   
-4         13  Deluxe Supermarket  1/21/1997 12:00:00 AM      0.9288   
-...      ...                 ...                    ...         ...   
-86824     23    Mid-Size Grocery  6/30/1997 12:00:00 AM      1.9600   
-86825     23    Mid-Size Grocery  6/30/1997 12:00:00 AM      1.4229   
-86826     23    Mid-Size Grocery   3/1/1997 12:00:00 AM      1.0752   
-86827     23    Mid-Size Grocery  2/11/1997 12:00:00 AM      4.3680   
-86828     23    Mid-Size Grocery  2/11/1997 12:00:00 AM      6.0216   
-
-       Store Sales  Unit Sales  
-0             5.43           3  
-1             5.00           4  
-2            11.20           4  
-3             2.94           2  
-4             2.16           4  
-...            ...         ...  
-86824         4.90           2  
-86825         4.59           3  
-86826         3.36           2  
-86827        10.40           4  
-86828        15.44           4  
-
-[86829 rows x 18 columns]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -2703,7 +2440,7 @@ print(df)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2718,42 +2455,10 @@ print(df)
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span>
-</pre></div>
-<div id="cell-4" class="clipboard-copy-txt"></div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">landing_bucket</span> <span class="o">=</span> <span class="s2">&quot;s3://landing-raw-sales-911/&quot;</span>
 <span class="n">staging_bucket</span> <span class="o">=</span> <span class="s2">&quot;s3://staging-clean-sales-911/&quot;</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">landing_bucket = "s3://landing-raw-sales-911/"
+<div id="cell-4" class="clipboard-copy-txt">landing_bucket = "s3://landing-raw-sales-911/"
 staging_bucket = "s3://staging-clean-sales-911/"</div>
     
         </div>
@@ -2774,7 +2479,7 @@ staging_bucket = "s3://staging-clean-sales-911/"</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2788,7 +2493,7 @@ staging_bucket = "s3://staging-clean-sales-911/"</div>
 
 <span class="n">wr</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">staging_bucket</span> <span class="o">+</span> <span class="s2">&quot;merged-sales-fact&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt"># wr.s3.to_csv(df=df1, path=output_bucket + "cleaned-v1-" + file_name, index=False)
+<div id="cell-5" class="clipboard-copy-txt"># wr.s3.to_csv(df=df1, path=output_bucket + "cleaned-v1-" + file_name, index=False)
 
 wr.s3.to_csv(df = df, path = staging_bucket + "merged-sales-fact", index = False)</div>
     
@@ -2830,13 +2535,45 @@ wr.s3.to_csv(df = df, path = staging_bucket + "merged-sales-fact", index = False
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt">print(df.isnull().sum())</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2851,9 +2588,9 @@ wr.s3.to_csv(df = df, path = staging_bucket + "merged-sales-fact", index = False
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">print(df.isnull().sum())</div>
+<div id="cell-7" class="clipboard-copy-txt">print(df.columns)</div>
     
         </div>
     </div>
@@ -2861,55 +2598,14 @@ wr.s3.to_csv(df = df, path = staging_bucket + "merged-sales-fact", index = False
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>C. City          0
-C. Country       0
-C. State         0
-Customer         0
-Yearly Income    0
-Category         0
-Subcategory      0
-Family           0
-Product          0
-S. City          0
-S. Country       0
-S. State         0
-Store            0
-Type             0
-Sales Date       0
-Store Cost       0
-Store Sales      0
-Unit Sales       0
-dtype: int64
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -2924,68 +2620,9 @@ dtype: int64
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-</pre></div>
-<div id="cell-8" class="clipboard-copy-txt">print(df.columns)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Index([&#39;C. City&#39;, &#39;C. Country&#39;, &#39;C. State&#39;, &#39;Customer&#39;, &#39;Yearly Income&#39;,
-       &#39;Category&#39;, &#39;Subcategory&#39;, &#39;Family&#39;, &#39;Product&#39;, &#39;S. City&#39;, &#39;S. Country&#39;,
-       &#39;S. State&#39;, &#39;Store&#39;, &#39;Type&#39;, &#39;Sales Date&#39;, &#39;Store Cost&#39;, &#39;Store Sales&#39;,
-       &#39;Unit Sales&#39;],
-      dtype=&#39;object&#39;)
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">print(df.info())</div>
+<div id="cell-8" class="clipboard-copy-txt">print(df.info())</div>
     
         </div>
     </div>
@@ -2993,145 +2630,29 @@ dtype: int64
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 86829 entries, 0 to 86828
-Data columns (total 18 columns):
- #   Column         Non-Null Count  Dtype  
----  ------         --------------  -----  
- 0   C. City        86829 non-null  object 
- 1   C. Country     86829 non-null  object 
- 2   C. State       86829 non-null  object 
- 3   Customer       86829 non-null  int64  
- 4   Yearly Income  86829 non-null  object 
- 5   Category       86829 non-null  object 
- 6   Subcategory    86829 non-null  object 
- 7   Family         86829 non-null  object 
- 8   Product        86829 non-null  object 
- 9   S. City        86829 non-null  object 
- 10  S. Country     86829 non-null  object 
- 11  S. State       86829 non-null  object 
- 12  Store          86829 non-null  int64  
- 13  Type           86829 non-null  object 
- 14  Sales Date     86829 non-null  object 
- 15  Store Cost     86829 non-null  float64
- 16  Store Sales    86829 non-null  float64
- 17  Unit Sales     86829 non-null  int64  
-dtypes: float64(2), int64(3), object(13)
-memory usage: 11.9+ MB
-None
-</pre>
 </div>
 </div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">List</span> <span class="n">of</span> <span class="n">columns</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C. City&#39;</span><span class="p">,</span> <span class="s1">&#39;C. Country&#39;</span><span class="p">,</span> <span class="s1">&#39;C. State&#39;</span><span class="p">,</span> <span class="s1">&#39;Customer&#39;</span><span class="p">,</span> <span class="s1">&#39;Yearly Income&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span> <span class="s1">&#39;Family&#39;</span><span class="p">,</span> <span class="s1">&#39;Product&#39;</span><span class="p">,</span> <span class="s1">&#39;S. City&#39;</span><span class="p">,</span> <span class="s1">&#39;S. Country&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;S. State&#39;</span><span class="p">,</span> <span class="s1">&#39;Store&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Sales Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Cost&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Sales&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Unit Sales&#39;</span><span class="p">]</span>
-    
-<span class="n">FD</span><span class="p">:</span>
-<span class="n">City</span> <span class="o">-&gt;</span> <span class="n">State</span> <span class="o">-&gt;</span> <span class="n">Country</span> <span class="p">[</span><span class="n">to</span> <span class="n">be</span> <span class="n">checked</span><span class="p">]</span>
-<span class="n">Category</span> <span class="o">-&gt;</span> <span class="n">Subcategory</span> <span class="o">-&gt;</span> <span class="n">Family</span> <span class="o">-&gt;</span> <span class="n">Product</span> <span class="p">[</span><span class="n">to</span> <span class="n">be</span> <span class="n">checked</span><span class="p">]</span>
-    
-<span class="n">DT_Customer</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">City</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">Country</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">State</span><span class="p">,</span> <span class="n">Customer</span><span class="p">,</span> <span class="n">Yearly_Income</span><span class="p">)</span>
-<span class="n">DT_Product</span> <span class="o">=</span> <span class="p">(</span><span class="n">Category</span><span class="p">,</span> <span class="n">Subcategory</span><span class="p">,</span> <span class="n">Family</span><span class="p">,</span> <span class="n">Product</span><span class="p">)</span>
-<span class="n">DT_Store</span> <span class="o">=</span> <span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">City</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Country</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">State</span><span class="p">,</span> <span class="n">Store</span><span class="p">,</span> <span class="n">Type</span><span class="p">)</span>
-
-<span class="n">FT_Sale</span> <span class="o">=</span> <span class="p">(</span><span class="n">Customer</span><span class="p">:</span><span class="n">DT_Customer</span><span class="p">,</span> <span class="n">Product</span><span class="p">:</span><span class="n">DT_Product</span><span class="p">,</span> <span class="n">Sales_Date</span><span class="p">,</span> <span class="o">*</span><span class="n">Store_Cost</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="n">Store_Sales</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="n">Unit_Sales</span><span class="o">*</span><span class="p">)</span>
-
-<span class="o">*</span><span class="n">Measures</span><span class="o">*</span>
-<span class="o">-</span><span class="n">Level</span><span class="o">-</span>
-</pre></div>
-<div id="cell-10" class="clipboard-copy-txt">List of columns: ['C. City', 'C. Country', 'C. State', 'Customer', 'Yearly Income',
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="considerations">Considerations:<a class="anchor-link" href="#considerations">&#182;</a></h2><p>List of columns: ['C. City', 'C. Country', 'C. State', 'Customer', 'Yearly Income',
        'Category', 'Subcategory', 'Family', 'Product', 'S. City', 'S. Country',
        'S. State', 'Store', 'Type', 'Sales Date', 'Store Cost', 'Store Sales',
-       'Unit Sales']
-    
-FD:
-City -> State -> Country [to be checked]
-Category -> Subcategory -> Family -> Product [to be checked]
-    
-DT_Customer = (C.City, C.Country, C.State, Customer, Yearly_Income)
-DT_Product = (Category, Subcategory, Family, Product)
-DT_Store = (S.City, S.Country, S.State, Store, Type)
-
-FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, *Store_Cost*, *Store_Sales*, *Unit_Sales*)
-
-*Measures*
--Level-</div>
-    
-        </div>
-    </div>
+       'Unit Sales']</p>
+<p><strong>FD</strong>:
+City -&gt; State -&gt; Country [to be checked]
+Category -&gt; Subcategory -&gt; Family -&gt; Product [to be checked]</p>
+<p><strong>DT_Customer</strong> = (C.City, C.Country, C.State, Customer, Yearly_Income)
+<strong>DT_Product</strong> = (Category, Subcategory, Family, Product)
+<strong>DT_Store</strong> = (S.City, S.Country, S.State, Store, Type)</p>
+<p><strong>FT_Sale</strong> = (Customer:DT_Customer, Product:DT_Product, Sales_Date, <em>Store_Cost</em>, <em>Store_Sales</em>, <em>Unit_Sales</em>)</p>
+<p><em>Measures</em></p>
 
 </div>
 </div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;/tmp/ipykernel_7457/3818622918.py&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    List of columns: [&#39;C. City&#39;, &#39;C. Country&#39;, &#39;C. State&#39;, &#39;Customer&#39;, &#39;Yearly Income&#39;,</span>
-         ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3149,18 +2670,18 @@ FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, *Store_Cost*, *
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3173,1239 +2694,13 @@ FT_Sale = (Customer:DT_Customer, Product:DT_Product, Sales_Date, *Store_Cost*, *
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">wr</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">staging_bucket</span> <span class="o">+</span> <span class="s2">&quot;merged-sales-fact&quot;</span><span class="p">)</span>
 <span class="n">raw_data</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">raw_data = wr.s3.read_csv(staging_bucket + "merged-sales-fact")
+<div id="cell-9" class="clipboard-copy-txt">raw_data = wr.s3.read_csv(staging_bucket + "merged-sales-fact")
 raw_data</div>
     
         </div>
     </div>
 
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>C. City</th>
-      <th>C. Country</th>
-      <th>C. State</th>
-      <th>Customer</th>
-      <th>Yearly Income</th>
-      <th>Category</th>
-      <th>Subcategory</th>
-      <th>Family</th>
-      <th>Product</th>
-      <th>S. City</th>
-      <th>S. Country</th>
-      <th>S. State</th>
-      <th>Store</th>
-      <th>Type</th>
-      <th>Sales Date</th>
-      <th>Store Cost</th>
-      <th>Store Sales</th>
-      <th>Unit Sales</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>117</td>
-      <td>$90K - $110K</td>
-      <td>Baking Goods</td>
-      <td>Cooking Oil</td>
-      <td>Food</td>
-      <td>Super Corn Oil</td>
-      <td>Salem</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>13</td>
-      <td>Deluxe Supermarket</td>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>2.1177</td>
-      <td>5.43</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>117</td>
-      <td>$90K - $110K</td>
-      <td>Baking Goods</td>
-      <td>Sauces</td>
-      <td>Food</td>
-      <td>Landslide Tomato Sauce</td>
-      <td>Salem</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>13</td>
-      <td>Deluxe Supermarket</td>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>1.6500</td>
-      <td>5.00</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>117</td>
-      <td>$90K - $110K</td>
-      <td>Baking Goods</td>
-      <td>Sugar</td>
-      <td>Food</td>
-      <td>Landslide Brown Sugar</td>
-      <td>Salem</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>13</td>
-      <td>Deluxe Supermarket</td>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>5.3760</td>
-      <td>11.20</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>117</td>
-      <td>$90K - $110K</td>
-      <td>Bathroom Products</td>
-      <td>Conditioner</td>
-      <td>Non-Consumable</td>
-      <td>Consolidated Silky Smooth Hair Conditioner</td>
-      <td>Salem</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>13</td>
-      <td>Deluxe Supermarket</td>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>1.1466</td>
-      <td>2.94</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>117</td>
-      <td>$90K - $110K</td>
-      <td>Beer and Wine</td>
-      <td>Wine</td>
-      <td>Drink</td>
-      <td>Pearl Merlot Wine</td>
-      <td>Salem</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>13</td>
-      <td>Deluxe Supermarket</td>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>0.9288</td>
-      <td>2.16</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>86824</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10226</td>
-      <td>$10K - $30K</td>
-      <td>Jams and Jellies</td>
-      <td>Peanut Butter</td>
-      <td>Food</td>
-      <td>Plato Chunky Peanut Butter</td>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>23</td>
-      <td>Mid-Size Grocery</td>
-      <td>6/30/1997 12:00:00 AM</td>
-      <td>1.9600</td>
-      <td>4.90</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>86825</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10226</td>
-      <td>$10K - $30K</td>
-      <td>Meat</td>
-      <td>Hot Dogs</td>
-      <td>Food</td>
-      <td>Cutting Edge Chicken Hot Dogs</td>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>23</td>
-      <td>Mid-Size Grocery</td>
-      <td>6/30/1997 12:00:00 AM</td>
-      <td>1.4229</td>
-      <td>4.59</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>86826</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10226</td>
-      <td>$10K - $30K</td>
-      <td>Pizza</td>
-      <td>Pizza</td>
-      <td>Food</td>
-      <td>PigTail Frozen Pepperoni Pizza</td>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>23</td>
-      <td>Mid-Size Grocery</td>
-      <td>3/1/1997 12:00:00 AM</td>
-      <td>1.0752</td>
-      <td>3.36</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>86827</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10226</td>
-      <td>$10K - $30K</td>
-      <td>Vegetables</td>
-      <td>Fresh Vegetables</td>
-      <td>Food</td>
-      <td>Ebony Garlic</td>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>23</td>
-      <td>Mid-Size Grocery</td>
-      <td>2/11/1997 12:00:00 AM</td>
-      <td>4.3680</td>
-      <td>10.40</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>86828</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10226</td>
-      <td>$10K - $30K</td>
-      <td>Vegetables</td>
-      <td>Fresh Vegetables</td>
-      <td>Food</td>
-      <td>Hermanos Green Pepper</td>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>23</td>
-      <td>Mid-Size Grocery</td>
-      <td>2/11/1997 12:00:00 AM</td>
-      <td>6.0216</td>
-      <td>15.44</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-<p>86829 rows × 18 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-</pre></div>
-<div id="cell-12" class="clipboard-copy-txt">print(raw_data.columns)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Index([&#39;C. City&#39;, &#39;C. Country&#39;, &#39;C. State&#39;, &#39;Customer&#39;, &#39;Yearly Income&#39;,
-       &#39;Category&#39;, &#39;Subcategory&#39;, &#39;Family&#39;, &#39;Product&#39;, &#39;S. City&#39;, &#39;S. Country&#39;,
-       &#39;S. State&#39;, &#39;Store&#39;, &#39;Type&#39;, &#39;Sales Date&#39;, &#39;Store Cost&#39;, &#39;Store Sales&#39;,
-       &#39;Unit Sales&#39;],
-      dtype=&#39;object&#39;)
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_customer</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;C. City&#39;</span><span class="p">,</span> <span class="s1">&#39;C. Country&#39;</span><span class="p">,</span> <span class="s1">&#39;C. State&#39;</span><span class="p">,</span> <span class="s1">&#39;Customer&#39;</span><span class="p">,</span> <span class="s1">&#39;Yearly Income&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">dt_customer</span>
-</pre></div>
-<div id="cell-13" class="clipboard-copy-txt">dt_customer = raw_data[['C. City', 'C. Country', 'C. State', 'Customer', 'Yearly Income']].drop_duplicates()
-dt_customer</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>C. City</th>
-      <th>C. Country</th>
-      <th>C. State</th>
-      <th>Customer</th>
-      <th>Yearly Income</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>117</td>
-      <td>$90K - $110K</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>188</td>
-      <td>$30K - $50K</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>274</td>
-      <td>$30K - $50K</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>304</td>
-      <td>$90K - $110K</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>Albany</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>422</td>
-      <td>$10K - $30K</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>86702</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>9967</td>
-      <td>$110K - $130K</td>
-    </tr>
-    <tr>
-      <th>86733</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10068</td>
-      <td>$50K - $70K</td>
-    </tr>
-    <tr>
-      <th>86767</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10073</td>
-      <td>$50K - $70K</td>
-    </tr>
-    <tr>
-      <th>86787</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10225</td>
-      <td>$30K - $50K</td>
-    </tr>
-    <tr>
-      <th>86819</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>10226</td>
-      <td>$10K - $30K</td>
-    </tr>
-  </tbody>
-</table>
-<p>5581 rows × 5 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_product</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span> <span class="s1">&#39;Family&#39;</span><span class="p">,</span> <span class="s1">&#39;Product&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">dt_product</span>
-</pre></div>
-<div id="cell-14" class="clipboard-copy-txt">dt_product = raw_data[['Category', 'Subcategory', 'Family', 'Product']].drop_duplicates()
-dt_product</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Category</th>
-      <th>Subcategory</th>
-      <th>Family</th>
-      <th>Product</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Baking Goods</td>
-      <td>Cooking Oil</td>
-      <td>Food</td>
-      <td>Super Corn Oil</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Baking Goods</td>
-      <td>Sauces</td>
-      <td>Food</td>
-      <td>Landslide Tomato Sauce</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Baking Goods</td>
-      <td>Sugar</td>
-      <td>Food</td>
-      <td>Landslide Brown Sugar</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bathroom Products</td>
-      <td>Conditioner</td>
-      <td>Non-Consumable</td>
-      <td>Consolidated Silky Smooth Hair Conditioner</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Beer and Wine</td>
-      <td>Wine</td>
-      <td>Drink</td>
-      <td>Pearl Merlot Wine</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>9140</th>
-      <td>Jams and Jellies</td>
-      <td>Jam</td>
-      <td>Food</td>
-      <td>Super Strawberry Jam</td>
-    </tr>
-    <tr>
-      <th>9952</th>
-      <td>Vegetables</td>
-      <td>Fresh Vegetables</td>
-      <td>Food</td>
-      <td>High Top Broccoli</td>
-    </tr>
-    <tr>
-      <th>10119</th>
-      <td>Fruit</td>
-      <td>Fresh Fruit</td>
-      <td>Food</td>
-      <td>High Top Lemons</td>
-    </tr>
-    <tr>
-      <th>10575</th>
-      <td>Eggs</td>
-      <td>Eggs</td>
-      <td>Food</td>
-      <td>Blue Medal Large Eggs</td>
-    </tr>
-    <tr>
-      <th>11554</th>
-      <td>Breakfast Foods</td>
-      <td>Waffles</td>
-      <td>Food</td>
-      <td>Imagine Apple Cinnamon Waffles</td>
-    </tr>
-  </tbody>
-</table>
-<p>1559 rows × 4 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_store</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;S. City&#39;</span><span class="p">,</span> <span class="s1">&#39;S. Country&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;S. State&#39;</span><span class="p">,</span> <span class="s1">&#39;Store&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">dt_store</span>
-</pre></div>
-<div id="cell-15" class="clipboard-copy-txt">dt_store = raw_data[['S. City', 'S. Country',
-       'S. State', 'Store', 'Type']].drop_duplicates()
-dt_store</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>S. City</th>
-      <th>S. Country</th>
-      <th>S. State</th>
-      <th>Store</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Salem</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>13</td>
-      <td>Deluxe Supermarket</td>
-    </tr>
-    <tr>
-      <th>2183</th>
-      <td>Los Angeles</td>
-      <td>USA</td>
-      <td>CA</td>
-      <td>7</td>
-      <td>Supermarket</td>
-    </tr>
-    <tr>
-      <th>2194</th>
-      <td>Beverly Hills</td>
-      <td>USA</td>
-      <td>CA</td>
-      <td>6</td>
-      <td>Gourmet Supermarket</td>
-    </tr>
-    <tr>
-      <th>3024</th>
-      <td>Bellingham</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>2</td>
-      <td>Small Grocery</td>
-    </tr>
-    <tr>
-      <th>4274</th>
-      <td>Seattle</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>15</td>
-      <td>Supermarket</td>
-    </tr>
-    <tr>
-      <th>5109</th>
-      <td>Portland</td>
-      <td>USA</td>
-      <td>OR</td>
-      <td>11</td>
-      <td>Supermarket</td>
-    </tr>
-    <tr>
-      <th>8015</th>
-      <td>San Francisco</td>
-      <td>USA</td>
-      <td>CA</td>
-      <td>14</td>
-      <td>Small Grocery</td>
-    </tr>
-    <tr>
-      <th>9008</th>
-      <td>Bremerton</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>3</td>
-      <td>Supermarket</td>
-    </tr>
-    <tr>
-      <th>14933</th>
-      <td>San Diego</td>
-      <td>USA</td>
-      <td>CA</td>
-      <td>24</td>
-      <td>Supermarket</td>
-    </tr>
-    <tr>
-      <th>41581</th>
-      <td>Tacoma</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>17</td>
-      <td>Deluxe Supermarket</td>
-    </tr>
-    <tr>
-      <th>64078</th>
-      <td>Spokane</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>16</td>
-      <td>Supermarket</td>
-    </tr>
-    <tr>
-      <th>77650</th>
-      <td>Walla Walla</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>22</td>
-      <td>Small Grocery</td>
-    </tr>
-    <tr>
-      <th>83177</th>
-      <td>Yakima</td>
-      <td>USA</td>
-      <td>WA</td>
-      <td>23</td>
-      <td>Mid-Size Grocery</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_date</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;Sales Date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">dt_date</span>
-</pre></div>
-<div id="cell-16" class="clipboard-copy-txt">dt_date = raw_data[['Sales Date']].drop_duplicates()
-dt_date</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Sales Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1/21/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1/11/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>8/24/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>9/10/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2/19/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>77990</th>
-      <td>3/7/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>83177</th>
-      <td>3/26/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>83250</th>
-      <td>9/16/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>83352</th>
-      <td>2/24/1997 12:00:00 AM</td>
-    </tr>
-    <tr>
-      <th>83467</th>
-      <td>11/19/1997 12:00:00 AM</td>
-    </tr>
-  </tbody>
-</table>
-<p>323 rows × 1 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-17">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ft_sales</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;Sales Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Store&#39;</span><span class="p">,</span> <span class="s1">&#39;Unit Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Product&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;Customer&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Cost&#39;</span><span class="p">,</span> <span class="s1">&#39;Unit Sales&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">ft_sales</span>
-</pre></div>
-<div id="cell-17" class="clipboard-copy-txt">ft_sales = raw_data[['Sales Date', 'Store', 'Unit Sales', 'Product',
-                     'Customer', 'Store Sales', 'Store Cost', 'Unit Sales']].drop_duplicates()
-ft_sales</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Sales Date</th>
-      <th>Store</th>
-      <th>Unit Sales</th>
-      <th>Product</th>
-      <th>Customer</th>
-      <th>Store Sales</th>
-      <th>Store Cost</th>
-      <th>Unit Sales</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>13</td>
-      <td>3</td>
-      <td>Super Corn Oil</td>
-      <td>117</td>
-      <td>5.43</td>
-      <td>2.1177</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>13</td>
-      <td>4</td>
-      <td>Landslide Tomato Sauce</td>
-      <td>117</td>
-      <td>5.00</td>
-      <td>1.6500</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>13</td>
-      <td>4</td>
-      <td>Landslide Brown Sugar</td>
-      <td>117</td>
-      <td>11.20</td>
-      <td>5.3760</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>13</td>
-      <td>2</td>
-      <td>Consolidated Silky Smooth Hair Conditioner</td>
-      <td>117</td>
-      <td>2.94</td>
-      <td>1.1466</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1/21/1997 12:00:00 AM</td>
-      <td>13</td>
-      <td>4</td>
-      <td>Pearl Merlot Wine</td>
-      <td>117</td>
-      <td>2.16</td>
-      <td>0.9288</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>86824</th>
-      <td>6/30/1997 12:00:00 AM</td>
-      <td>23</td>
-      <td>2</td>
-      <td>Plato Chunky Peanut Butter</td>
-      <td>10226</td>
-      <td>4.90</td>
-      <td>1.9600</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>86825</th>
-      <td>6/30/1997 12:00:00 AM</td>
-      <td>23</td>
-      <td>3</td>
-      <td>Cutting Edge Chicken Hot Dogs</td>
-      <td>10226</td>
-      <td>4.59</td>
-      <td>1.4229</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>86826</th>
-      <td>3/1/1997 12:00:00 AM</td>
-      <td>23</td>
-      <td>2</td>
-      <td>PigTail Frozen Pepperoni Pizza</td>
-      <td>10226</td>
-      <td>3.36</td>
-      <td>1.0752</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>86827</th>
-      <td>2/11/1997 12:00:00 AM</td>
-      <td>23</td>
-      <td>4</td>
-      <td>Ebony Garlic</td>
-      <td>10226</td>
-      <td>10.40</td>
-      <td>4.3680</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>86828</th>
-      <td>2/11/1997 12:00:00 AM</td>
-      <td>23</td>
-      <td>4</td>
-      <td>Hermanos Green Pepper</td>
-      <td>10226</td>
-      <td>15.44</td>
-      <td>6.0216</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-<p>86829 rows × 8 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -4420,7 +2715,7 @@ ft_sales</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-18">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4430,9 +2725,183 @@ ft_sales</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt"></div>
+<div id="cell-10" class="clipboard-copy-txt">print(raw_data.columns)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_customer</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;C. City&#39;</span><span class="p">,</span> <span class="s1">&#39;C. Country&#39;</span><span class="p">,</span> <span class="s1">&#39;C. State&#39;</span><span class="p">,</span> <span class="s1">&#39;Customer&#39;</span><span class="p">,</span> <span class="s1">&#39;Yearly Income&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">dt_customer</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">dt_customer = raw_data[['C. City', 'C. Country', 'C. State', 'Customer', 'Yearly Income']].drop_duplicates()
+dt_customer</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_product</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;Subcategory&#39;</span><span class="p">,</span> <span class="s1">&#39;Family&#39;</span><span class="p">,</span> <span class="s1">&#39;Product&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">dt_product</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt">dt_product = raw_data[['Category', 'Subcategory', 'Family', 'Product']].drop_duplicates()
+dt_product</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_store</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;S. City&#39;</span><span class="p">,</span> <span class="s1">&#39;S. Country&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;S. State&#39;</span><span class="p">,</span> <span class="s1">&#39;Store&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">dt_store</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt">dt_store = raw_data[['S. City', 'S. Country',
+       'S. State', 'Store', 'Type']].drop_duplicates()
+dt_store</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dt_date</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;Sales Date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">dt_date</span>
+</pre></div>
+<div id="cell-14" class="clipboard-copy-txt">dt_date = raw_data[['Sales Date']].drop_duplicates()
+dt_date</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ft_sales</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;Sales Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Store&#39;</span><span class="p">,</span> <span class="s1">&#39;Unit Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Product&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Customer&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Cost&#39;</span><span class="p">,</span> <span class="s1">&#39;Unit Sales&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">ft_sales</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt">ft_sales = raw_data[['Sales Date', 'Store', 'Unit Sales', 'Product',
+                     'Customer', 'Store Sales', 'Store Cost', 'Unit Sales']].drop_duplicates()
+ft_sales</div>
     
         </div>
     </div>
@@ -4452,7 +2921,7 @@ ft_sales</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-19">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4472,7 +2941,7 @@ ft_sales</div>
 <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;postgresql://</span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">@</span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">port</span><span class="p">),</span> <span class="n">db</span><span class="p">)</span>
 <span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt">host = "database-lab.cepvkrc8ii6y.us-east-1.rds.amazonaws.com"
+<div id="cell-16" class="clipboard-copy-txt">host = "database-lab.cepvkrc8ii6y.us-east-1.rds.amazonaws.com"
 port = 5432
 user = "postgres"
 pwd = "bigdata2022"
@@ -4500,7 +2969,7 @@ engine = create_engine(s)</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-20">
+            <clipboard-copy for="cell-17">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4515,7 +2984,7 @@ engine = create_engine(s)</div>
 <span class="n">dt_store</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
 <span class="n">dt_date</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt">dt_customer.to_sql('customer', engine, index=False, if_exists='replace')
+<div id="cell-17" class="clipboard-copy-txt">dt_customer.to_sql('customer', engine, index=False, if_exists='replace')
 dt_product.to_sql('product', engine, index=False, if_exists='replace')
 dt_store.to_sql('store', engine, index=False, if_exists='replace')
 dt_date.to_sql('date', engine, index=False, if_exists='replace')</div>
@@ -4538,7 +3007,7 @@ dt_date.to_sql('date', engine, index=False, if_exists='replace')</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
+            <clipboard-copy for="cell-18">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4550,7 +3019,7 @@ dt_date.to_sql('date', engine, index=False, if_exists='replace')</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ft_sales</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;sale&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt">ft_sales.to_sql('sale', engine, index=False, if_exists='replace')</div>
+<div id="cell-18" class="clipboard-copy-txt">ft_sales.to_sql('sale', engine, index=False, if_exists='replace')</div>
     
         </div>
     </div>
@@ -4684,7 +3153,7 @@ dt_date.to_sql('date', engine, index=False, if_exists='replace')</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-22">
+            <clipboard-copy for="cell-19">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4714,7 +3183,7 @@ dt_date.to_sql('date', engine, index=False, if_exists='replace')</div>
     <span class="n">dot</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s1">&#39;prov.png&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s1">&#39;prov.png&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt">from prov.model import ProvDocument
+<div id="cell-19" class="clipboard-copy-txt">from prov.model import ProvDocument
 from prov.dot import prov_to_dot
 from IPython.display import Image
 
@@ -4752,7 +3221,7 @@ def plot():
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-23">
+            <clipboard-copy for="cell-20">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4764,7 +3233,7 @@ def plot():
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
-<div id="cell-23" class="clipboard-copy-txt">plot()</div>
+<div id="cell-20" class="clipboard-copy-txt">plot()</div>
     
         </div>
     </div>
@@ -4788,8 +3257,7 @@ def plot():
 
 
 <div class="jp-RenderedImage jp-OutputArea-output jp-OutputArea-executeResult">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAABmJLR0QA/wD/AP+gvaeTAAAAJ0lEQVQYlWP8////fwbiwGomIhUyMDAwMIwqpo9iFgYGhtVEqj0BAAvPBjJ63HJVAAAAAElFTkSuQmCC
-"
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAABmJLR0QA/wD/AP+gvaeTAAAAJ0lEQVQYlWP8////fwbiwGomIhUyMDAwMIwqpo9iFgYGhtVEqj0BAAvPBjJ63HJVAAAAAElFTkSuQmCC"
 class="
 "
 >
@@ -4812,7 +3280,7 @@ class="
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 1, 2022 15:33:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 1, 2022 15:39:24</span>
       
         <br>
         Created:
