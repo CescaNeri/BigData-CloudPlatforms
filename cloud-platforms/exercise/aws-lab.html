@@ -13,7 +13,7 @@
     
     
       
-        <title>AWS Lab - CescaNeri/BigData-CloudPlatforms</title>
+        <title>DWH Lab - CescaNeri/BigData-CloudPlatforms</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS Lab
+              DWH Lab
             
           </span>
         </div>
@@ -865,27 +865,25 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
       
       
       
       
         <label class="md-nav__link" for="__nav_10">
-          AWS Lab
+          Cloud Lab
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="AWS Lab" data-md-level="1">
+      <nav class="md-nav" aria-label="Cloud Lab" data-md-level="1">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
-          AWS Lab
+          Cloud Lab
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -895,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="california-housing.html" class="md-nav__link">
+      <a href="../aws-lab/california-housing.html" class="md-nav__link">
         California Housing System
       </a>
     </li>
@@ -909,13 +907,63 @@
   
   
     <li class="md-nav__item">
-      <a href="smart-agricolture.html" class="md-nav__link">
+      <a href="../aws-lab/smart-agricolture.html" class="md-nav__link">
         Smart Agriculture
       </a>
     </li>
   
 
             
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-lab/aws-lab.md" class="md-nav__link">
+        AWS Lab
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          AWS Lab
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AWS Lab" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          AWS Lab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -933,12 +981,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          AWS Lab
+          DWH Lab
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="aws-lab.html" class="md-nav__link md-nav__link--active">
-        AWS Lab
+        DWH Lab
       </a>
       
         
@@ -994,6 +1042,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloudpl-lab.html" class="md-nav__link">
+        Notebook
+      </a>
     </li>
   
 
@@ -1093,7 +1155,7 @@
               
   
                 
-  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/cloud-platforms/aws-lab/aws-lab.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CescaNeri/BigData-CloudPlatforms/edit/main/cloud-platforms/exercise/aws-lab.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -1104,7 +1166,7 @@
 <p>We start by creating 2 buckets, one for raw data (<em>landing</em>) and one for cleaned data (<em>staging</em>):</p>
 <p><strong>landing_bucket</strong> = "s3://landing-raw-sales-911/"</p>
 <p><strong>staging_bucket</strong> = "s3://staging-clean-sales-911/"</p>
-<p>Then, we upload the three csv filed on the <strong>landing bucket</strong> and we merge the data into a single data frame:</p>
+<p>Then, we upload the three csv files on the <strong>landing bucket</strong> and we merge the data into a single data frame:</p>
 <div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv&quot;</span><span class="p">,</span> 
                                 <span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-1-2.v0.0.1.csv&quot;</span><span class="p">,</span> 
                                 <span class="s2">&quot;s3://landing-raw-sales-911/sales_fact_1997.slice-2-3.v0.0.1.csv&quot;</span><span class="p">]),</span> 
@@ -1175,7 +1237,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 28, 2022 13:46:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 1, 2022 15:33:00</span>
       
         <br>
         Created:
@@ -1211,7 +1273,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="smart-agricolture.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Smart Agriculture" rel="prev">
+        <a href="../aws-lab/smart-agricolture.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Smart Agriculture" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1225,6 +1287,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="cloudpl-lab.html" class="md-footer__link md-footer__link--next" aria-label="Next: Notebook" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Notebook
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

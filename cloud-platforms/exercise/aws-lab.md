@@ -8,7 +8,7 @@ We start by creating 2 buckets, one for raw data (*landing*) and one for cleaned
 
 **staging_bucket** = "s3://staging-clean-sales-911/"
 
-Then, we upload the three csv filed on the **landing bucket** and we merge the data into a single data frame:
+Then, we upload the three csv files on the **landing bucket** and we merge the data into a single data frame:
 
 ```python
 df = pd.concat(map(pd.read_csv, ["s3://landing-raw-sales-911/sales_fact_1997.slice-0-1.v0.0.1.csv", 
