@@ -11,7 +11,7 @@ They cannot store all the data but they need to analyze them and store the resul
 
 ![](domo.jpg)
 
-# Big Data - Definition
+## Big Data - Definition
 
 How can we distinguish big data from normal data?
 The line is quite vague
