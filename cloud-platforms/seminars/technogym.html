@@ -1094,6 +1094,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#google-bigquery" class="md-nav__link">
+    Google BigQuery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-case" class="md-nav__link">
+    SQL case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-ml" class="md-nav__link">
+    BigQuery ML
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1164,6 +1185,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#google-bigquery" class="md-nav__link">
+    Google BigQuery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-case" class="md-nav__link">
+    SQL case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-ml" class="md-nav__link">
+    BigQuery ML
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1211,13 +1253,47 @@ Technogym uses Google Cloud as PaaS.</p>
 <li>Frequency of communication different from device to device</li>
 <li>Direction of communication (in some cases communication needs to be bi-directional)</li>
 </ul>
+<p><strong>Key Qualities for Storage:</strong></p>
+<ul>
+<li>Availability </li>
+<li>Durability</li>
+<li>Reliability</li>
+<li>Fault Tolerance (zero downtime)</li>
+<li>Consistency (data integrity)</li>
+</ul>
+<h2 id="google-bigquery">Google BigQuery</h2>
+<p>How do they choose where to locate the machines?</p>
+<ol>
+<li>Regulations (keep data in Europe)</li>
+<li>Where data is needed</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">JSON_EXTRACT</span><span class="p">(</span><span class="k">data</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">RawData</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="nb">DATE</span><span class="p">(</span><span class="n">publish_time</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;2022-12-05&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>BigQuery gives you the possibility to <strong>schedule queries</strong>, so that you can set a query to run automatically at pre-set times.</p>
+<p><strong>Google DataStudio</strong> performs the same jobs as Tableau.</p>
+<p>BigQuery understands the data type that you are dealing with and allows you to work with the data without the need to convert it.</p>
+<h2 id="sql-case">SQL case</h2>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">file_name</span><span class="o">/</span><span class="k">view</span><span class="w"></span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">TimeStampEvent</span><span class="p">,</span><span class="w"> </span><span class="n">JSON_VALUE</span><span class="p">(</span><span class="n">jsondata</span><span class="p">.</span><span class="k">data</span><span class="p">.</span><span class="n">message</span><span class="p">.</span><span class="k">data</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">counter</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">file_name</span><span class="o">/</span><span class="n">json</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">JSON_VALUE</span><span class="p">(</span><span class="n">jsondata</span><span class="p">.</span><span class="k">data</span><span class="p">.</span><span class="n">message</span><span class="p">.</span><span class="k">data</span><span class="p">)</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"></span>
+</code></pre></div>
+<p>To display data on an excel file, we just need to open a new google sheet file and open the view we created.</p>
+<p>Alternatively, queries can be directly written on google sheets when you open the data.</p>
+<p>We can select <code>refresh</code> options which allow us to schedule refresh times.</p>
+<h2 id="bigquery-ml">BigQuery ML</h2>
+<p>As soon as you have data on BigQuery, BigQuery ML allows you to build ML models without the need of extracting the data first.</p>
+<p>With BigQuery ML, there is no need to use python or java, but you can just use SQL. 
+You can choose among different models like linear regression, K-means and so on.</p>
+<p><code>AutoML</code> allows developers with limited machine learning experience to train high-quality models specific to their business needs.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 5, 2022 10:04:31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 5, 2022 11:23:53</span>
       
         <br>
         Created:
