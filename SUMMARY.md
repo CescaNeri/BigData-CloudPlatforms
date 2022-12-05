@@ -9,3 +9,4 @@
 * [Cloud Computing](cloud-platforms/cloud-computing/)
 * [Cloud Lab](cloud-platforms/aws-lab/)
 * [AWS Lab](cloud-platforms/exercise/)
+* [Seminars](cloud-platforms/seminars/)
