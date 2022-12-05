@@ -14,6 +14,7 @@ They cannot store all the data but they need to analyze them and store the resul
 ## Big Data - Definition
 
 How can we distinguish big data from normal data?
+
 The line is quite vague
 
 
@@ -25,12 +26,12 @@ We can define Big Data following the V's principles:
 
 - VOLUME (dataset that are particularly big)
 - VELOCITY - interpreted in two ways:
-    - velocity in which data are injected 
-    - speed of the analysis that you want to run
+    - Velocity in which data are injected 
+    - Speed of the analysis that you want to run
 - VARIETY (many different formats of data)
-    - structured vs semi-structured (JSON)
+    - Structured vs semi-structured (JSON)
 - VERACITY (in many cases, you are dealing with datasets which you cannot fully rely on)
-    - especially true when you are dealing with social data 
+    - Especially true when you are dealing with social data 
 
 ![](datav.jpg)
 
