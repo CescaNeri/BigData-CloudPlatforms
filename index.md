@@ -22,6 +22,10 @@
 
 Questions on all (theoretical and practical) aspects of the course, including both modules and seminars. 
 
+- Exam must be in presence
+- Be prepared :)
+- All the lectures are subjects of questions
+
 **Exam Dates:**
 
 - 21 December
