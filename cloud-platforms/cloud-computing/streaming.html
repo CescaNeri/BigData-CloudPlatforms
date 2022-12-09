@@ -1187,7 +1187,9 @@ With batch ingestion, the goal is to move data from on-premises storage, followi
 <p>The unified log lives across a cluster of machines.
 Distribution ensures:</p>
 <ul>
-<li>to do</li>
+<li>Scalability (work with streams larger than the capacity of single machines)</li>
+<li>Durability (replicate all events within the cluster to overcome data loss)</li>
+<li>Using a log as a universal integration mechanism is never going to be more than an elegant fantasy if we cannot build a log that is fast, cheap and scalable</li>
 </ul>
 <p><strong>Ordered system</strong>: events in a shard have a sequential IDs (allows append-only).</p>
 <p>With streaming data, we can identify two types of processing:</p>
@@ -1267,7 +1269,7 @@ Users must scale shards up and down manually.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 7, 2022 11:49:56</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 9, 2022 14:48:27</span>
       
         <br>
         Created:
