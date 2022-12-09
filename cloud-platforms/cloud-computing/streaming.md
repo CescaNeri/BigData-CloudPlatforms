@@ -37,7 +37,9 @@ With **unified log**, a single log in a company with applications sending/readin
 The unified log lives across a cluster of machines.
 Distribution ensures:
 
-- to do
+- Scalability (work with streams larger than the capacity of single machines)
+- Durability (replicate all events within the cluster to overcome data loss)
+- Using a log as a universal integration mechanism is never going to be more than an elegant fantasy if we cannot build a log that is fast, cheap and scalable
 
 **Ordered system**: events in a shard have a sequential IDs (allows append-only).
 
