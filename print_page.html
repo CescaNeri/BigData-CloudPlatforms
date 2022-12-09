@@ -2275,10 +2275,32 @@ Big data systems are mostly data-intensive.</p>
 <p>The solution is to have single computer -&gt; <strong>Data Center</strong></p>
 <p><img alt="" src="big-data/infrastructures-architectures/datacenter.jpg" /></p>
 <p>The core is the <strong>framework provider</strong>, which is the set of software modules that handles the abstraction of the complexity of the computer system and makes it visible as if it was a single entity.</p>
+<p>It provides general resources or services to be used by the Big Data Application Provider in the creation of the specific application.</p>
+<p>The <strong>data provider</strong> introduces new data or information feeds into the Big Data system. It can be anything from a sensor to a human and performs the following activities:</p>
+<ul>
+<li>Collecting and persisting the data</li>
+<li>Providing transformation functions</li>
+<li>Creating the metadata describing the data source</li>
+<li>Enforcing access rights on data access and establishing contracts for data access authorizations</li>
+<li>Making the data accessible through suitable programmable push or pull interfaces and mechanisms</li>
+<li>Publishing the availability of the information and the means to access it</li>
+</ul>
 <p><strong>System Orchestrator</strong> -&gt; manages application (both a human being or a program)</p>
-<p>ADD DETAILS FROM THE SLIDES!!! 'til 28</p>
+<ul>
+<li>Integrates the required application activities into ana operational vertical system</li>
+<li>Configure and manage the other components of the Big Data architecture to implement one ore more workloads</li>
+<li>Monitor workloads and system to verify the meeting of quality requirements</li>
+<li>Elastically assign and provision additional physical or virtual resources</li>
+</ul>
 <p><img alt="" src="big-data/infrastructures-architectures/arch.jpg" /></p>
-<p>ADD DETAILS</p>
+<p>A Big Data architecture is composed of:</p>
+<ol>
+<li><strong>Data sources</strong>: data stores, static files, real-time sources</li>
+<li><strong>Data storage</strong>: distributed file store or database</li>
+<li><strong>Batch processing</strong>: Long-running batch jobs to filter, aggregate, and prepare the data for analysis</li>
+<li><strong>Analytical data store</strong>: serve the processed data in a structured format that can be queried using analytical tool</li>
+<li><strong>Analysis and reporting</strong>: Traditional OLAP and BI tools, interactive exploration, analytical notebooks</li>
+</ol>
 <h2 id="big-data-infrastructures-architectures-architectures-analytical-applications">Analytical Applications</h2>
 <ul>
 <li><strong>Batch Analysis:</strong> Take a large amount of data and run analysis<ul>

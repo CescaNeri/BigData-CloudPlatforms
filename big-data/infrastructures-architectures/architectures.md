@@ -12,13 +12,33 @@ The solution is to have single computer -> **Data Center**
 
 The core is the **framework provider**, which is the set of software modules that handles the abstraction of the complexity of the computer system and makes it visible as if it was a single entity.
 
+It provides general resources or services to be used by the Big Data Application Provider in the creation of the specific application.
+
+The **data provider** introduces new data or information feeds into the Big Data system. It can be anything from a sensor to a human and performs the following activities:
+
+- Collecting and persisting the data
+- Providing transformation functions
+- Creating the metadata describing the data source
+- Enforcing access rights on data access and establishing contracts for data access authorizations
+- Making the data accessible through suitable programmable push or pull interfaces and mechanisms
+- Publishing the availability of the information and the means to access it
+
 **System Orchestrator** -> manages application (both a human being or a program)
 
-ADD DETAILS FROM THE SLIDES!!! 'til 28
+- Integrates the required application activities into ana operational vertical system
+- Configure and manage the other components of the Big Data architecture to implement one ore more workloads
+- Monitor workloads and system to verify the meeting of quality requirements
+- Elastically assign and provision additional physical or virtual resources
 
 ![](arch.jpg)
 
-ADD DETAILS
+A Big Data architecture is composed of:
+
+1. **Data sources**: data stores, static files, real-time sources
+2. **Data storage**: distributed file store or database
+3. **Batch processing**: Long-running batch jobs to filter, aggregate, and prepare the data for analysis
+4. **Analytical data store**: serve the processed data in a structured format that can be queried using analytical tool
+5. **Analysis and reporting**: Traditional OLAP and BI tools, interactive exploration, analytical notebooks
 
 ## Analytical Applications
 
