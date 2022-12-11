@@ -38,7 +38,9 @@ Master service -> *namenode*
 - Persistently maintains the filesystem tree
 - Coordinates the storage on different machines
 - Keeps in memory the location of each block for a given file (**block pool**)
+
 Slaves -> *datanodes*
+
 - Store and retrieve blocks
 
 ## SPoF
