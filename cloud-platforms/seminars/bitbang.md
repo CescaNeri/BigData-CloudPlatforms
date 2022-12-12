@@ -59,3 +59,16 @@ A **Data Management Platform** collects, organizes and activates first, second a
 - Direct marketing campaign were not orchestrated
 - Marketing campaigns could not be personalized based on retail data
 
+## Recap about the seminars
+
+AWS, Google and Azure (Cloud Service provider).
+Why BitBang chose Azure? Mainly for the relationship with Adobe and because it is a huge cloud service provider in italy. Also, cloud provider do not compete on services but on hardware (CPU) and prices.
+
+**Versioning** and data versioning for pipelines (seems simple but it's not, and it is very important).
+Information system can be very complex when you do not start from scratch. 
+
+Data driven innovation is related to people mindsets.
+
+Key importance to regulations and restrictions in foreign countries.
+
+It is not just about cloud services but also about their functionalities. 
