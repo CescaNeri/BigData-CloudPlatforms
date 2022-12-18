@@ -41,7 +41,7 @@ The risks involved include:
 
 ## Types of Service Providers
 
-There different types of cloud:
+There are different types of cloud:
 
 - **Public** (accessible to anyone like Microsoft, AWS, Google ...)
 - **Private** (accessible by individuals within an institution)
