@@ -878,6 +878,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cloud-platforms/cloud-computing/streaming.html" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1413,6 +1427,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-cloud-computing-streaming" class="md-nav__link">
+    25. Streaming
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1428,14 +1449,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    25. California Housing System
+    26. California Housing System
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
-    26. Smart Agriculture
+    27. Smart Agriculture
   </a>
   
 </li>
@@ -1455,21 +1476,21 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-exercise-aws-lab" class="md-nav__link">
-    27. DWH Lab
+    28. DWH Lab
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-exercise-cloudpl-lab" class="md-nav__link">
-    28. Notebook
+    29. Notebook
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-exercise-provenance-graph" class="md-nav__link">
-    29. Provenance Graph
+    30. Provenance Graph
   </a>
   
 </li>
@@ -1489,14 +1510,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-seminars-technogym" class="md-nav__link">
-    30. Technogym
+    31. Technogym
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-seminars-bitbang" class="md-nav__link">
-    31. BitBang
+    32. BitBang
   </a>
   
 </li>
@@ -1818,6 +1839,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cloud-platforms-cloud-computing-streaming" class="md-nav__link">
+    25. Streaming
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1833,14 +1861,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-california-housing" class="md-nav__link">
-    25. California Housing System
+    26. California Housing System
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-aws-lab-smart-agricolture" class="md-nav__link">
-    26. Smart Agriculture
+    27. Smart Agriculture
   </a>
   
 </li>
@@ -1860,21 +1888,21 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-exercise-aws-lab" class="md-nav__link">
-    27. DWH Lab
+    28. DWH Lab
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-exercise-cloudpl-lab" class="md-nav__link">
-    28. Notebook
+    29. Notebook
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-exercise-provenance-graph" class="md-nav__link">
-    29. Provenance Graph
+    30. Provenance Graph
   </a>
   
 </li>
@@ -1894,14 +1922,14 @@
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-seminars-technogym" class="md-nav__link">
-    30. Technogym
+    31. Technogym
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloud-platforms-seminars-bitbang" class="md-nav__link">
-    31. BitBang
+    32. BitBang
   </a>
   
 </li>
@@ -3754,7 +3782,108 @@ There is no point in moving 18 machines if we are not using all of them.</p>
 <li>1 Core node</li>
 <li>4 Task nodes</li>
 </ul>
-<p><img alt="" src="cloud-platforms/cloud-computing/cloud-solution.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
+<p><img alt="" src="cloud-platforms/cloud-computing/cloud-solution.jpg" /></p></section><section class="print-page" id="cloud-platforms-cloud-computing-streaming"><h1 id="cloud-platforms-cloud-computing-streaming-data-pipelines-on-cloud-streaming">Data Pipelines on Cloud - Streaming</h1>
+<p>Batch vs Streaming systems:</p>
+<p>One of the main difference between batch and streaming is <strong>latency</strong>. With streaming systems, latency is expected to be very short, which with batch data it may takes hours to execute data.</p>
+<p>With streaming systems results are usually approximate while batch systems provide exact results by processing massive data at once.</p>
+<p>Batch systems are engine that are capable of handling processing on <strong>bounded</strong> datasets.
+While streaming systems are engines capable of handling processing on <strong>unbounded</strong> dataset.
+Streaming is a superset of batch processing.</p>
+<h2 id="cloud-platforms-cloud-computing-streaming-ingestion">Ingestion</h2>
+<p>The goal of data ingestion is to move data to the cloud.
+With batch ingestion, the goal is to move data from on-premises storage, following this workflow:</p>
+<ul>
+<li>Receive shipment</li>
+<li>Set up</li>
+<li>Transfer data</li>
+<li>Ship back</li>
+</ul>
+<p>With streaming systems, data flows in both directions so storage systems are both sources and destinations for data transformations.</p>
+<p>The streaming is continuous, with unlimited succession of individual events ordered by the point in time at which each event occurred.</p>
+<p><img alt="" src="cloud-platforms/cloud-computing/log.jpg" /></p>
+<p>The general idea is to collect events from many source systems, store them in a unified log and enable applications to operate on these event streams.</p>
+<p><img alt="" src="cloud-platforms/cloud-computing/unified.jpg" /></p>
+<p>With <strong>unified log</strong>, a single log in a company with applications sending/reading events, while with <strong>append-only log</strong>, new events are appended to the unified log.</p>
+<p><strong>Distributed Systems</strong></p>
+<p>The unified log lives across a cluster of machines.
+Distribution ensures:</p>
+<ul>
+<li>Scalability (work with streams larger than the capacity of single machines)</li>
+<li>Durability (replicate all events within the cluster to overcome data loss)</li>
+<li>Using a log as a universal integration mechanism is never going to be more than an elegant fantasy if we cannot build a log that is fast, cheap and scalable</li>
+</ul>
+<p><strong>Ordered system</strong>: events in a shard have a sequential IDs (allows append-only).</p>
+<p>With streaming data, we can identify two types of processing:</p>
+<ul>
+<li><strong>Single-event</strong>: a single event produces zero or more events</li>
+<li><strong>Multiple-event</strong>: multiple events collectively produce zero or more events<ul>
+<li>Aggregating data</li>
+<li>Functions like minimum, maximum or average</li>
+<li>Pattern matching (with DoS)</li>
+<li>Reordering events on a sort key</li>
+</ul>
+</li>
+</ul>
+<p><strong>Amazon Kinesis Data Streams</strong></p>
+<p>It is created and provisioned by shard (each shard provides 1 MBps and 1000 data puts per second).</p>
+<p>Consumers get records by shard (records are sorted by partition key and sequence number). Ordering is not guaranteed across shards.</p>
+<p>Kinesis works like <code>kafka</code>.</p>
+<p>Records are retained for 7 days at maximum.</p>
+<p>Shards allow scalability (scale-out), they can be split into two or merged.
+Users must scale shards up and down manually.</p>
+<p><img alt="" src="cloud-platforms/cloud-computing/shard.jpg" /></p>
+<h2 id="cloud-platforms-cloud-computing-streaming-lambda-function">Lambda Function</h2>
+<p>Apart from Paas, Saas and Iaas, we can also have functions as a service.</p>
+<p>AWS Lambda allows you to build pipelines incrementally.</p>
+<p>Lambda allows you to build a function and compose it on a pipeline. The idea is to build a function and then re-using it.</p>
+<p>Functions are <strong>modular</strong> and they can be easily integrated across the system. </p>
+<p><img alt="" src="cloud-platforms/cloud-computing/lambda.jpg" /></p>
+<p>The Lambda runtime invokes a lambda function multiple times in parallel. </p>
+<p>A function is composed as follow: <code>code + configuration + dependencies</code>.</p>
+<p><strong>Serverless Computing rules:</strong></p>
+<ul>
+<li>If you want your code to be reusable, functions should do only one thing (single-purpose).</li>
+<li>A function that does just one thing is more testable and robust</li>
+<li>A function with a well-defined interface is also more likely to be reused</li>
+<li>Code should be created in a <strong>stateless style</strong> (the execution of the function should be independent from any state)<ul>
+<li>Statelessness allow scalability</li>
+<li>Local resources or processes will not survive along sessions</li>
+</ul>
+</li>
+<li>Functions that terminate sooner are cheaper</li>
+</ul>
+<p><em>How can we accurately calculate the cost</em></p>
+<p>We can create a test environment which simulates the behavior of the system.</p>
+<h2 id="cloud-platforms-cloud-computing-streaming-pattern-for-data-pipelines">Pattern for data pipelines</h2>
+<p>Pattern are architectural solutions to problems in software design. It is a template for how to solve a problem in many different situations.</p>
+<p><strong>Command pattern</strong></p>
+<p>A behavioral design pattern in which an object is used to encapsulate the information needed to perform an action or trigger an event.</p>
+<p>Patterns are usually categorized according to the scope. In this case we are considering behavioral patterns as we need to specify how services are interacting with each others.</p>
+<p>The <code>lambda function</code> encapsulate a request as a object. The command function is used to invoke other functions and services. It knows which functions to invoke in response to data/events and how to call those functions.</p>
+<p><strong>Pipes and filters patter</strong></p>
+<p>Decompose a complex processing task into a sequence of manageable services.</p>
+<ul>
+<li>COmponents designed to transform data are referred to as filters.</li>
+<li>Connectors that pass data between components are referred to as pipes.</li>
+</ul>
+<p><strong>Messaging patter</strong></p>
+<p>Massaging patterns describe how two different parts of a message passing system connect and communicate with each other.</p>
+<p>Decouple services from direct dependence and allow storage of events in queue:</p>
+<ul>
+<li>Reliability: if the consuming service goes offline, messages are retained in the queue and can still be processed.</li>
+<li>A message queue can have a single sender/receiver or multiple sender/receiver.</li>
+</ul>
+<p><strong>Priority queue pattern</strong></p>
+<p><strong>Decouple</strong> and prioritize requests sent to services:</p>
+<ul>
+<li>Requests with a higher priority are received and processed more quickly than those with a lower priority.</li>
+<li>Useful in applications that offer different service level guarantees.</li>
+</ul>
+<p><strong>Control</strong> how and when messages are dealt with:</p>
+<ul>
+<li>Different queues, topics, or streams to feed messages to your functions.</li>
+<li>High-priority messages go through expensive services with more capacity.</li>
+</ul></section><h1 class='nav-section-title-end'>Ended: Cloud Computing</h1>
                         <h1 class='nav-section-title' id='section-cloud-lab'>
                             Cloud Lab <a class='headerlink' href='#section-cloud-lab' title='Permanent link'>↵</a>
                         </h1>
