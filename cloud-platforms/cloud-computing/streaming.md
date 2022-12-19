@@ -113,7 +113,7 @@ The `lambda function` encapsulate a request as a object. The command function is
 
 Decompose a complex processing task into a sequence of manageable services.
 
-- COmponents designed to transform data are referred to as filters.
+- Components designed to transform data are referred to as filters.
 - Connectors that pass data between components are referred to as pipes.
 
 **Messaging patter**
